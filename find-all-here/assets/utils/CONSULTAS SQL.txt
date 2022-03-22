@@ -1,0 +1,33 @@
+
+RECORDS (Historial de transacciones)
+RECORDS_DETAIL (Detalle de compra/venta)
+
+
+SELECT * FROM RECORDS_DETAIL RD INNER
+JOIN RECORDS R ON R.id = RD._record
+JOIN PRODUCTS P ON P.id = RD._product
+WHERE P._user = :mi_id
+LIMIT 10
+
+SELECT * FROM RECORDS WHERE _user = :mi_id LIMIT 10
+
+-- QUIERO MOSTRAR LAS IMAGENES MINI DE UN PRODUCTO SEGPUN ORDEN NUMÉRICO
+SELECT id,mini,type FROM IMAGES  WHERE   id= :id ORDER BY `order` ASC; 
+ 
+-- Quiero ver la cantidad de usuarios que calificaron a un usuario n (12)
+   conjunto a su calificación promedio
+
+SELECT COUNT(U.id) AS cantida_users, AVG(R.rate) AS calificasion_promedio 
+FROM USERS U INER JOIN RATICS R ON U.id = R._user WHERE U.id = 12;
+
+SELECT COUNT(_user) AS quantity, AVG(rate) AS rating
+FROM RATING WHERE _user = 12;
+
+-- Quiero ver la lista de usuarios a los que yo sigo
+
+SELECT U.name as segidores FROM USERS U INER JOIN FOLLOWS  F ON U.id = F._user
+WHERE U.id = :id;
+
+SELECT U.username FROM FOLLOWS F INNER
+JOIN USERS U ON U.id = F._user_follow
+WHERE F._user = :miid
