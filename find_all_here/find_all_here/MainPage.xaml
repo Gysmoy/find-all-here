@@ -24,6 +24,25 @@
                 <Label x:Name="lbl_estado" Text="" FontSize="16" Padding="30,0,30,0"/>
             </StackLayout>
         </ScrollView>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                    <Button Grid.Column="0" Text="Inicio"></Button>
+                </Grid.ColumnDefinitions>
+                
+            </Grid>
+        </Frame>
+        
+
+
 
     </StackLayout>
 
