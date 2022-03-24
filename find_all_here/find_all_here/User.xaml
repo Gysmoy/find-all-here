@@ -39,22 +39,22 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <Button Clicked="BtnHome_Clicked" Grid.Column="0" Text="Inicio"
+                    <Button Grid.Column="0" Text="Inicio"
                             FontSize="12" FontAttributes="Bold"
                             BackgroundColor="#222222" TextColor="#ffffff"
                             ImageSource="home.svg" ContentLayout="Top,0"/>
 
-                    <Button Clicked="BtnSearch_Clicked" Grid.Column="1" Text="Búsqueda"
+                    <Button Grid.Column="1" Text="Búsqueda"
                             FontSize="12" FontAttributes="Bold"
                             BackgroundColor="#222222" TextColor="#ffffff"
                             ImageSource="search.svg" ContentLayout="Top,0"/>
 
-                    <Button Clicked="BtnAdd_Clicked" Grid.Column="2" Text="+"
+                    <Button Grid.Column="2" Text="+"
                             FontSize="20" FontAttributes="Bold"
                             BackgroundColor="#2196F3" TextColor="#ffffff"
                             CornerRadius="10" Margin="0,5"/>
 
-                    <Button Clicked="BtnInbox_Clicked" Grid.Column="3" Text="Bandeja"
+                    <Button Grid.Column="3" Text="Bandeja"
                             FontSize="12" FontAttributes="Bold"
                             BackgroundColor="#222222" TextColor="#ffffff"
                             ImageSource="bell.svg" ContentLayout="Top,0"/>
