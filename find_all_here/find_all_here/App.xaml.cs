@@ -10,7 +10,7 @@ namespace find_all_here
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Home());
         }
 
         protected override void OnStart()

@@ -629,3 +629,7 @@ D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\fin
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\res\drawable\bell.svg
+D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\res\drawable\home.svg
+D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\res\drawable\search.svg
+D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here.Android\obj\Debug\120\res\drawable\user.svg

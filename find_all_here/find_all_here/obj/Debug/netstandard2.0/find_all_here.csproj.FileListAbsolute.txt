@@ -7,7 +7,6 @@ D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\fin
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\find_all_here.csproj.AssemblyReference.cache
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\find_all_here.GeneratedMSBuildEditorConfig.editorconfig
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\App.xaml.g.cs
-D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\find_all_here.AssemblyInfoInputs.cache
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\find_all_here.AssemblyInfo.cs
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\find_all_here.csproj.CoreCompileInputs.cache
@@ -17,3 +16,5 @@ D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\fin
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\refint\find_all_here.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\find_all_here.pdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\ref\find_all_here.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\Home.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\find_all_here\find_all_here\find_all_here\obj\Debug\netstandard2.0\User.xaml.g.cs

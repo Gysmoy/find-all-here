@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="find_all_here.User"
+             Title="PERFIL DE USUARIO">
+    <StackLayout BackgroundColor="#111111">
+        <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout>
+                <ListView>
+                    <ListView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Mi</x:String>
+                            <x:String>Primer</x:String>
+                            <x:String>Hola</x:String>
+                            <x:String>Mundo</x:String>
+                            <x:String>En</x:String>
+                            <x:String>Forma</x:String>
+                            <x:String>Dr</x:String>
+                            <x:String>Lista</x:String>
+                            <x:String>En</x:String>
+                            <x:String>XAMARIN</x:String>
+                        </x:Array>
+                    </ListView.ItemsSource>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        <Frame BackgroundColor="#222222" Padding="0" CornerRadius="0">
+            <StackLayout>
+                <Grid Margin="0" Padding="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button Clicked="BtnHome_Clicked" Grid.Column="0" Text="Inicio"
+                            FontSize="12" FontAttributes="Bold"
+                            BackgroundColor="#222222" TextColor="#ffffff"
+                            ImageSource="home.svg" ContentLayout="Top,0"/>
+
+                    <Button Clicked="BtnSearch_Clicked" Grid.Column="1" Text="Búsqueda"
+                            FontSize="12" FontAttributes="Bold"
+                            BackgroundColor="#222222" TextColor="#ffffff"
+                            ImageSource="search.svg" ContentLayout="Top,0"/>
+
+                    <Button Clicked="BtnAdd_Clicked" Grid.Column="2" Text="+"
+                            FontSize="20" FontAttributes="Bold"
+                            BackgroundColor="#2196F3" TextColor="#ffffff"
+                            CornerRadius="10" Margin="0,5"/>
+
+                    <Button Clicked="BtnInbox_Clicked" Grid.Column="3" Text="Bandeja"
+                            FontSize="12" FontAttributes="Bold"
+                            BackgroundColor="#222222" TextColor="#ffffff"
+                            ImageSource="bell.svg" ContentLayout="Top,0"/>
+
+                    <Button Grid.Column="4" Text="Perfil"
+                            FontSize="12" FontAttributes="Bold"
+                            BackgroundColor="#333333" TextColor="#ffffff"
+                            ImageSource="user.svg" ContentLayout="Top,0"/>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>
