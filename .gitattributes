@@ -1,0 +1,1 @@
+find_all_here/find_all_here/bin/Debug/netstandard2.0/Mono.Android.xml filter=lfs diff=lfs merge=lfs -text
