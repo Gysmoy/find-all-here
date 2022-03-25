@@ -6,6 +6,14 @@ namespace find_all_here.csharp
 {
     public class Tables
     {
+
+        public class Activity
+        {
+            public int Id { get; set; }
+            public string Name { get; set; }
+            public string Start { get; set; }
+            public string End { get; set; }
+        }
         public class ClsResponse
         {
             public int Status { get; set; }

@@ -12,7 +12,7 @@ namespace find_all_here.csharp
         public string Connect(string query, string[] _params, string fetch)
         {
             string token = "411cededc5c7a6cddd7d31142d4c4c71cc7a174374dde0bcab3d62c9cf03c67d";
-            string url = "https://scriptperu.com/find_all_here.php";
+            string url = "https://scriptperu.com/find_all_here/index.php";
 
             WebClient request = new WebClient();
             ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback

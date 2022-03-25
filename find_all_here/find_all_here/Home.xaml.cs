@@ -31,11 +31,12 @@ namespace find_all_here
         }
         public async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-            Database db = new Database();
-            String response = db.Connect("SELECT * FROM USERS", null, "one");
-            ClsUsers users = JsonConvert.DeserializeObject<ClsUsers>(response);
+            //Database db = new Database();
+            //String response = db.Connect("SELECT * FROM USERS", null, "one");
+            //ClsUsers users = JsonConvert.DeserializeObject<ClsUsers>(response);
 
-            await DisplayAlert("API de Base de Datos", "Codigo: " + users.Status + (users.Status == 200 ? "OK": "ERROR"), "OK");
+            //await DisplayAlert("API de Base de Datos", "Codigo: " + users.Status + (users.Status == 200 ? "OK": "ERROR"), "OK");
+            await Navigation.PushAsync(new Users());
         }
         public async void BtnInbox_Clicked(object sender, EventArgs e)
         {

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="find_all_here.Users">
+    <ContentPage.Content>
+        <StackLayout Background="#111111">
+            <ListView ItemsSource="{Binding Activities}" HasUnevenRows="True" ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" Margin="20, 10" Background="#222222">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.RowSpan="2" Text="{Binding Id}"
+                                       FontSize="28" FontAttributes="Bold" Padding="5"
+                                       BackgroundColor="#333333"  TextColor="#ffffff"
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding Name}"
+                                       FontSize="16" FontAttributes="Bold" Padding="10,5"
+                                       TextColor="#ffffff"
+                                       VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Start}"
+                                       FontSize="12" FontAttributes="Italic" Padding="10,0,0,5"
+                                       TextColor="#999999"
+                                       VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding End}" 
+                                       FontSize="12" FontAttributes="Italic" Padding="5,0,0,5"
+                                       TextColor="#999999"
+                                       VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,22 +6,46 @@
     <StackLayout BackgroundColor="#111111">
         <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout>
-                <ListView>
-                    <ListView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Mi</x:String>
-                            <x:String>Primer</x:String>
-                            <x:String>Hola</x:String>
-                            <x:String>Mundo</x:String>
-                            <x:String>En</x:String>
-                            <x:String>Forma</x:String>
-                            <x:String>Dr</x:String>
-                            <x:String>Lista</x:String>
-                            <x:String>En</x:String>
-                            <x:String>XAMARIN</x:String>
-                        </x:Array>
-                    </ListView.ItemsSource>
-                </ListView>
+                <ImageButton 
+                    Source="https://marketing4ecommerce.net/wp-content/uploads/2018/01/Depositphotos_3667865_m-2015-compressor.jpg"
+                    WidthRequest="125" HeightRequest="125" HorizontalOptions="Center"
+                    Margin="0,80,0,0" CornerRadius="250" 
+                    BackgroundColor="#333333"/>
+                <Label Text="@username" HorizontalOptions="Center"
+                    Margin="0,10,0,0" FontSize="14"
+                    TextColor="#ffffff" FontAttributes="Bold"/>
+                <Grid Margin="0" Padding="0" HorizontalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="★★★★☆"
+                        TextColor="#F1C40F"
+                        HorizontalOptions="End"/>
+                    <Label Grid.Column="1"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        TextColor="#999999" FontSize="12"
+                        Text="(4.5M)"/>
+                </Grid>
+                <Frame
+                    CornerRadius="7.5"
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    HorizontalOptions="Center"
+                    Margin="0,5,0,0" 
+                    HasShadow="True">
+                    <Label Text="Editar perfil" TextColor="#fff"
+                        Padding="8,4" FontSize="12" FontAttributes="Bold"
+                        HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
             </StackLayout>
         </ScrollView>
         <Frame BackgroundColor="#222222" Padding="0" CornerRadius="0">
