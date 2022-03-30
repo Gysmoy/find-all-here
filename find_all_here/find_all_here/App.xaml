@@ -3,6 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.App">
     <Application.Resources>
-
+        <Style TargetType="Grid">
+            <Setter Property="ColumnSpacing" Value="0" />
+            <Setter Property="RowSpacing" Value="0" />
+        </Style>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#067bea</Color>
+            <Color x:Key="lbl-primary">#efefef</Color>
+            <Color x:Key="lbl-secondary">#cfcfcf</Color>
+            <Color x:Key="bg-body">#101010</Color>
+            <Color x:Key="bg-container">#202020</Color>
+            <Color x:Key="bg-outline">#303030</Color>
+            <Color x:Key="bg-profile">#404040</Color>
+            <Color x:Key="btn-primary-outline">#330090e7</Color>
+            <Color x:Key="btn-primary">#0090e7</Color>
+            <Color x:Key="btn-success-outline">#3300d25b</Color>
+            <Color x:Key="btn-success">#00d25b</Color>
+            <Color x:Key="btn-danger-outline">#33fc424a</Color>
+            <Color x:Key="btn-danger">#fc424a</Color>
+            <Color x:Key="btn-info-outline">#338f5fe8</Color>
+            <Color x:Key="btn-info">#8f5fe8</Color>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

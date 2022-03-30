@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 using static find_all_here.csharp.Tables;
 
@@ -20,15 +21,6 @@ namespace find_all_here
             InitializeComponent();
         }
 
-        public async void BtnHome_Clicked(object sender, EventArgs e)
-        {
-            
-        }
-
-        public async void BtnSearch_Clicked(object sender, EventArgs e)
-        {
-
-        }
         public async void BtnAdd_Clicked(object sender, EventArgs e)
         {
             //Database db = new Database();
@@ -36,15 +28,8 @@ namespace find_all_here
             //ClsUsers users = JsonConvert.DeserializeObject<ClsUsers>(response);
 
             //await DisplayAlert("API de Base de Datos", "Codigo: " + users.Status + (users.Status == 200 ? "OK": "ERROR"), "OK");
-            await Navigation.PushAsync(new Users());
-        }
-        public async void BtnInbox_Clicked(object sender, EventArgs e)
-        {
-
-        }
-        public async void BtnProfile_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new User());
+            Routing.RegisterRoute($"{nameof(Users)}", typeof(Users));
+            await Shell.Current.GoToAsync($"{nameof(Users)}");
         }
     }
 }

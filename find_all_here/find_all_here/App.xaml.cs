@@ -9,8 +9,8 @@ namespace find_all_here
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new Home());
+            MainPage = new Shell();
+            //MainPage = new NavigationPage(new Home());
         }
 
         protected override void OnStart()

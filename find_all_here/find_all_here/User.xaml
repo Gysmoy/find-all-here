@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.User"
-             Title="PERFIL DE USUARIO">
+             Title="PERFIL">
     <StackLayout BackgroundColor="#111111">
         <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <StackLayout>
                 <ImageButton 
-                    Source="https://marketing4ecommerce.net/wp-content/uploads/2018/01/Depositphotos_3667865_m-2015-compressor.jpg"
+                    Source=""
                     WidthRequest="125" HeightRequest="125" HorizontalOptions="Center"
                     Margin="0,80,0,0" CornerRadius="250" 
                     BackgroundColor="#333333"/>
@@ -39,7 +39,7 @@
                     Margin="0,5,0,0" 
                     HasShadow="True">
                     <Label Text="Editar perfil" TextColor="#fff"
-                        Padding="8,4" FontSize="12" FontAttributes="Bold"
+                        Padding="10,5" FontSize="12" FontAttributes="Bold"
                         HorizontalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
@@ -48,47 +48,5 @@
                 </Frame>
             </StackLayout>
         </ScrollView>
-        <Frame BackgroundColor="#222222" Padding="0" CornerRadius="0">
-            <StackLayout>
-                <Grid Margin="0" Padding="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="2*"/>
-                    </Grid.ColumnDefinitions>
-
-
-                    <Button Grid.Column="0" Text="Inicio"
-                            FontSize="12" FontAttributes="Bold"
-                            BackgroundColor="#222222" TextColor="#ffffff"
-                            ImageSource="home.svg" ContentLayout="Top,0"/>
-
-                    <Button Grid.Column="1" Text="Búsqueda"
-                            FontSize="12" FontAttributes="Bold"
-                            BackgroundColor="#222222" TextColor="#ffffff"
-                            ImageSource="search.svg" ContentLayout="Top,0"/>
-
-                    <Button Grid.Column="2" Text="+"
-                            FontSize="20" FontAttributes="Bold"
-                            BackgroundColor="#2196F3" TextColor="#ffffff"
-                            CornerRadius="10" Margin="0,5"/>
-
-                    <Button Grid.Column="3" Text="Bandeja"
-                            FontSize="12" FontAttributes="Bold"
-                            BackgroundColor="#222222" TextColor="#ffffff"
-                            ImageSource="bell.svg" ContentLayout="Top,0"/>
-
-                    <Button Grid.Column="4" Text="Perfil"
-                            FontSize="12" FontAttributes="Bold"
-                            BackgroundColor="#333333" TextColor="#ffffff"
-                            ImageSource="user.svg" ContentLayout="Top,0"/>
-                </Grid>
-            </StackLayout>
-        </Frame>
     </StackLayout>
 </ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="find_all_here.Search"
+             Title="BUSCAR">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <!--Frame BackgroundColor="#202020" Padding="0" CornerRadius="0">
+                <StackLayout>
+                    <Grid Margin="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <ImageButton Grid.Column="0"
+                        BackgroundColor="#202020" HeightRequest="50" Padding="9"
+                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/homeflat_106039.png"/>
+
+                        <ImageButton Grid.Column="1"
+                        BackgroundColor="#303030" HeightRequest="50" Padding="9"
+                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/searchzoomflat_106031.png" />
+
+                        <Frame Grid.Column="2"
+                        CornerRadius="7.5"
+                        Padding="0"
+                        BackgroundColor="#2196F3"
+                        HorizontalOptions="Center"
+                        Margin="0,5" 
+                        HasShadow="True">
+                            <Label Text="+" TextColor="#fff"
+                        Padding="12.5,5" FontSize="20" FontAttributes="Bold"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding BtnAdd_Clicked}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Frame>
+
+                        <ImageButton Grid.Column="3"
+                        BackgroundColor="#202020" HeightRequest="50" Padding="9"
+                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/lightbulbflat_106023.png" />
+
+                        <ImageButton Grid.Column="4"
+                        BackgroundColor="#202020" HeightRequest="50" Padding="9"
+                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/robotflat_106032.png"/>
+                    </Grid>
+                </StackLayout>
+            </Frame-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
