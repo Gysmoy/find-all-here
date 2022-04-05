@@ -1,16 +1,5 @@
-﻿using Android.Content;
-using Android.Widget;
-using find_all_here.csharp;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System;
 using Xamarin.Forms;
-using static find_all_here.csharp.Tables;
 
 namespace find_all_here
 {

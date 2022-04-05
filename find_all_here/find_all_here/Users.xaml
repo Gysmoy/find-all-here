@@ -4,7 +4,9 @@
              x:Class="find_all_here.Users">
     <ContentPage.Content>
         <StackLayout Background="#111111">
-            <ListView ItemsSource="{Binding Activities}" HasUnevenRows="True" ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped">
+            
+            <ListView ItemsSource="{Binding Activities}" HasUnevenRows="True"
+                ItemSelected="ListView_ItemSelected" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -39,8 +41,8 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

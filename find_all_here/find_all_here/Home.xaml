@@ -53,7 +53,7 @@
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
                             <ImageButton Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
-                                VerticalOptions="Center"
+                                VerticalOptions="Center" HorizontalOptions="Center"
                                 Source=""
                                 CornerRadius="250" WidthRequest="40" HeightRequest="40" BackgroundColor="{StaticResource bg-profile}"/>
                             <Frame Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
@@ -140,7 +140,14 @@
                                 Text="12 comentarios" TextColor="{StaticResource lbl-secondary}"/>
                             <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6"
                                 Padding="0" Margin="0,5,0,0" HeightRequest="1" BackgroundColor="{StaticResource bg-profile}"/>
-                            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="0"/>
+                            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+                                Margin="0,10,0,10" Padding="0" FontSize="12" HeightRequest="40" FontAttributes="Bold"
+                                BackgroundColor="{StaticResource btn-primary-outline}" TextColor="{StaticResource btn-primary}"
+                                Text="+ AÑADIR AL CARRITO"/>
+                            <Button Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"
+                                Margin="0,10,0,10" Padding="0" FontSize="12" HeightRequest="40" FontAttributes="Bold"
+                                BackgroundColor="{StaticResource bg-container}" TextColor="{StaticResource lbl-primary}"
+                                Text="VER COMENTARIOS"/>
                         </Grid>
                     </StackLayout>
                 </Frame>

@@ -1,10 +1,4 @@
-﻿using find_all_here.csharp;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,28 +18,18 @@ namespace find_all_here
             Activities = new List<Activity>();
 
             Activities.Add(new Activity()
-            {
-                Id = 1,
-                Name = "Levantarse",
-                Start = "05:00",
-                End = "05:30"
-            }) ;
+            {Id = 1, Name = "Levantarse", Start = "05:00", End = "05:30"}) ;
 
             Activities.Add(new Activity()
-            {
-                Id = 2,
-                Name = "Cambiarse la ropa",
-                Start = "05:30",
-                End = "06:00"
+            {Id = 2, Name = "Cambiarse la ropa", Start = "05:30", End = "06:00"
             });
 
             Activities.Add(new Activity()
-            {
-                Id = 3,
-                Name = "Ordenar el cuarto",
-                Start = "06:00",
-                End = "06:45"
+            {Id = 3, Name = "Ordenar el cuarto", Start = "06:00", End = "06:45"
             });
+
+            BindingContext = this;
+
 
             Activities.Add(new Activity()
             {
