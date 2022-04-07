@@ -3,12 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.Inbox"
              Title="BANDEJA">
-    <ContentPage.Content>
+    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#101010">
+        <StackLayout  Padding="0">
+         
+            <StackLayout>
+                <Grid Padding="10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                     
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                </Grid>
+
+
+
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+    <!--ContentPage.Content>
         <StackLayout>
+            <Label Text="Hola"></Label>
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <!--Frame BackgroundColor="#202020" Padding="0" CornerRadius="0">
+            <Frame BackgroundColor="#202020" Padding="0" CornerRadius="0">
                 <StackLayout>
                     <Grid Margin="0">
                         <Grid.RowDefinitions>
@@ -56,7 +84,7 @@
                         Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/robotflat_106032.png"/>
                     </Grid>
                 </StackLayout>
-            </Frame-->
+            </Frame>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content-->
 </ContentPage>

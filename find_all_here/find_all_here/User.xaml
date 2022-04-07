@@ -38,14 +38,19 @@
                     HorizontalOptions="Center"
                     Margin="0,5,0,0" 
                     HasShadow="True">
-                    <Label Text="Editar perfil" TextColor="#fff"
+                    <!--
+                    <Label  Text="Editar perfil" TextColor="#fff"
                         Padding="10,5" FontSize="12" FontAttributes="Bold"
                         HorizontalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
                         </Label.GestureRecognizers>
-                    </Label>
+                    </Label>-->
+                    <Button Text="Editar perfil" BackgroundColor="#2196F3" TextColor="#fff" FontSize="12" FontAttributes="Bold"
+                            HorizontalOptions="Center" Clicked="Ir"/>
+                    
                 </Frame>
+              
             </StackLayout>
         </ScrollView>
     </StackLayout>

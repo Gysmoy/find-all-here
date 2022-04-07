@@ -10,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace find_all_here
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class User : ContentPage
+    public partial class UserConfig : ContentPage
     {
-        public User()
+        public UserConfig()
         {
             InitializeComponent();
-        }
-        async void Ir(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new UserConfig());
         }
     }
 }
