@@ -25,8 +25,9 @@
                     BackgroundColor="{StaticResource bg-container}"
                     TextColor="{StaticResource lbl-primary}" TextTransform="None"
                     FontAttributes="None" FontSize="12" HeightRequest="35"
-                    BorderWidth="1" BorderColor="{StaticResource bg-profile}"
+                    BorderWidth="0" BorderColor="{StaticResource bg-profile}"
                     VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+                    
                     WidthRequest="500" Margin="10,0"
                     CornerRadius="25" Clicked="BtnAdd_Clicked"/>
                 <Button Grid.Row="0" Grid.Column="2" Text="SALIR"

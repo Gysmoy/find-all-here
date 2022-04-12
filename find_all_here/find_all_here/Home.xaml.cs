@@ -18,6 +18,8 @@ namespace find_all_here
 
             //await DisplayAlert("API de Base de Datos", "Codigo: " + users.Status + (users.Status == 200 ? "OK": "ERROR"), "OK");
             Routing.RegisterRoute($"{nameof(Users)}", typeof(Users));
+
+            // simular el comportamiento de un shelContent
             await Shell.Current.GoToAsync($"{nameof(Users)}");
         }
     }
