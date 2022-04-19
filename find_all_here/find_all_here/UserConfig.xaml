@@ -50,13 +50,13 @@
                     <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="1" Grid.Column="0" ></Entry>
                     <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="1" Grid.Column="1" x:Name="txt_apellidos"  ></Entry>
                     <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="3" Grid.Column="0" x:Name="txt_name_user"></Entry>
-                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="3" Grid.Column="1" x:Name="txt_email"></Entry>
-                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="5" Grid.Column="0" x:Name="txt_telefono"></Entry>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="3" Grid.Column="1" x:Name="txt_email" Keyboard="Email"></Entry>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="5" Grid.Column="0" x:Name="txt_telefono" Keyboard="Numeric" ></Entry>
                     <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="5" Grid.Column="1" x:Name="txt_fec_nac"></Entry>
                     <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="7" Grid.Column="0" x:Name="txt_sexo"></Entry>
                     <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="7" Grid.Column="1" x:Name="txt_direc"></Entry>
-                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="9" Grid.Column="0" x:Name="txt_pass"></Entry>
-                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="9" Grid.Column="1" x:Name="txt_ver_pass"></Entry>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="9" Grid.Column="0" x:Name="txt_pass" IsPassword="True"></Entry>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" FontSize="16" Grid.Row="9" Grid.Column="1" x:Name="txt_ver_pass" IsPassword="True"></Entry>
 
                     
                 </Grid>
