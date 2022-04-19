@@ -12,7 +12,11 @@ namespace find_all_here
             InitializeComponent();
             BindingContext = _viewModel = new HomeViewModel();
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
+        }
 
         public async void BtnAdd_Clicked(object sender, EventArgs e)
         {
