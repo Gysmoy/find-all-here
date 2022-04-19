@@ -4,8 +4,8 @@ using System.Text;
 
 namespace find_all_here.Models
 {
-    public class Products: Response
+    public class ListaProducts: Response
     {
-        public List<Product> Data { get; set; }
+        public List<ProductDetail> Data { get; set; }
     }
 }

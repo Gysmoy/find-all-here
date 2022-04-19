@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static find_all_here.csharp.Tables;
+using static find_all_here.csharp.Tables2;
 
 namespace find_all_here
 {

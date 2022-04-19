@@ -4,7 +4,7 @@ using System.Text;
 
 namespace find_all_here.csharp
 {
-    public class Tables
+    public class Tables2
     {
 
         public class Activity

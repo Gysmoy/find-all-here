@@ -1,6 +1,5 @@
 ﻿using Android.Widget;
 using find_all_here.csharp;
-using find_all_here.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,41 +7,84 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using find_all_here.Models;
 
 namespace find_all_here.ViewModels
 {
     public class HomeViewModel: BaseViewModel
     {
         private Product _selectedProduct;
-        public ObservableCollection<Product> Products { get; }
+        public ObservableCollection<Product> BindingProducts { get; }
         public Command LoadProductsCommand { get; }
+        public Command AddProductCommand { get; }
         public Command<Product> ProductTapped { get; }
         public HomeViewModel()
         {
-            Products = new ObservableCollection<Product>();
+            Title = "Find All Here";
+            BindingProducts = new ObservableCollection<Product>();
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
+            ProductTapped = new Command<Product>(OnProductSelected);
+            AddProductCommand = new Command(OnAddProduct);
         }
 
-        async Task ExecuteLoadProductsCommand()
+        public async Task ExecuteLoadProductsCommand()
         {
-            Database db = new Database();
-            String sp = StoredProcedures.GetAllProducts;
-            String[] parameters = { };
-            String response = db.Connect(sp, parameters, "all");
-            Products products = JsonConvert.DeserializeObject<Products>(response);
-            Toast.MakeText(Android.App.Application.Context, products.Message, ToastLength.Short).Show();
-            if (products.Status == 200)
+            IsBusy = true;
+            try
             {
-                Product product = products.Data[0];
-                Toast.MakeText(Android.App.Application.Context, JsonConvert.SerializeObject(product), ToastLength.Short).Show();
-                /*
-                foreach (Product product in products.Data)
+                BindingProducts.Clear();
+                Database db = new Database();
+                String sp = StoredProcedures.GetAllProducts;
+                String response = db.Connect(sp, null, "all");
+                ListaProducts listaProducts = JsonConvert.DeserializeObject<ListaProducts>(response);
+                Toast.MakeText(Android.App.Application.Context, listaProducts.Message, ToastLength.Short).Show();
+                if (listaProducts.Status == 200)
                 {
-                    // mostrar 
-                    Debug.WriteLine(JsonConvert.SerializeObject(product));
-                }*/
-            } else
+                    foreach (ProductDetail productDetail in listaProducts.Data)
+                    {
+                        Product product = productDetail;
+
+                        Brand brand = new Brand
+                        {
+                            Id = productDetail.B_id,
+                            Name = productDetail.B_name,
+                            Status = productDetail.B_status
+                        };
+                        product.Brand = brand;
+
+                        Category category = new Category
+                        {
+                            Id = productDetail.C_id,
+                            Name = productDetail.C_name,
+                            Status = productDetail.C_status
+                        };
+                        product.Category = category;
+
+                        User user = new User
+                        {
+                            Id = productDetail.U_id,
+                            Names = productDetail.U_names,
+                            Surnames = productDetail.U_surnames,
+                            Username = productDetail.U_username,
+                            Email = productDetail.U_email,
+                            Gender = productDetail.U_gender,
+                            Address = productDetail.U_address,
+                            Phone = productDetail.U_phone
+                        };
+                        product.User = user;
+                        
+                        BindingProducts.Add(product);
+                    }
+                } else
+                {
+                    Toast.MakeText(Android.App.Application.Context, listaProducts.Message, ToastLength.Short).Show();
+                }
+            } catch (Exception e)
             {
+                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
+            } finally
+            {
+                IsBusy = false;
             }
         }
         public void OnAppearing()
@@ -59,7 +101,7 @@ namespace find_all_here.ViewModels
                 OnProductSelected(value);
             }
         }
-        private async void OnAddItem(object obj)
+        private async void OnAddProduct(object obj)
         {
             await Shell.Current.GoToAsync($"product_edit?{nameof(Product.Id)}");
         }
