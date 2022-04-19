@@ -35,7 +35,7 @@
                     TextColor="#fc424a" TextTransform="None"
                     FontAttributes="None" FontSize="12" HeightRequest="35"
                     VerticalOptions="Center" HorizontalOptions="Center"
-                    CornerRadius="25"/>
+                    CornerRadius="25" Clicked="Login"/>
             </Grid>
             <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                 <CollectionView
