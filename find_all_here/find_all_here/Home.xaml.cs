@@ -1,14 +1,18 @@
-﻿using System;
+﻿using find_all_here.ViewModels;
+using System;
 using Xamarin.Forms;
 
 namespace find_all_here
 {
     public partial class Home : ContentPage
     {
+        HomeViewModel _viewModel;
         public Home()
         {
             InitializeComponent();
+            BindingContext = _viewModel = new HomeViewModel();
         }
+
 
         public async void BtnAdd_Clicked(object sender, EventArgs e)
         {
