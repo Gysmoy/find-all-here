@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Android;
 using Xamarin.Forms;
 using find_all_here.Models;
 
@@ -14,14 +15,14 @@ namespace find_all_here.ViewModels
     public class HomeViewModel: BaseViewModel
     {
         private Product _selectedProduct;
-        public ObservableCollection<ProductDetail> BindingProducts { get; }
+        public ObservableCollection<Product> BindingProducts { get; }
         public Command LoadProductsCommand { get; }
         public Command AddProductCommand { get; }
         public Command<Product> ProductTapped { get; }
         public HomeViewModel()
         {
             Title = "Find All Here";
-            BindingProducts = new ObservableCollection<ProductDetail>();
+            BindingProducts = new ObservableCollection<Product>();
             ProductTapped = new Command<Product>(OnProductSelected);
             AddProductCommand = new Command(OnAddProduct);
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
@@ -43,8 +44,11 @@ namespace find_all_here.ViewModels
                 {
                     foreach (ProductDetail productDetail in listaProducts.Data)
                     {
-                        /*Product product = productDetail;
-                        product.Relative_time = GetRelativeTime(productDetail.Update_date);
+                        //Product product = productDetail;
+                        Product product = new Product();
+                        product.Id = productDetail.Id;
+                        product.Name = productDetail.Name;
+                        product.Description = productDetail.Description;
 
                         Brand brand = new Brand
                         {
@@ -62,6 +66,15 @@ namespace find_all_here.ViewModels
                         };
                         product.Category = category;
 
+                        product.Purchase_price = productDetail.Purchase_price;
+                        product.Sale_price = productDetail.Sale_price;
+                        product.Proportions = productDetail.Proportions;
+                        product.Stock = productDetail.Stock;
+                        product.Tags = productDetail.Tags;
+                        product.Image_mini = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/mini";
+                        product.Image_full = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/full";
+                        product.Product_status = productDetail.Product_status;
+                        
                         User user = new User
                         {
                             Id = productDetail.U_id,
@@ -76,12 +89,14 @@ namespace find_all_here.ViewModels
                             Profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full",
                         };
                         product.User = user;
+                        product.Update_date = productDetail.Update_date;
+                        product.Relative_time = GetRelativeTime(product.Update_date);
+                        product.Percent = decimal.Round((1 - (product.Sale_price / product.Purchase_price)) * -100, 2);
+                        product.Relative_Percent = (product.Percent > 1) ? "+" + product.Percent + "%": "" + product.Percent + "%";
+                        product.Color_percent = (product.Percent > 1) ? "#fc424a" : "#00d25b";
+                        product.Status = productDetail.Status;
                         
-                        BindingProducts.Add(product);*/
-
-                        productDetail.U_profile_mini = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/mini";
-                        productDetail.U_profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full";
-                        BindingProducts.Add(productDetail);
+                        BindingProducts.Add(product);
                     }
                 } else
                 {
