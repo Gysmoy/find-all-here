@@ -12,9 +12,14 @@ namespace find_all_here
             InitializeComponent();
             BindingContext = _viewModel = new HomeViewModel();
         }
+        
         async void Login(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Login());
+        }
+        async void ir(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddProductView());
         }
         protected override void OnAppearing()
         {

@@ -114,7 +114,7 @@ namespace find_all_here.ViewModels
         }
         private async void OnAddProduct(object obj)
         {
-            await Shell.Current.GoToAsync($"product_edit?{nameof(Product.Id)}");
+            await Shell.Current.GoToAsync(nameof(AddProductView));
         }
         async void OnProductSelected(Product product)
         {
