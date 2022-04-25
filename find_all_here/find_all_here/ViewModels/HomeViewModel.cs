@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Android;
 using Xamarin.Forms;
 using find_all_here.Models;
 
@@ -14,14 +15,14 @@ namespace find_all_here.ViewModels
     public class HomeViewModel: BaseViewModel
     {
         private Product _selectedProduct;
-        public ObservableCollection<ProductDetail> BindingProducts { get; }
+        public ObservableCollection<Product> BindingProducts { get; }
         public Command LoadProductsCommand { get; }
         public Command AddProductCommand { get; }
         public Command<Product> ProductTapped { get; }
         public HomeViewModel()
         {
             Title = "Find All Here";
-            BindingProducts = new ObservableCollection<ProductDetail>();
+            BindingProducts = new ObservableCollection<Product>();
             ProductTapped = new Command<Product>(OnProductSelected);
             AddProductCommand = new Command(OnAddProduct);
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
@@ -43,7 +44,9 @@ namespace find_all_here.ViewModels
                 {
                     foreach (ProductDetail productDetail in listaProducts.Data)
                     {
-                        /*Product product = productDetail;
+                        Product product = productDetail;
+                        product.Percent = (1 - (product.Sale_price / product.Purchase_price)) * -1;
+                        product.Color_percent = (product.Percent > 1) ? "#fc424a" : "#00d25b";
                         product.Relative_time = GetRelativeTime(productDetail.Update_date);
 
                         Brand brand = new Brand
@@ -77,11 +80,8 @@ namespace find_all_here.ViewModels
                         };
                         product.User = user;
                         
-                        BindingProducts.Add(product);*/
-
-                        productDetail.U_profile_mini = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/mini";
-                        productDetail.U_profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full";
-                        BindingProducts.Add(productDetail);
+                        BindingProducts.Add(product);
+                        BindingProducts.Add(product);
                     }
                 } else
                 {
