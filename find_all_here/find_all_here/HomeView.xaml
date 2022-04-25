@@ -86,7 +86,7 @@
                                 </Label.FormattedText>
                             </Label>
                             <Frame Margin="0,5,0,0" Padding="0" CornerRadius="0">
-                                <ImageButton Margin="0" Padding="0" BackgroundColor="#ffffff" CornerRadius="0" Source="https://espaciohogar.com/wp-content/uploads/2019/08/ideas-para-dejar-una-manta-en-el-sofa-sillon-ikea-1.jpg" />
+                                <ImageButton Margin="0" Padding="0" BackgroundColor="#ffffff" CornerRadius="0" x:DataType="model:Product" Source="{Binding Image_mini}" />
                             </Frame>
                             <Grid Margin="10,0" Padding="0" BackgroundColor="Transparent">
                                 <Grid.ColumnDefinitions>

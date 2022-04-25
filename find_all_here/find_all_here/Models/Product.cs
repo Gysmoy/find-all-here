@@ -16,6 +16,8 @@ namespace find_all_here.Models
         public string Proportions { get; set; }
         public int Stock { get; set; }
         public string Tags { get; set; }
+        public string Image_mini { get; set; }
+        public string Image_full { get; set; }
         public string Product_status { get; set; }
         public User User { get; set; }
         public DateTime Update_date { get; set; }
