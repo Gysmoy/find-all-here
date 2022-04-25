@@ -19,6 +19,7 @@ namespace find_all_here.Models
         public string Product_status { get; set; }
         public User User { get; set; }
         public DateTime Update_date { get; set; }
+        public string Relative_time { get; set; }
         public bool Status { get; set; }
     }
 }

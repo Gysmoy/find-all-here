@@ -20,5 +20,7 @@ namespace find_all_here.Models
         public string U_gender { get; set; }
         public string U_address { get; set; }
         public string U_phone { get; set; }
+        public string U_profile_mini { get; set; }
+        public string U_profile_full { get; set; }
     }
 }

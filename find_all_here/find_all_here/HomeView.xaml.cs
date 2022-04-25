@@ -4,10 +4,10 @@ using Xamarin.Forms;
 
 namespace find_all_here
 {
-    public partial class Home : ContentPage
+    public partial class HomeView : ContentPage
     {
         HomeViewModel _viewModel;
-        public Home()
+        public HomeView()
         {
             InitializeComponent();
             BindingContext = _viewModel = new HomeViewModel();

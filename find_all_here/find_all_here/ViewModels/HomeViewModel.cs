@@ -14,35 +14,37 @@ namespace find_all_here.ViewModels
     public class HomeViewModel: BaseViewModel
     {
         private Product _selectedProduct;
-        public ObservableCollection<Product> BindingProducts { get; }
+        public ObservableCollection<ProductDetail> BindingProducts { get; }
         public Command LoadProductsCommand { get; }
         public Command AddProductCommand { get; }
         public Command<Product> ProductTapped { get; }
         public HomeViewModel()
         {
             Title = "Find All Here";
-            BindingProducts = new ObservableCollection<Product>();
-            LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
+            BindingProducts = new ObservableCollection<ProductDetail>();
             ProductTapped = new Command<Product>(OnProductSelected);
             AddProductCommand = new Command(OnAddProduct);
+            LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
+            ExecuteLoadProductsCommand();
         }
 
-        public async Task ExecuteLoadProductsCommand()
+        Task ExecuteLoadProductsCommand()
         {
             IsBusy = true;
             try
             {
                 BindingProducts.Clear();
                 Database db = new Database();
-                String sp = StoredProcedures.GetAllProducts;
-                String response = db.Connect(sp, null, "all");
+                string sp = StoredProcedures.GetAllProducts;
+                string response = db.Connect(sp, null, "all");
                 ListaProducts listaProducts = JsonConvert.DeserializeObject<ListaProducts>(response);
                 Toast.MakeText(Android.App.Application.Context, listaProducts.Message, ToastLength.Short).Show();
                 if (listaProducts.Status == 200)
                 {
                     foreach (ProductDetail productDetail in listaProducts.Data)
                     {
-                        Product product = productDetail;
+                        /*Product product = productDetail;
+                        product.Relative_time = GetRelativeTime(productDetail.Update_date);
 
                         Brand brand = new Brand
                         {
@@ -69,11 +71,17 @@ namespace find_all_here.ViewModels
                             Email = productDetail.U_email,
                             Gender = productDetail.U_gender,
                             Address = productDetail.U_address,
-                            Phone = productDetail.U_phone
+                            Phone = productDetail.U_phone,
+                            Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/mini",
+                            Profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full",
                         };
                         product.User = user;
                         
-                        BindingProducts.Add(product);
+                        BindingProducts.Add(product);*/
+
+                        productDetail.U_profile_mini = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/mini";
+                        productDetail.U_profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full";
+                        BindingProducts.Add(productDetail);
                     }
                 } else
                 {
@@ -86,7 +94,10 @@ namespace find_all_here.ViewModels
             {
                 IsBusy = false;
             }
+
+            return Task.CompletedTask;
         }
+
         public void OnAppearing()
         {
             IsBusy = true;

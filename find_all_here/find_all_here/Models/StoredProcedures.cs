@@ -9,7 +9,7 @@ namespace find_all_here.Models
         public static string GetAllProducts = @"
         SELECT
             P.id, P.name, P.description, P.purchase_price, P.sale_price,
-            P.proportions, P.stock, P.tags, P.product_status, P.update_date,
+            P.proportions, P.stock, P.tags, P.product_status, P.update_date, P.status,
             B.id AS b_id, B.brand AS b_name, B.status AS b_status,
             C.id AS c_id, C.category AS c_name, C.status AS c_status,
             U.id AS u_id, U.names AS u_names, U.surnames AS u_surnames,

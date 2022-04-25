@@ -28,8 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Update="HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Inbox.xaml.cs">
       <DependentUpon>Inbox.xaml</DependentUpon>
