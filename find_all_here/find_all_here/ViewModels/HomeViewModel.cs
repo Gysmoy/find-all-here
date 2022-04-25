@@ -45,7 +45,8 @@ namespace find_all_here.ViewModels
                     foreach (ProductDetail productDetail in listaProducts.Data)
                     {
                         Product product = productDetail;
-                        product.Percent = (1 - (product.Sale_price / product.Purchase_price)) * -1;
+                        product.Percent = (1 - (product.Sale_price / product.Purchase_price)) * -100;
+                        product.Relative_Percent = (product.Percent > 1) ? "+" + product.Percent + "%": "" + product.Percent + "%";
                         product.Color_percent = (product.Percent > 1) ? "#fc424a" : "#00d25b";
                         product.Relative_time = GetRelativeTime(productDetail.Update_date);
 

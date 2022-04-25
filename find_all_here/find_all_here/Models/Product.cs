@@ -21,6 +21,7 @@ namespace find_all_here.Models
         public DateTime Update_date { get; set; }
         public string Relative_time { get; set; }
         public decimal Percent { get; set; }
+        public string Relative_Percent { get; set; }
         public string Color_percent { get; set; }
         public bool Status { get; set; }
     }

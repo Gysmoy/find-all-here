@@ -55,15 +55,14 @@
                                                 <Span Text="S/" FontAttributes="Bold" FontSize="12" TextColor="{StaticResource lbl-primary}" />
                                                 <Span Text="{Binding Sale_price}" FontAttributes="Bold" FontSize="12" TextColor="{StaticResource lbl-primary}" />
                                                 <Span Text=" " />
-                                                <Span Text="{Binding Percent}" FontAttributes="Bold" FontSize="10" TextColor="{Binding Color_percent}" />
-                                                <Span Text="%" FontAttributes="Bold" FontSize="10" TextColor="{Binding Color_percent}" />
+                                                <Span Text="{Binding Relative_Percent}" FontAttributes="Bold" FontSize="10" TextColor="{Binding Color_percent}" />
                                                 <Span Text=" • " />
                                             </FormattedString.Spans>
                                         </FormattedString>
                                     </Label.FormattedText>
                                 </Label>
                                 <Frame Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Start" CornerRadius="5" Margin="0" Padding="0" BackgroundColor="{StaticResource btn-info-outline}">
-                                    <Label Text="Ver productos relacionados" TextColor="{StaticResource btn-info}" Padding="2,1.5" FontSize="12" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="Productos relacionados" TextColor="{StaticResource btn-info}" Padding="2,1.5" FontSize="12" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Center">
                                         <Label.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding AddProductCommand}" />
                                         </Label.GestureRecognizers>
