@@ -16,10 +16,12 @@ namespace find_all_here
 
         protected override void OnStart()
         {
+            // Abrir loginView como primeiro view
+            
             // Comprobar si el usuario a iniciado sesión
             /*if (string.IsNullOrEmpty(Settings.UserId))
             {*/
-                MainPage = new NavigationPage(new LoginView());
+                MainPage = new LoginView();
             /*}
             else
             {
