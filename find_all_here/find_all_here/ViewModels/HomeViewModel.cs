@@ -98,7 +98,7 @@ namespace find_all_here.ViewModels
                         product.Color_percent = (product.Percent > 1) ? "#fc424a" : "#00d25b";
                         product.Status = productDetail.Status;
                         
-                        BindingProducts.Add(product);
+                        BindingProducts.Add(product); 
                     }
                 } else
                 {
