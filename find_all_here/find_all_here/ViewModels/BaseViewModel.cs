@@ -56,7 +56,7 @@ namespace find_all_here.ViewModels
         }
 
         // Método público para hacer hash a un texto en sha256
-        public string Hash(string text)
+        public string Sha256(string text)
         {
             var crypt = new System.Security.Cryptography.SHA256Managed();
             var hash = new System.Text.StringBuilder();
