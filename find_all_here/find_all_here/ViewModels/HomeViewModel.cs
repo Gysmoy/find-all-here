@@ -131,14 +131,7 @@ namespace find_all_here.ViewModels
         }
         private async void OnAddProduct(object obj)
         {
-            try
-            {
-                await Shell.Current.GoToAsync(nameof(AddProductView));
-            }
-            catch ( Exception e)
-            {
-                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
-            }
+            await Shell.Current.Navigation.PushModalAsync(new AddProductView());
         }
         async void OnProductSelected(Product product)
         {

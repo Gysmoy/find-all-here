@@ -15,7 +15,7 @@ namespace find_all_here
         
         async void Login(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Login());
+            await Navigation.PushAsync(new LoginView());
         }
         async void ir(object sender, EventArgs e)
         {

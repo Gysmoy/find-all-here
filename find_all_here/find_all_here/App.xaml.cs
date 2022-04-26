@@ -18,9 +18,9 @@ namespace find_all_here
         {
             // Comprobar si el usuario a iniciado sesión
             /*if (string.IsNullOrEmpty(Settings.UserId))
-            {
-                MainPage = new NavigationPage(new Login());
-            }
+            {*/
+                MainPage = new NavigationPage(new LoginView());
+            /*}
             else
             {
                 MainPage = new NavigationPage(new Shell());

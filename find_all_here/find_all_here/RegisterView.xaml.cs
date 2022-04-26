@@ -10,11 +10,16 @@ using Xamarin.Forms.Xaml;
 namespace find_all_here
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class RegisterView : ContentPage
     {
-        public Login()
+        public RegisterView()
         {
             InitializeComponent();
+        }
+
+        private async void NavToLogin_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LoginView());
         }
     }
 }

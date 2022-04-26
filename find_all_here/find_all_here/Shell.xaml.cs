@@ -15,6 +15,7 @@ namespace find_all_here
         public Shell()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(AddProductView), typeof(AddProductView));
         }
     }
 }
