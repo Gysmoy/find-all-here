@@ -5,29 +5,61 @@
              Title="Agregar Producto" 
              BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" Margin="20,15,20,20">
             <Label Text="Fotografías" FontSize="Large"/>
+            <Frame Padding="1" HeightRequest="0" BackgroundColor="White"/>
+            <Button Text="&#xE802; " 
+                    WidthRequest="10"
+                    HeightRequest="200"
+                    BorderColor="White"
+                    BorderWidth="2"
+                    CornerRadius="30"/>
+            <Frame Padding="1" HeightRequest="0" BackgroundColor="White"/>
             <Label Text="Nombre" FontSize="Medium"/>
             <Entry x:Name="txtNom"/>
             <Label Text="Precio (s/)" FontSize="Medium"/>
             <Entry x:Name="txtPre"/>
             <Label Text="Descripcion de Objeto" FontSize="Medium"/>
             <Entry x:Name="txtObj"/>
-            <Button Text="Agregar" 
+            <Grid Margin="10,0" Padding="0" BackgroundColor="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Text="Agregar" 
                     BackgroundColor="#358000" 
                     FontSize="Small" 
-                    x:Name="btnAgregar" 
+                    x:Name="btnAgregar01" 
                     CornerRadius="20"
-                    WidthRequest="30"
-                    HeightRequest="10"/>
-            <Button Text="cancelar" 
+                    BorderColor="White"
+                    BorderWidth="1"
+                    WidthRequest="9"
+                    HeightRequest="40"
+                    Grid.Row="0" 
+                    Grid.Column="4" 
+                    Grid.ColumnSpan="3"/>
+                <Button Text="cancelar" 
                     FontSize="Small" 
                     BackgroundColor="#820101" 
-                    x:Name="btnCancelar" 
+                    x:Name="btnCancelar02" 
                     CornerRadius="20"
-                    WidthRequest="30"
-                    HeightRequest="10"/>
-           
+                    BorderColor="White"
+                    BorderWidth="1"
+                    WidthRequest="10"
+                    HeightRequest="40"
+                    Grid.Row="0" 
+                    Grid.Column="0" 
+                    Grid.ColumnSpan="3"/>
+            </Grid>
         </StackLayout>
        
     </ContentPage.Content>
