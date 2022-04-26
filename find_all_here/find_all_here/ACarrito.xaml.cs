@@ -13,6 +13,7 @@ namespace find_all_here
     public partial class ACarrito : ContentPage
     {
         public IList<DBCarrito> DBCarritos { get; private set; }
+        public HomeView MainPage { get; private set; }
 
         public ACarrito()
         {
@@ -109,9 +110,9 @@ namespace find_all_here
             DBCarrito selectedItem = e.Item as DBCarrito;
         }
 
-        async void Button_Clicked(object sender, EventArgs e)
+        async void Btn_Home(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddProductView());
+            MainPage = new HomeView();
         }
 
         async void Button_Clicked_1(object sender, EventArgs e)

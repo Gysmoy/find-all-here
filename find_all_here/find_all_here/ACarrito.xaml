@@ -27,7 +27,7 @@
                     FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
                     HorizontalOptions="Start" CornerRadius="16"/>
 
-            <Button Grid.Column="1" Text="581.4k" Margin="0,45,165,10"
+            <Button Grid.Column="1" Text="581.4k" Margin="0,45,115,10"
                     BackgroundColor="#838383" BorderWidth="3" BorderColor="#474747" TextTransform="None"
                     FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
                     HorizontalOptions="End" CornerRadius="16"/>
@@ -91,13 +91,13 @@
         </ListView>
 
         <Grid>
-            <Button Text="VOLVER" FontSize="16"
+            <Button Text="VOLVER" FontSize="16" TextColor="#fff"
                     BackgroundColor="#414241 " BorderWidth="3" BorderColor="#737373  " 
                     FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
                     VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,178,8"
-                    CornerRadius="16" Clicked="Button_Clicked"/>
+                    CornerRadius="16" Clicked="Btn_Home"/>
 
-            <Button Text="CONTINUAR" FontSize="16"
+            <Button Text="CONTINUAR" FontSize="16" TextColor="#fff"
                     BackgroundColor="#310202 " BorderWidth="3" BorderColor="#5F0303 " 
                     FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
                     VerticalOptions="Center" HorizontalOptions="Center" Margin="170,0,8,8"
