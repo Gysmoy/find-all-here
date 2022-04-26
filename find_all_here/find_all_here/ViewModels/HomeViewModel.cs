@@ -98,7 +98,7 @@ namespace find_all_here.ViewModels
                         product.Color_percent = (product.Percent > 1) ? "#fc424a" : "#00d25b";
                         product.Status = productDetail.Status;
                         
-                        BindingProducts.Add(product); 
+                        BindingProducts.Add(product);
                     }
                 } else
                 {
@@ -131,7 +131,14 @@ namespace find_all_here.ViewModels
         }
         private async void OnAddProduct(object obj)
         {
-            await Shell.Current.GoToAsync($"AddProductView");
+            try
+            {
+                await Shell.Current.GoToAsync(nameof(AddProductView));
+            }
+            catch ( Exception e)
+            {
+                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
+            }
         }
         async void OnProductSelected(Product product)
         {

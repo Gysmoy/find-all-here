@@ -6,11 +6,11 @@ namespace find_all_here
 {
     public partial class HomeView : ContentPage
     {
-        HomeViewModel _viewModel;
+        HomeViewModel _homeViewModel;
         public HomeView()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new HomeViewModel();
+            BindingContext = _homeViewModel = new HomeViewModel();
         }
         
         async void Login(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace find_all_here
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.OnAppearing();
+            _homeViewModel.OnAppearing();
         }
     }
 }

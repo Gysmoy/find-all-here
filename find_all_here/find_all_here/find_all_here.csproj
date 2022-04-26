@@ -67,11 +67,24 @@
     <EmbeddedResource Update="Profile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="App.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <DependentUpon>AssemblyInfo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="User.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\netstandard2.0\find_all_here.deps.json" />
+    <Content Include="bin\Debug\netstandard2.0\find_all_here.dll" />
+    <Content Include="bin\Debug\netstandard2.0\find_all_here.pdb" />
+    <Content Include="bin\Debug\netstandard2.0\Mono.Android.dll" />
+    <Content Include="bin\Debug\netstandard2.0\Mono.Android.pdb" />
+    <Content Include="bin\Debug\netstandard2.0\Mono.Android.xml" />
   </ItemGroup>
 </Project>

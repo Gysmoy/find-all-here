@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:local="clr-namespace:find_all_here.ViewModels"
-    xmlns:model="clr-namespace:find_all_here.Models"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:find_all_here="clr-namespace:find_all_here"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="find_all_here.HomeView"
-    x:Name="BrowseProductsPage"
-    Title="{Binding Title}">
+    Title="{Binding Title}"
+    xmlns:local="clr-namespace:find_all_here.ViewModels"
+    xmlns:model="clr-namespace:find_all_here.Models"  
+    x:Name="BrowseProductsPage">
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Agregar" Command="{Binding AddProductCommand}" />
     </ContentPage.ToolbarItems>
+    
     <RefreshView x:DataType="local:HomeViewModel" Command="{Binding LoadProductsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
         <CollectionView x:Name="ProductsListView" ItemsSource="{Binding BindingProducts}" SelectionMode="None">
             <CollectionView.ItemTemplate>
