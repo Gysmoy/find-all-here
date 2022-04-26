@@ -9,7 +9,7 @@
     x:Name="BrowseProductsPage">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Command="{Binding AddProductCommand}"/>
+        <ToolbarItem Text="➕" Command="{Binding AddProductCommand}" />
         <ToolbarItem Text="🛒" Command="{Binding OpenCartCommand}" />
     </ContentPage.ToolbarItems>
     
