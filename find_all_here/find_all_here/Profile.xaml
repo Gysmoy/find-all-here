@@ -50,6 +50,25 @@
                             HorizontalOptions="Center" Clicked="Ir"/>
                     
                 </Frame>
+                <Frame
+                    CornerRadius="7.5"
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    HorizontalOptions="Center"
+                    Margin="0,5,0,0" 
+                    HasShadow="True">
+                    <!--
+                    <Label  Text="Editar perfil" TextColor="#fff"
+                        Padding="10,5" FontSize="12" FontAttributes="Bold"
+                        HorizontalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>-->
+                    <Button Text="Cerrar Sesion" BackgroundColor="#2196F3" TextColor="#fff" FontSize="12" FontAttributes="Bold"
+                            HorizontalOptions="Center" Clicked="Logout_btn"/>
+                    
+                </Frame>
               
             </StackLayout>
         </ScrollView>

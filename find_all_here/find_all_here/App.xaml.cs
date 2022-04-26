@@ -13,20 +13,21 @@ namespace find_all_here
             MainPage = new Shell();
             //MainPage = new NavigationPage(new HomeView());
         }
-
         protected override void OnStart()
+
         {
-            // Abrir loginView como primeiro view
-            
-            // Comprobar si el usuario a iniciado sesión
-            /*if (string.IsNullOrEmpty(Settings.UserId))
-            {*/
-                MainPage = new LoginView();
-            /*}
-            else
+            var status = Properties.ContainsKey("status") ? (bool)Properties["status"] : false;
+            if (!status)
             {
-                MainPage = new NavigationPage(new Shell());
-            }*/
+                MainPage = new LoginView();
+                
+            }
+            
+        }
+        public void Logout()
+        {
+            Properties["status"] = false;
+            MainPage = new LoginView();
         }
 
         protected override void OnSleep()
