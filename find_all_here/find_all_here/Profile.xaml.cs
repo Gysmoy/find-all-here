@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Java.Util;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,5 +20,13 @@ namespace find_all_here
         {
             await Navigation.PushAsync(new UserConfig());
         }
+
+        async void Logout_btn(object sender, EventArgs e)
+        {
+           // App.Current.Logout();
+        } 
+       
+
     }
+    
 }
