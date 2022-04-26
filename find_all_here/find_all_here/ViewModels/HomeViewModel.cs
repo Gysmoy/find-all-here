@@ -19,6 +19,7 @@ namespace find_all_here.ViewModels
         public ObservableCollection<Product> BindingProducts { get; }
         public Command LoadProductsCommand { get; }
         public Command AddProductCommand { get; }
+        public Command OpenCartCommand { get; }
         public Command<Product> ProductTapped { get; }
         public HomeViewModel()
         {
@@ -26,6 +27,7 @@ namespace find_all_here.ViewModels
             BindingProducts = new ObservableCollection<Product>();
             ProductTapped = new Command<Product>(OnProductSelected);
             AddProductCommand = new Command(OnAddProduct);
+            OpenCartCommand = new Command(OnOpenCart);
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
             ExecuteLoadProductsCommand();
         }
@@ -130,6 +132,10 @@ namespace find_all_here.ViewModels
             }
         }
         private async void OnAddProduct(object obj)
+        {
+            await Shell.Current.Navigation.PushModalAsync(new AddProductView());
+        }
+        private async void OnOpenCart(object obj)
         {
             await Shell.Current.Navigation.PushModalAsync(new ACarrito());
         }

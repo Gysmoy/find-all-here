@@ -49,10 +49,10 @@
                     Grid.ColumnSpan="3"/>
                 <Button Text="cancelar" 
                     FontSize="Small" 
-                    BackgroundColor="#820101" 
+                    BackgroundColor="{StaticResource btn-danger-outline}" 
                     x:Name="btnCancelar02" 
                     CornerRadius="20"
-                    BorderColor="White"
+                    BorderColor="{StaticResource btn-danger}"
                     BorderWidth="1"
                     WidthRequest="10"
                     HeightRequest="40"

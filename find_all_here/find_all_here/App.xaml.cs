@@ -1,4 +1,5 @@
 ﻿using System;
+using Android.Widget;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using find_all_here.Models;
@@ -19,7 +20,7 @@ namespace find_all_here
             var status = Properties.ContainsKey("status") ? (bool)Properties["status"] : false;
             if (!status)
             {
-                MainPage = new LoginView();
+                //MainPage = new LoginView();
                 
             }
             

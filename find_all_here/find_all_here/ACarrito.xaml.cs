@@ -112,7 +112,8 @@ namespace find_all_here
 
         async void Btn_Home(object sender, EventArgs e)
         {
-            MainPage = new HomeView();
+            // cerrar el este modal
+            await Navigation.PopModalAsync();
         }
 
         async void Button_Clicked_1(object sender, EventArgs e)

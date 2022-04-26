@@ -19,7 +19,8 @@ namespace find_all_here
         }
         async void ir(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddProductView());
+            // Abrir APago.xaml como modal
+            await Navigation.PushModalAsync(new APago());
         }
         protected override void OnAppearing()
         {
