@@ -128,7 +128,9 @@ namespace find_all_here.ViewModels
             this.IsRunningTxt = false;
             this.IsVisibleTxt = false;
             this.IsEnabledTxt = true;
-
+            
+            // Establecer shell como la pagina principal
+            App.Current.MainPage = new Shell();
         }
 
         public async void ResetPasswordEmail()
