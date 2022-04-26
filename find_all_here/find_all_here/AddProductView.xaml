@@ -1,12 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="find_all_here.AddProductView">
+             x:Class="find_all_here.AddProductView"
+             Title="Agregar Producto" 
+             BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical">
+            <Label Text="Fotografías" FontSize="Large"/>
+            <Label Text="Nombre" FontSize="Medium"/>
+            <Entry x:Name="txtNom"/>
+            <Label Text="Precio (s/)" FontSize="Medium"/>
+            <Entry x:Name="txtPre"/>
+            <Label Text="Descripcion de Objeto" FontSize="Medium"/>
+            <Entry x:Name="txtObj"/>
+            <Button Text="Agregar" 
+                    BackgroundColor="#358000" 
+                    FontSize="Small" 
+                    x:Name="btnAgregar" 
+                    CornerRadius="20"
+                    WidthRequest="30"
+                    HeightRequest="10"/>
+            <Button Text="cancelar" 
+                    FontSize="Small" 
+                    BackgroundColor="#820101" 
+                    x:Name="btnCancelar" 
+                    CornerRadius="20"
+                    WidthRequest="30"
+                    HeightRequest="10"/>
+           
         </StackLayout>
+       
     </ContentPage.Content>
 </ContentPage>
