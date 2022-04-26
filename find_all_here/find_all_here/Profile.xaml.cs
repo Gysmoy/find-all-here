@@ -23,7 +23,8 @@ namespace find_all_here
 
         async void Logout_btn(object sender, EventArgs e)
         {
-           // App.Current.Logout();
+            App.Current.Properties.Clear();
+            App.Current.MainPage = new LoginView();
         } 
        
 
