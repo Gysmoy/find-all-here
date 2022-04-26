@@ -1,10 +1,15 @@
-﻿using System.Windows.Input;
+﻿
+
+using Android.Widget;
+using find_all_here.Models;
+using Newtonsoft.Json;
+using System.Windows.Input;
+using find_all_here.csharp;
 using GalaSoft.MvvmLight.Command;
 
 namespace find_all_here.ViewModels
 {
-
-     public class LoginViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
         #region Attribute
         public string email;
@@ -63,74 +68,56 @@ namespace find_all_here.ViewModels
 
         public async void LoginMethod()
         {
-            /*if (string.IsNullOrEmpty(this.email))
+            
+            if (string.IsNullOrEmpty(this.email))
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter an email.",
-                    "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    "Error!",
+                    "Debes ingresar un usuario o un correo",
+                    "Aceptar");
                 return;
             }
             if (string.IsNullOrEmpty(this.password))
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter a password.",
-                    "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    "Error!",
+                    "Debes ingresar una contraseña",
+                    "Aceptar");
                 return;
             }
 
-            string WebAPIkey = "AIzaSyDewQerdzU0rAZIcpETYdr-jOAeeHc2RUE";
-
-
-            var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIkey));
-            try
+            Database db = new Database();
+            string sp = StoredProcedures.GetUserByUsernameAndPassword;
+            string password = Sha256(this.password);
+            string[] parameters = { this.email, this.email, password };
+            string response = db.Connect(sp, parameters, "one");
+            var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
+            Toast.MakeText(Android.App.Application.Context, userValidate.Message, ToastLength.Short).Show();
+            if (userValidate.Status == 200)
             {
-                var auth = await authProvider.SignInWithEmailAndPasswordAsync(EmailTxt.ToString(), PasswordTxt.ToString());
-                var content = await auth.GetFreshAuthAsync();
-                var serializedcontnet = JsonConvert.SerializeObject(content);
-                
-                Preferences.Set("MyFirebaseRefreshToken", serializedcontnet);
+                if (userValidate.Data.Count == 0)
+                {
+                    await App.Current.MainPage.DisplayAlert(
+                        "Error!",
+                        "Usuario o contraseña incorrecta",
+                        "Aceptar");
+                    return;
+                }
+                else
+                {
+                    var user = userValidate.Data[0];
+                    /* INICIO: Almacenamiento de sesión */
+                    /* FIN: Almacenamiento de sesión */
+                    this.IsRunningTxt = false;
+                    this.IsVisibleTxt = false;
+                    this.IsEnabledTxt = true;
+                    await App.Current.MainPage.DisplayAlert(
+                        "Correcto!",
+                        "Bienvenido a Find All Here",
+                        "Aceptar");
+                    App.Current.MainPage = new Shell();
+                }
             }
-            catch (Exception ex)
-            {
-                await App.Current.MainPage.DisplayAlert("Alert", "Invalid useremail or password", "OK");
-            }
-
-            this.IsVisibleTxt = true;
-            this.IsRunningTxt = true;
-            this.IsEnabledTxt = false;
-
-            await Task.Delay(20);
-            */
-
-            /*
-            List<UserModel> e = App.Database.GetUsersValidate(email, password).Result;
-            if (e.Count == 0)
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                  "Error",
-                  "Email or Password Incorrect.",
-                  "Accept");
-                this.IsRunningTxt = false;
-                this.IsVisibleTxt = false;
-                this.IsEnabledTxt = true;
-            }
-            else if (e.Count > 0)
-            {
-                await Application.Current.MainPage.Navigation.PushAsync(new ContainerTabbedPage());
-                this.IsRunningTxt = false;
-                this.IsVisibleTxt = false;
-                this.IsEnabledTxt = true;
-            }
-            */
-
-            this.IsRunningTxt = false;
-            this.IsVisibleTxt = false;
-            this.IsEnabledTxt = true;
-            
-            // Establecer shell como la pagina principal
-            App.Current.MainPage = new Shell();
         }
 
         public async void ResetPasswordEmail()
