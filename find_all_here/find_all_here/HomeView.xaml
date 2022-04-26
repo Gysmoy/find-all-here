@@ -9,7 +9,7 @@
     x:Name="BrowseProductsPage">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Agregar" Command="{Binding AddProductCommand}" />
+        <ToolbarItem Text="🛒" Command="{Binding AddProductCommand}" />
     </ContentPage.ToolbarItems>
     
     <RefreshView x:DataType="local:HomeViewModel" Command="{Binding LoadProductsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">

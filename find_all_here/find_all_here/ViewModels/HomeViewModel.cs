@@ -131,7 +131,7 @@ namespace find_all_here.ViewModels
         }
         private async void OnAddProduct(object obj)
         {
-            await Shell.Current.Navigation.PushModalAsync(new AddProductView());
+            await Shell.Current.Navigation.PushModalAsync(new ACarrito());
         }
         async void OnProductSelected(Product product)
         {
