@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using Android.Widget;
 using find_all_here.Models;
 using Newtonsoft.Json;
@@ -86,38 +87,56 @@ namespace find_all_here.ViewModels
                 return;
             }
 
-            Database db = new Database();
-            string sp = StoredProcedures.GetUserByUsernameAndPassword;
-            string password = Sha256(this.password);
-            string[] parameters = { this.email, this.email, password };
-            string response = db.Connect(sp, parameters, "one");
-            var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
-            Toast.MakeText(Android.App.Application.Context, userValidate.Message, ToastLength.Short).Show();
-            if (userValidate.Status == 200)
+            this.IsRunningTxt = true;
+            this.IsVisibleTxt = true;
+            this.IsEnabledTxt = false;
+            try
             {
-                if (userValidate.Data.Count == 0)
+                Database db = new Database();
+                string sp = StoredProcedures.GetUserByUsernameAndPassword;
+                string password = Sha256(this.password);
+                string[] parameters = { this.email, this.email, password };
+                string response = db.Connect(sp, parameters, "one");
+                var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
+                Toast.MakeText(Android.App.Application.Context, userValidate.Message, ToastLength.Short).Show();
+                if (userValidate.Status == 200)
                 {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error!",
-                        "Usuario o contraseña incorrecta",
-                        "Aceptar");
-                    return;
-                }
-                else
-                {
-                    var user = userValidate.Data[0];
-                    /* INICIO: Almacenamiento de sesión */
-                    /* FIN: Almacenamiento de sesión */
-                    this.IsRunningTxt = false;
-                    this.IsVisibleTxt = false;
-                    this.IsEnabledTxt = true;
-                    await App.Current.MainPage.DisplayAlert(
-                        "Correcto!",
-                        "Bienvenido a Find All Here",
-                        "Aceptar");
-                    App.Current.MainPage = new Shell();
+                    if (userValidate.Data.Count == 0)
+                    {
+                        await App.Current.MainPage.DisplayAlert(
+                            "Error!",
+                            "Usuario o contraseña incorrecta",
+                            "Aceptar");
+                        return;
+                    }
+                    else
+                    {
+                        var user = userValidate.Data[0];
+                        /* INICIO: Almacenamiento de sesión */
+                        /* FIN: Almacenamiento de sesión */
+                        
+                        await App.Current.MainPage.DisplayAlert(
+                            "Correcto!",
+                            "Bienvenido a Find All Here",
+                            "Aceptar");
+                        App.Current.MainPage = new Shell();
+                    }
                 }
             }
+            catch (Exception e)
+            {
+                await App.Current.MainPage.DisplayAlert(
+                    "Error!",
+                    "No se pudo conectar con el servidor",
+                    "Aceptar");
+            } 
+            finally
+            {
+                this.IsRunningTxt = false;
+                this.IsVisibleTxt = false;
+                this.IsEnabledTxt = true;
+            }
+            
         }
 
         public async void ResetPasswordEmail()
