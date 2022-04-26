@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Android;
+using Android.Content.Res;
 using Xamarin.Forms;
 using find_all_here.Models;
 
@@ -71,8 +72,9 @@ namespace find_all_here.ViewModels
                         product.Proportions = productDetail.Proportions;
                         product.Stock = productDetail.Stock;
                         product.Tags = productDetail.Tags;
-                        product.Image_mini = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/mini";
-                        product.Image_full = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/full";
+                        Guid guid = Guid.NewGuid();
+                        product.Image_mini = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/mini/" + guid.ToString();
+                        product.Image_full = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/full/" + guid.ToString();
                         product.Product_status = productDetail.Product_status;
                         
                         User user = new User
@@ -85,8 +87,8 @@ namespace find_all_here.ViewModels
                             Gender = productDetail.U_gender,
                             Address = productDetail.U_address,
                             Phone = productDetail.U_phone,
-                            Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/mini",
-                            Profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full",
+                            Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/mini/" + guid.ToString(),
+                            Profile_full = "https://scriptperu.com/find_all_here/image/user/" + productDetail.U_id + "/full/" + guid.ToString(),
                         };
                         product.User = user;
                         product.Update_date = productDetail.Update_date;
@@ -129,7 +131,7 @@ namespace find_all_here.ViewModels
         }
         private async void OnAddProduct(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(AddProductView));
+            await Shell.Current.GoToAsync($"AddProductView");
         }
         async void OnProductSelected(Product product)
         {
