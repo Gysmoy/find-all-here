@@ -3,32 +3,38 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="find_all_here.RegisterView"
-    BackgroundColor="{StaticResource bg-container}">
+    BackgroundColor="{StaticResource Primary}">
 
     <ScrollView>
         <StackLayout>
-            <ActivityIndicator
-                IsRunning="{Binding IsRunningTxt}"
-                IsVisible="{Binding IsVisibleTxt}"
-                Color="{StaticResource lbl-primary}"
-                Scale="0.8" />
+
             <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
                 <Image Grid.Row="0"
-                    Margin="0,50"
+                    Margin="10"
                     Source="fah_logo.png"
-                    HeightRequest="125"
-                    WidthRequest="125"/>
-                <Frame Grid.Row="1"
+                    HeightRequest="25"
+                    WidthRequest="25"/>
+                <Label Grid.Column="1"
+                    Margin="10"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource lbl-primary}"
+                    Text="Find All Here"/>
+                <Frame Grid.Row="1" Grid.ColumnSpan="2"
                     Margin="0,0,0,-25"
                     HasShadow="True"
                     BackgroundColor="{StaticResource bg-container}"
                     BorderColor="{StaticResource bg-container}"
                     CornerRadius="25">
-                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,40,20,65">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,20,20,65">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -41,24 +47,33 @@
                             <RowDefinition Height="Auto"></RowDefinition>
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0"
-                            Text="Find All Here"
-                            FontSize="36"
-                            FontAttributes="Bold"
-                            TextColor="{StaticResource lbl-primary}"
-                            HorizontalOptions="CenterAndExpand"/>
-                        <Label Grid.Row="1"
                             Margin="0,0,0,0"
-                            Text="Inicie sesión para continuar"
+                            Text="Registre sus datos en el siguiente formulario"
                             FontSize="16"
                             TextColor="{StaticResource lbl-secondary}"
                             HorizontalOptions="CenterAndExpand"/>
-                        <Frame Grid.Row="2"
-                            Margin="0,30,0,0"
+                        <Frame Grid.Row="1"
+                            Margin="0"
                             Padding="10,0"
                             CornerRadius="5"
                             Background="{StaticResource bg-outline}">
                             <Entry
-                                Placeholder="Usuario o correo electrónico"
+                                Placeholder="Nombres"
+                                MaxLength="320"
+                                FontSize="16"
+                                TextColor="{StaticResource lbl-primary}"
+                                Text="{Binding EmailTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Frame Grid.Row="2"
+                            Margin="0"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                                <Entry
+                                Placeholder="Apellidos"
                                 MaxLength="320"
                                 FontSize="16"
                                 TextColor="{StaticResource lbl-primary}"
@@ -68,6 +83,47 @@
                                 VerticalOptions="FillAndExpand"/>
                         </Frame>
                         <Frame Grid.Row="3"
+                            Margin="0"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                            <Entry
+                                Placeholder="Apellidos"
+                                MaxLength="320"
+                                FontSize="16"
+                                TextColor="{StaticResource lbl-primary}"
+                                Text="{Binding EmailTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Frame Grid.Row="4"
+                            Margin="0"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                            <DatePicker
+                                FontSize="16"
+                                TextColor="{StaticResource lbl-primary}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Frame Grid.Row="5"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                            <Entry 
+                                Placeholder="Nombre de usuario"
+                                IsPassword="True"
+                                FontSize="16"
+                                Text="{Binding PasswordTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                TextColor="{StaticResource lbl-primary}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Frame Grid.Row="6"
                             Padding="10,0"
                             CornerRadius="5"
                             Background="{StaticResource bg-outline}">
@@ -81,7 +137,21 @@
                                 HorizontalOptions="FillAndExpand"
                                 VerticalOptions="FillAndExpand"/>
                         </Frame>
-                        <Button Grid.Row="4"
+                        <Frame Grid.Row="7"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                            <Entry 
+                                Placeholder="Repita su contraseña"
+                                IsPassword="True"
+                                FontSize="16"
+                                Text="{Binding PasswordTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                TextColor="{StaticResource lbl-primary}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Button Grid.Row="9"
                             Text="¿Olvidaste tu contraseña?"
                             Background="{StaticResource bg-container}"
                             TextColor="{StaticResource lbl-primary}"
@@ -89,7 +159,7 @@
                             Margin="0,-20,0,0"
                             FontAttributes="Bold"
                             HorizontalOptions="EndAndExpand" />
-                        <Button Grid.Row="5"
+                        <Button Grid.Row="10"
                             Margin="0,-10,0,0"
                             Padding="10,5,10,5"
                             Text="Iniciar sesión"
@@ -100,27 +170,27 @@
                             CornerRadius="10"
                             Command="{Binding LoginCommand}"
                             IsEnabled="{Binding IsEnabledTxt}" />
-                        <Button Grid.Row="6"
+                        <Button Grid.Row="11"
                             Padding="10,5,10,5"
                             Text="Registrarse"
                             FontSize="14"
                             FontAttributes="Bold"
                             BackgroundColor="{StaticResource btn-primary-outline}"
                             TextColor="{StaticResource btn-primary}"
-                            CornerRadius="10"
+                            CornerRadius="12"
                             IsEnabled="{Binding IsEnabledTxt}"
                             Clicked="LogIn_Clicked" />
-                        <Label Grid.Row="7"
+                        <Label Grid.Row="13"
                             Margin="0,15,0,0"
                             Text="© Todos los derechos reservados"
                             TextColor="{StaticResource lbl-secondary}"
                             HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="8"
+                        <Label Grid.Row="14"
                             Margin="0,-10,0,0"
                             Text="Versión 2022.1.1"
                             TextColor="{StaticResource lbl-secondary}"
                             HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="9"
+                        <Label Grid.Row="15"
                             Margin="0,-10,0,0"
                             Text="Propiedad de SoDe Perú"
                             TextColor="{StaticResource lbl-primary}"
