@@ -11,6 +11,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="➕" Command="{Binding AddProductCommand}" />
         <ToolbarItem Text="🛒" Command="{Binding OpenCartCommand}" />
+        <ToolbarItem Text="➜" Command="{Binding LogoutCommand}" />
     </ContentPage.ToolbarItems>
     
     <RefreshView x:DataType="local:HomeViewModel" Command="{Binding LoadProductsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">

@@ -102,7 +102,7 @@
                     <ActivityIndicator
                         IsRunning="{Binding IsRunningTxt}"
                         IsVisible="{Binding IsVisibleTxt}"
-                        Color="Black"
+                        Color="{StaticResource lbl-primary}" />
                         Scale="0.8" />
                 </StackLayout>
                 <StackLayout Grid.Row="6" HorizontalOptions="Center" Orientation="Vertical" >
@@ -127,61 +127,131 @@
             </Grid>
         </ScrollView>
     </ContentPage.Content-->
-    <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Image Grid.Row="0" Margin="0,30" Source="fah_logo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="80"> </Image>
-            <Frame Grid.Row="1"
-                Margin="0,0,0,-40"
-                HasShadow="True"
-                BackgroundColor="{StaticResource bg-body}"
-                BorderColor="{StaticResource bg-body}"
-                CornerRadius="25"
-                HeightRequest="700">
-                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,40,20,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0"
-                        Text="Find All Here"
-                        FontSize="32"
-                        FontAttributes="Bold"
-                        TextColor="{StaticResource lbl-primary}"
-                        HorizontalOptions="CenterAndExpand"/>
-                    <Label Grid.Row="1"
-                        Margin="0,-15,0,0"
-                        Text="Inicie sesión para continuar"
-                        TextColor="{StaticResource lbl-secondary}"
-                        HorizontalOptions="CenterAndExpand"/>
-                    <Entry Grid.Row="2" Placeholder="Usuario o correo electrónico" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
-                    <Entry Grid.Row="3" Placeholder="Contraseña" IsPassword="True" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
-                    <Button Grid.Row="4" Text="Login" BackgroundColor="{StaticResource btn-primary}" CornerRadius="20"></Button>
-                    <Label Grid.Row="5" Text="or signin with" HorizontalOptions="CenterAndExpand"></Label>
-                    <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="40">
-                        <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo626DNKJxdHM-VNRD0m7x_8Jim-r9kRalJQ" WidthRequest="30"
-                               HeightRequest="30" Aspect="AspectFit"></Image>
-                        <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnLfAn36-LTYNHjioWgvu-0KUTIDDrW5lX_g" WidthRequest="30"
-                               HeightRequest="30" Aspect="AspectFit"></Image>
-                        <Image Source="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" WidthRequest="30"
-                               HeightRequest="30" Aspect="AspectFit"></Image>
-                        <Image Source="https://cdn-icons-png.flaticon.com/512/174/174857.png" WidthRequest="30"
-                               HeightRequest="30" Aspect="AspectFit"></Image>
-                    </StackLayout>
-                    <Label Grid.Row="7" Text="Forget Password" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
-                    <Label Grid.Row="8" Margin="0,-10,0,0" Text="Don't have an account? Sign up here" HorizontalOptions="CenterAndExpand"></Label>
-                 </Grid>
-            </Frame>
-        </Grid>
-    </ContentPage.Content>
+    <ScrollView>
+        <StackLayout>
+            <ActivityIndicator
+                IsRunning="{Binding IsRunningTxt}"
+                IsVisible="{Binding IsVisibleTxt}"
+                Color="{StaticResource lbl-primary}"
+                Scale="0.8" />
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0"
+                    Margin="0,50"
+                    Source="fah_logo.png"
+                    HeightRequest="125"
+                    WidthRequest="125"/>
+                <Frame Grid.Row="1"
+                    Margin="0,0,0,-25"
+                    HasShadow="True"
+                    BackgroundColor="{StaticResource bg-container}"
+                    BorderColor="{StaticResource bg-container}"
+                    CornerRadius="25">
+                    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,40,20,65">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0"
+                            Text="Find All Here"
+                            FontSize="36"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource lbl-primary}"
+                            HorizontalOptions="CenterAndExpand"/>
+                        <Label Grid.Row="1"
+                            Margin="0,0,0,0"
+                            Text="Inicie sesión para continuar"
+                            FontSize="16"
+                            TextColor="{StaticResource lbl-secondary}"
+                            HorizontalOptions="CenterAndExpand"/>
+                        <Frame Grid.Row="2"
+                            Margin="0,30,0,0"
+                            Padding="5,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                            <Entry
+                                Placeholder="Usuario o correo electrónico"
+                                MaxLength="320"
+                                FontSize="16"
+                                TextColor="{StaticResource lbl-primary}"
+                                Text="{Binding EmailTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Frame Grid.Row="3"
+                            Padding="5,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                            <Entry 
+                                Placeholder="Contraseña"
+                                IsPassword="True"
+                                FontSize="16"
+                                Text="{Binding PasswordTxt, Mode=TwoWay}"
+                                IsEnabled="{Binding IsEnabledTxt}"
+                                TextColor="{StaticResource lbl-primary}"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"/>
+                        </Frame>
+                        <Button Grid.Row="4"
+                            Text="¿Olvidaste tu contraseña?"
+                            Background="{StaticResource bg-body}"
+                            TextColor="{StaticResource lbl-primary}"
+                            FontSize="12"
+                            Margin="0,-20,0,0"
+                            FontAttributes="Bold"
+                            HorizontalOptions="EndAndExpand" />
+                        <Button Grid.Row="5"
+                            Margin="0,-10,0,0"
+                            Padding="10,5,10,5"
+                            Text="Iniciar sesión"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            BackgroundColor="{StaticResource btn-success}"
+                            TextColor="{StaticResource lbl-primary}"
+                            CornerRadius="10"
+                            Command="{Binding LoginCommand}"
+                            IsEnabled="{Binding IsEnabledTxt}" />
+                        <Button Grid.Row="6"
+                            Padding="10,5,10,5"
+                            Text="Registrarse"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            BackgroundColor="{StaticResource btn-primary-outline}"
+                            TextColor="{StaticResource btn-primary}"
+                            CornerRadius="10"
+                            IsEnabled="{Binding IsEnabledTxt}"
+                            Clicked="SignUp_Clicked" />
+                        <Label Grid.Row="7"
+                            Margin="0,15,0,0"
+                            Text="© Todos los derechos reservados"
+                            TextColor="{StaticResource lbl-secondary}"
+                            HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="8"
+                            Margin="0,-10,0,0"
+                            Text="Versión 2022.1.1"
+                            TextColor="{StaticResource lbl-secondary}"
+                            HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="9"
+                            Margin="0,-10,0,0"
+                            Text="Propiedad de SoDe Perú"
+                            TextColor="{StaticResource lbl-primary}"
+                            FontAttributes="Bold"
+                            HorizontalOptions="CenterAndExpand" />
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
 </ContentPage>

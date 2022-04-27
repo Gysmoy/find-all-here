@@ -21,7 +21,7 @@ namespace find_all_here
 
         private async void SignUp_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RegisterView());
+            await Navigation.PushModalAsync(new RegisterView());
         }
     }
 }
