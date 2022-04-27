@@ -113,6 +113,10 @@ namespace find_all_here.ViewModels
                     {
                         var user = userValidate.Data[0];
                         /* INICIO: Almacenamiento de sesión */
+                        App.Current.Properties["status"] = true;
+                        App.Current.Properties["id"] = user.Id;
+                        App.Current.Properties["names"] = user.Names;
+                        App.Current.Properties["surnames"] = user.Surnames;
                         /* FIN: Almacenamiento de sesión */
                         
                         await App.Current.MainPage.DisplayAlert(

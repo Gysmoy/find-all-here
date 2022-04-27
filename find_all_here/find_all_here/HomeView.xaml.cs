@@ -19,13 +19,17 @@ namespace find_all_here
         }
         async void ir(object sender, EventArgs e)
         {
-            // Abrir APago.xaml como modal
             await Navigation.PushModalAsync(new APago());
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
             _homeViewModel.OnAppearing();
+        }
+        private void OnLogOutClicked(object sender, EventArgs e)
+        {
+            App.Current.Properties.Clear();
+            App.Current.MainPage = new LoginView();
         }
     }
 }

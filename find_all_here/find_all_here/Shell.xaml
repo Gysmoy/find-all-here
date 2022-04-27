@@ -4,39 +4,29 @@
        xmlns:local="clr-namespace:find_all_here"
        Title="FIND ALL HERE"
        x:Class="find_all_here.Shell">
-
+    
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="NavBarStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
-                <Setter Property="Shell.TitleColor" Value="White" />
-                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="#202020" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="#ffffff"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="#067bea"/>
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource lbl-primary}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource lbl-primary}" />
+                <Setter Property="Shell.DisabledColor" Value="{StaticResource lbl-outline}" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource lbl-secondary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource bg-outline}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource lbl-primary}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource lbl-secondary}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Primary}"/>
                 <Setter Property="Shell.NavBarHasShadow" Value="True"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource NavBarStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-
-
-
+    
     <TabBar>
-        <ShellContent Title="Inicio" Icon="home.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomeView}"/>
+        <ShellContent Title="Inicio" Icon="home.png" Route="HomeView" ContentTemplate="{DataTemplate local:HomeView}"/>
         <ShellContent Title="Búsqueda" Icon="search.png" Route="SearchPage" ContentTemplate="{DataTemplate local:Search}" />
-        <ShellContent Title="Nuevo" Icon="upload.png" Route="UploadPage" ContentTemplate="{DataTemplate local:AddProductView}"/>
         <ShellContent Title="Bandeja" Icon="inbox.png" Route="InboxPage" ContentTemplate="{DataTemplate local:Inbox}" />
         <ShellContent Title="Perfil" Icon="user.png" Route="UserPage" ContentTemplate="{DataTemplate local:Profile}" />
     </TabBar>
-
-    <!--
-        If you would like to navigate to this content you can do so by calling
-        await Shell.Current.GoToAsync("//LoginPage");
-    -->
-
-
 </Shell>

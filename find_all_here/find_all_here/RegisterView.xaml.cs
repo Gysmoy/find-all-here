@@ -17,9 +17,9 @@ namespace find_all_here
             InitializeComponent();
         }
 
-        private async void NavToLogin_Clicked(object sender, EventArgs e)
+        private async void LogIn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginView());
+            await Navigation.PopModalAsync();
         }
     }
 }

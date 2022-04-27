@@ -9,9 +9,9 @@
     x:Name="BrowseProductsPage">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="➕" Command="{Binding AddProductCommand}" />
-        <ToolbarItem Text="🛒" Command="{Binding OpenCartCommand}" />
-        <ToolbarItem Text="➜" Command="{Binding LogoutCommand}" />
+        <ToolbarItem Name="Agregar producto" Icon="plus.png"  Command="{Binding AddProductCommand}" />
+        <ToolbarItem Name="Ver Carrito" Icon="cart.png"  Command="{Binding OpenCartCommand}" />
+        <ToolbarItem Name="Cerrar sesión" Icon="logout.png" Activated="OnLogOutClicked"/>
     </ContentPage.ToolbarItems>
     
     <RefreshView x:DataType="local:HomeViewModel" Command="{Binding LoadProductsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">

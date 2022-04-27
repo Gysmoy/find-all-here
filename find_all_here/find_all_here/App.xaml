@@ -18,6 +18,8 @@
             <Color x:Key="bg-profile">#404040</Color>
             <Color x:Key="btn-primary-outline">#330090e7</Color>
             <Color x:Key="btn-primary">#0090e7</Color>
+            <Color x:Key="btn-secondary-outline">#33e4eaec</Color>
+            <Color x:Key="btn-secondary">#e4eaec</Color>
             <Color x:Key="btn-success-outline">#3300d25b</Color>
             <Color x:Key="btn-success">#00d25b</Color>
             <Color x:Key="btn-danger-outline">#33fc424a</Color>

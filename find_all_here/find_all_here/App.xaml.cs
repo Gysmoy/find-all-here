@@ -12,14 +12,16 @@ namespace find_all_here
         public App()
         {
             InitializeComponent();
-            MainPage = new Shell();
-            //MainPage = new NavigationPage(new HomeView());
         }
         protected override void OnStart()
 
         {
             var status = Properties.ContainsKey("status") ? (bool)Properties["status"] : false;
-            if (!status)
+            if (status)
+            {
+                MainPage = new Shell();
+            }
+            else
             {
                 MainPage = new LoginView();
             }
@@ -27,7 +29,7 @@ namespace find_all_here
         }
         public void Logout()
         {
-            Properties["status"] = false;
+            Properties.Clear();
             MainPage = new LoginView();
         }
 
