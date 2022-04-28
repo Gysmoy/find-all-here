@@ -9,6 +9,6 @@ namespace find_all_here.Models
     {
         public int Status { get; set; }
         public string Message { get; set; }
-        public ArraySegment<NameValueCollection> Data { get; set; }
+        public bool Data { get; set; }
     }
 }

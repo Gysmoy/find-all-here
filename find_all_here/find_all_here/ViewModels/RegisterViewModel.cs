@@ -135,9 +135,9 @@ namespace find_all_here.ViewModels
                 var db = new Database();
                 var sp = StoredProcedures.ExistUser;
                 string[] parameters = { this.email, this.email};
-                var responseStr = db.Connect(sp, parameters, "one");
-                Response response = JsonConvert.DeserializeObject<Response>(responseStr);
-                if (response.Data.Count != 0)
+                var response = db.Connect(sp, parameters, "one");
+                var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
+                if (userValidate.Data.Count != 0)
                 {
                     Toast.MakeText(
                         Android.App.Application.Context, 
@@ -151,7 +151,7 @@ namespace find_all_here.ViewModels
             {
                 Toast.MakeText(
                     Android.App.Application.Context, 
-                    "No hay respuesta del servidor",  
+                    e.Message,  
                     ToastLength.Short
                 ).Show();
             }
@@ -186,9 +186,9 @@ namespace find_all_here.ViewModels
                 var db = new Database();
                 var sp = StoredProcedures.ExistUser;
                 string[] parameters = { this.username, this.username };
-                var responseStr = db.Connect(sp, parameters, "one");
-                Response response = JsonConvert.DeserializeObject<Response>(responseStr);
-                if (response.Data.Count != 0)
+                var response = db.Connect(sp, parameters, "one");
+                var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
+                if (userValidate.Data.Count != 0)
                 {
                     Toast.MakeText(
                         Android.App.Application.Context,
@@ -202,7 +202,7 @@ namespace find_all_here.ViewModels
             {
                 Toast.MakeText(
                     Android.App.Application.Context, 
-                    "No hay respuesta del servidor",  
+                    e.Message,  
                     ToastLength.Short
                 ).Show();
             }
@@ -241,7 +241,7 @@ namespace find_all_here.ViewModels
                 };
                 var responseStr = db.Connect(sp, parameters, "result");
                 var response = JsonConvert.DeserializeObject<Response>(responseStr);
-                if (response.Status == 200)
+                if (response.Data)
                 {
                     await App.Current.MainPage.DisplayAlert(
                         "Correcto!",
@@ -252,8 +252,11 @@ namespace find_all_here.ViewModels
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
-                throw;
+                Toast.MakeText(
+                    Android.App.Application.Context, 
+                    e.Message,  
+                    ToastLength.Short
+                ).Show();
             }
         }
 
