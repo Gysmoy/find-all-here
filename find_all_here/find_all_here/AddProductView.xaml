@@ -8,7 +8,8 @@
         <StackLayout Orientation="Vertical" Margin="20,15,20,20">
             <Label Text="Fotografías" FontSize="Large"/>
             <Frame Padding="1" HeightRequest="0" BackgroundColor="White"/>
-            <Button Text="&#xE802; " 
+            <ImageButton 
+                    Source="plus"
                     WidthRequest="10"
                     HeightRequest="200"
                     BorderColor="White"
@@ -48,6 +49,7 @@
                     Grid.Column="4" 
                     Grid.ColumnSpan="3"/>
                 <Button Text="cancelar" 
+                    Clicked="Btn03"
                     FontSize="Small" 
                     BackgroundColor="{StaticResource btn-danger-outline}" 
                     x:Name="btnCancelar02" 
