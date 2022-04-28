@@ -28,7 +28,10 @@ namespace find_all_here.Models
         WHERE
             (email = ? OR username = ?) AND password = ?
         ";
-
+        public static string ExistUser = @"
+        SELECT U.id FROM USERS U
+        WHERE email = ? OR username = ?
+        ";
         public static string SetUser = @"
         INSERT INTO USERS (
             names, surnames, username, email, password,

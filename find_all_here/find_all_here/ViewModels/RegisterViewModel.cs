@@ -112,101 +112,148 @@ namespace find_all_here.ViewModels
 
         public async void RegisterMethod()
         {
+            if (string.IsNullOrEmpty(this.names))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese su nombre", ToastLength.Short).Show();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.surnames))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese sus apellidos", ToastLength.Short).Show();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.email))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese su correo electrónico", ToastLength.Short).Show();
+                return;
+            }
+
             try
             {
-                if (string.IsNullOrEmpty(this.names))
+                var db = new Database();
+                var sp = StoredProcedures.ExistUser;
+                string[] parameters = { this.email, this.email};
+                var responseStr = db.Connect(sp, parameters, "one");
+                Response response = JsonConvert.DeserializeObject<Response>(responseStr);
+                if (response.Status == 200)
                 {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su nombre",
-                        "Aceptar");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(this.surnames))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su apellido",
-                        "Aceptar");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(this.email))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su correo",
-                        "Aceptar");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(this.phone))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su telefono",
-                        "Aceptar");
-                    return;
-                }
-
-                if (
-                    string.IsNullOrEmpty(this.dateDay.ToString()) ||
-                    string.IsNullOrEmpty(this.dateMonth.ToString()) ||
-                    string.IsNullOrEmpty(this.dateYear.ToString()))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su fecha de nacimiento",
-                        "Aceptar");
-                    return;
-                }
-                var dateBirth = new Date(this.dateDay, this.dateMonth, this.dateYear);
-                
-                await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    dateBirth.ToString(),
-                    "Aceptar");
-
-                if (string.IsNullOrEmpty(this.username))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su nombre de usuario",
-                        "Aceptar");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(this.password))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su contraseña",
-                        "Aceptar");
-                    return;
-                }
-
-                if (string.IsNullOrEmpty(this.confirmPassword))
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Ingrese su contraseña de confirmación",
-                        "Aceptar");
-                    return;
-                }
-
-                if (this.password != this.confirmPassword)
-                {
-                    await App.Current.MainPage.DisplayAlert(
-                        "Error",
-                        "Las contraseñas no coinciden",
-                        "Aceptar");
+                    Toast.MakeText(
+                        Android.App.Application.Context, 
+                        "El correo electrónico " + this.email + " ya está registrado", 
+                        ToastLength.Short
+                    ).Show();
                     return;
                 }
             }
             catch (Exception e)
             {
-                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Long).Show();
+                Toast.MakeText(
+                    Android.App.Application.Context, 
+                    "No hay respuesta del servidor",  
+                    ToastLength.Short
+                ).Show();
+            }
+
+            if (string.IsNullOrEmpty(this.phone))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese su número de teléfono", ToastLength.Short).Show();
+                return;
+            }
+
+            if (
+                string.IsNullOrEmpty(this.dateDay.ToString()) ||
+                this.dateDay > 31 || this.dateDay < 1 || 
+                string.IsNullOrEmpty(this.dateMonth.ToString()) ||
+                this.dateMonth > 12 || this.dateMonth < 1 ||
+                string.IsNullOrEmpty(this.dateYear.ToString()) ||
+                this.dateYear < 1900 || this.dateYear > DateTime.Now.Year
+            )
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese una fecha de nacimiento válida", ToastLength.Short).Show();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.username))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese su nombre de usuario", ToastLength.Short).Show();
+                return;
+            }
+
+            try
+            {
+                var db = new Database();
+                var sp = StoredProcedures.ExistUser;
+                string[] parameters = { this.username, this.username };
+                var responseStr = db.Connect(sp, parameters, "one");
+                Response response = JsonConvert.DeserializeObject<Response>(responseStr);
+                if (response.Status == 200)
+                {
+                    Toast.MakeText(
+                        Android.App.Application.Context,
+                        "El nombre de usuario @" + this.username + " ya está registrado",
+                        ToastLength.Short
+                    ).Show();
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+                Toast.MakeText(
+                    Android.App.Application.Context, 
+                    "No hay respuesta del servidor",  
+                    ToastLength.Short
+                ).Show();
+            }
+
+            if (string.IsNullOrEmpty(this.password))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese su contraseña", ToastLength.Short).Show();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(this.confirmPassword))
+            {
+                Toast.MakeText(Android.App.Application.Context, "Ingrese su contraseña nuevamente", ToastLength.Short).Show();
+                return;
+            }
+
+            if (this.password != this.confirmPassword)
+            {
+                Toast.MakeText(Android.App.Application.Context, "Las contraseñas no coinciden", ToastLength.Short).Show();
+                return;
+            }
+
+            try
+            {
+                var db = new Database();
+                var sp = StoredProcedures.SetUser;
+                var birthDate = this.dateYear + "-" + this.dateMonth + "-" + this.dateDay;
+                string[] parameters = {
+                    this.names,
+                    this.surnames,
+                    this.username,
+                    this.email,
+                    Sha256(this.password),
+                    birthDate,
+                    this.phone
+                };
+                var responseStr = db.Connect(sp, parameters, "result");
+                var response = JsonConvert.DeserializeObject<Response>(responseStr);
+                if (response.Status == 200)
+                {
+                    await App.Current.MainPage.DisplayAlert(
+                        "Correcto!",
+                        "Usuario registrado exitosamente",
+                        "Aceptar");
+                    await App.Current.MainPage.Navigation.PopModalAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
 

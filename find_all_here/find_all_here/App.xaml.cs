@@ -30,7 +30,7 @@ namespace find_all_here
             else
             {
                 Properties.Clear();
-                MainPage = new RegisterView();
+                MainPage = new LoginView();
             }
             
         }
