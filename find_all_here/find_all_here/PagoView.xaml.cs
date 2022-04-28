@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace find_all_here
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class APago : ContentPage
+    public partial class PagoView : ContentPage
     {
-        public APago()
+        public PagoView()
         {
             InitializeComponent();
         }

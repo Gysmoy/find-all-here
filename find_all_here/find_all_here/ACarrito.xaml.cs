@@ -116,9 +116,9 @@ namespace find_all_here
             await Navigation.PopModalAsync();
         }
 
-        async void Button_Clicked_1(object sender, EventArgs e)
+        async void Btn_Pago(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new APago());
+            await Navigation.PushModalAsync(new PagoView());
         }
     }
 }

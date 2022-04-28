@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.ACarrito">
-    <StackLayout BackgroundColor="#242524  ">
+    <StackLayout BackgroundColor="{StaticResource bg-container}">
         <Grid Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -16,30 +16,32 @@
                     VerticalOptions="Center" HorizontalOptions="Center"
                     WidthRequest="85" HeightRequest="85"
                     BackgroundColor="{StaticResource bg-profile}"
-                    Source="user" CornerRadius="250"/>
+                    Source="alex" CornerRadius="250"/>
 
             <Label Grid.Column="1" FontSize="18"
                    Text="Alex Ccora Contreras" TextColor="#FFF"
                    FontAttributes="Bold" Margin="9"/>
 
             <Button Grid.Column="1" Text="Seguir" Margin="10,45,10,10" TextColor="#FFF"
-                    BackgroundColor="#228705" BorderWidth="3" BorderColor="#239B56" TextTransform="None"
+                    BackgroundColor="#228705" BorderWidth="1" BorderColor="#239B56" TextTransform="None"
                     FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
-                    HorizontalOptions="Start" CornerRadius="16"/>
+                    HorizontalOptions="Start" CornerRadius="9"/>
 
-            <Button Grid.Column="1" Text="581.4k" Margin="0,45,115,10"
-                    BackgroundColor="#838383" BorderWidth="3" BorderColor="#474747" TextTransform="None"
+            <Button Grid.Column="1" Text="581.4k" Margin="0,45,155,10"
+                    BackgroundColor="#838383" BorderWidth="1" BorderColor="#474747" TextTransform="None"
                     FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
-                    HorizontalOptions="End" CornerRadius="16"/>
+                    HorizontalOptions="End" CornerRadius="9"/>
         </Grid>
         
         <ListView ItemsSource="{Binding DBCarritos}" HasUnevenRows="True" 
-                  BackgroundColor="#484948 ">
+                  ItemSelected="ListView_ItemSelected" 
+                  ItemTapped="ListView_ItemTapped"
+                  BackgroundColor="{StaticResource bg-profile}">
             
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Padding="16" BackgroundColor="#1B2631" 
+                        <Frame Padding="16" BackgroundColor="{StaticResource bg-container}" 
                                HorizontalOptions="FillAndExpand" 
                                VerticalOptions="FillAndExpand"
                                BorderColor="#FFFFFF" 
@@ -73,16 +75,16 @@
                                        FontAttributes="Bold"/>
 
                                 <Button Grid.Row="0" Grid.Column="2" Text="- 2 +" TextColor="#FFF"
-                                        BackgroundColor="#081E00" BorderWidth="3" BorderColor="#0B5345 " TextTransform="None"
+                                        BackgroundColor="#081E00" BorderWidth="1" BorderColor="#0B5345 " TextTransform="None"
                                         FontAttributes="Bold" FontSize="12" HeightRequest="35" WidthRequest="60"
                                         VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,4"
-                                        CornerRadius="16"/>
+                                        CornerRadius="9"/>
 
                                 <Button Grid.Row="1" Grid.Column="2" Text="🗑️"
-                                        BackgroundColor="#310202 " BorderWidth="3" BorderColor="#5F0303  " TextTransform="None"
+                                        BackgroundColor="#310202 " BorderWidth="1" BorderColor="#5F0303  " TextTransform="None"
                                         FontAttributes="None" FontSize="13" HeightRequest="35" WidthRequest="60"
                                         VerticalOptions="Center" HorizontalOptions="Center"
-                                        CornerRadius="16"/>
+                                        CornerRadius="9"/>
                             </Grid>
                         </Frame>
                     </ViewCell>
@@ -92,16 +94,16 @@
 
         <Grid>
             <Button Text="VOLVER" FontSize="16" TextColor="#fff"
-                    BackgroundColor="#414241 " BorderWidth="3" BorderColor="#737373  " 
+                    BackgroundColor="#414241 " BorderWidth="1" BorderColor="#737373  " 
                     FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
                     VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,178,8"
-                    CornerRadius="16" Clicked="Btn_Home"/>
+                    CornerRadius="9" Clicked="Btn_Home"/>
 
             <Button Text="CONTINUAR" FontSize="16" TextColor="#fff"
-                    BackgroundColor="#310202 " BorderWidth="3" BorderColor="#5F0303 " 
+                    BackgroundColor="#310202 " BorderWidth="1" BorderColor="#5F0303 " 
                     FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
                     VerticalOptions="Center" HorizontalOptions="Center" Margin="170,0,8,8"
-                    CornerRadius="16" Clicked="Button_Clicked_1"/>
+                    CornerRadius="9" Clicked="Btn_Pago"/>
         </Grid>
     </StackLayout>
 </ContentPage>

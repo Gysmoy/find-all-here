@@ -17,10 +17,7 @@ namespace find_all_here
         {
             await Navigation.PushAsync(new LoginView());
         }
-        async void ir(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new APago());
-        }
+        
         protected override void OnAppearing()
         {
             base.OnAppearing();
