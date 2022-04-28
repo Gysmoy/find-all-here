@@ -96,10 +96,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <DependentUpon>AssemblyInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Update="ARView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <DependentUpon>AssemblyInfo.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
