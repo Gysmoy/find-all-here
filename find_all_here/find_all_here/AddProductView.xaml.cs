@@ -19,7 +19,8 @@ namespace find_all_here
         }
         async void Btn03(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new HomeView());
+            // cerrar el este modal
+            await Navigation.PopModalAsync();
         }
     }
 }
