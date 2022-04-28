@@ -5,8 +5,9 @@ using find_all_here.Models;
 
 namespace find_all_here.ViewModels
 {
-    public class DBCarrito
+    public class CartViewModel : BaseViewModel
     {
+        
         public string name { get; set; }
 
         public string Name { get; set; }

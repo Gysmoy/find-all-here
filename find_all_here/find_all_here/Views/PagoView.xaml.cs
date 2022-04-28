@@ -13,15 +13,15 @@ namespace find_all_here
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PagoView : ContentPage
     {
-        public IList<DBCarrito> DBCarritos { get; private set; }
+        public IList<CartViewModel> DBCarritos { get; private set; }
         public PagoView()
         {
             InitializeComponent();
-            DBCarritos = new List<DBCarrito>();
+            DBCarritos = new List<CartViewModel>();
 
-            DBCarritos.Add(new DBCarrito { Name = "YAPE", Image = "yapelogo.png" });
-            DBCarritos.Add(new DBCarrito { Name = "TUNKI", Image = "tunki.png" });
-            DBCarritos.Add(new DBCarrito { Name = "INTERBANK", Image = "interbank.png" });
+            DBCarritos.Add(new CartViewModel { Name = "YAPE", Image = "yapelogo.png" });
+            DBCarritos.Add(new CartViewModel { Name = "TUNKI", Image = "tunki.png" });
+            DBCarritos.Add(new CartViewModel { Name = "INTERBANK", Image = "interbank.png" });
 
             BindingContext = this;
         }
