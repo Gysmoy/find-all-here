@@ -163,26 +163,26 @@
                             Padding="10,0"
                             CornerRadius="5"
                             Background="{StaticResource bg-outline}">
-                            <Grid 
-                                RowSpacing="0"
-                                Padding="0"
-                                HorizontalOptions="FillAndExpand">
+                            <StackLayout>
+                                <Label Grid.ColumnSpan="3" 
+                                    Margin="0,5,0,0"
+                                    Text="Fecha de nacimiento"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                                <Grid 
+                                    RowSpacing="2.5"
+                                    Padding="0">
+
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1"/>
-                                        <ColumnDefinition Width="1"/>
-                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="2*"/>
                                     </Grid.ColumnDefinitions>
-                                    <Label Grid.ColumnSpan="3" 
-                                        Margin="0,5,0,0"
-                                        Text="Fecha de nacimiento"
-                                        FontSize="16"
-                                        TextColor="{StaticResource lbl-primary}"/>
+                                    
                                     <Entry
-                                        Grid.Row="1"
                                         Grid.Column="0"
                                         Margin="0,-10,0,0"
                                         FontSize="16"
@@ -194,7 +194,6 @@
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand" />
                                     <Entry
-                                        Grid.Row="1"
                                         Grid.Column="1"
                                         Margin="0,-10,0,0"
                                         FontSize="16"
@@ -205,7 +204,6 @@
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"/>
                                     <Entry
-                                        Grid.Row="1"
                                         Grid.Column="2"
                                         Margin="0,-10,0,0"
                                         FontSize="16"
@@ -216,6 +214,8 @@
                                         HorizontalOptions="FillAndExpand"
                                         VerticalOptions="FillAndExpand"/>
                                 </Grid>
+                            </StackLayout>
+                            
                         </Frame>
                         <Label Grid.Row="7"
                             Margin="0"

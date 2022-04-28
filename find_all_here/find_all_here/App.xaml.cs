@@ -18,9 +18,9 @@ namespace find_all_here
 
         {
             /* Creando carrito */
-            if (!Properties.ContainsKey("carrito"))
+            if (!Properties.ContainsKey("cart"))
             {
-                Properties["carrito"] = JsonConvert.SerializeObject(new Cart());
+                Properties["cart"] = JsonConvert.SerializeObject(new Cart());
             }
             var user = Properties.ContainsKey("user") ? JsonConvert.DeserializeObject<User>((String)Properties["user"]) : new User();
             if (user.Status)
@@ -30,7 +30,7 @@ namespace find_all_here
             else
             {
                 Properties.Clear();
-                MainPage = new LoginView();
+                MainPage = new RegisterView();
             }
             
         }
