@@ -16,24 +16,29 @@ namespace find_all_here
         protected override void OnStart()
 
         {
-            var status = Properties.ContainsKey("status") ? (bool)Properties["status"] : false;
-            /* INICIO: AGREGANDO PRODUCTOS */
-            Cart cart = new Cart();
-            Product product = new Product();
-            product.Name = "Coca Cola";
-            product.Price = 1.5;
-            product.Quantity = 1;
-            product.Image_mini = "https://www.cocacola.es/content/dam/one/es/es2/coca-cola/products/productos/dic-2021/CC_Origal.jpg";
-            cart.Products.Add(product);
-            product.Name = "Pepsi";
-            product.Price = 1.5;
-            product.Quantity = 1;
-            product.Image_mini = "https://ihopperu.com/wp-content/uploads/2020/08/103181-1.jpg";
-            cart.Products.Add(product);
+            var user = Properties.ContainsKey("user") ? (User)Properties["user"] : new User();
+            /* INICIO: AGREGANDO PRODUCTOS 
+            var cart = new Cart();
+            var coca = new Product
+            {
+                Name = "Coca Cola",
+                Price = 1.5,
+                Quantity = 1,
+                Image_mini = "https://www.cocacola.es/content/dam/one/es/es2/coca-cola/products/productos/dic-2021/CC_Origal.jpg"
+            };
+            cart.Products.Add(coca);
+            var pepsi = new Product
+            {
+                Name = "Pepsi",
+                Price = 1.5,
+                Quantity = 1,
+                Image_mini = "https://ihopperu.com/wp-content/uploads/2020/08/103181-1.jpg"
+            };
+            cart.Products.Add(pepsi);
             
             Properties["cart"] = cart;
-            /* FIN: AGREGANDO PRODUCTOS */
-            if (status)
+            FIN: AGREGANDO PRODUCTOS */
+            if (user.Status)
             {
                 MainPage = new Shell();
             }

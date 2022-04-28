@@ -111,18 +111,15 @@ namespace find_all_here.ViewModels
                     }
                     else
                     {
-                        var user = userValidate.Data[0];
-                        /* INICIO: Almacenamiento de sesión */
-                        App.Current.Properties["status"] = true;
-                        App.Current.Properties["id"] = user.Id;
-                        App.Current.Properties["names"] = user.Names;
-                        App.Current.Properties["surnames"] = user.Surnames;
-                        /* FIN: Almacenamiento de sesión */
-                        
                         await App.Current.MainPage.DisplayAlert(
                             "Correcto!",
                             "Bienvenido a Find All Here",
                             "Aceptar");
+                        
+                        var user = userValidate.Data[0];
+                        user.Status = true;
+                        App.Current.Properties["user"] = user;
+
                         App.Current.MainPage = new Shell();
                     }
                 }

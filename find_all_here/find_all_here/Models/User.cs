@@ -18,5 +18,6 @@ namespace find_all_here.Models
         public string Profile_mini { get; set; }
         public string Profile_full { get; set; }
         public string Profile_type { get; set; }
+        public bool Status { get; set; }
     }
 }
