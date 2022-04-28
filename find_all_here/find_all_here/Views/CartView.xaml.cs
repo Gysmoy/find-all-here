@@ -23,77 +23,77 @@ namespace find_all_here
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon blanco de cuero",
-                Precio = "S/,00,00",
+                Precio = 12.50,
                 Url = "https://promart.vteximg.com.br/arquivos/ids/4436046-1000-1000/10012119.jpg?v=637805479991770000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon negro de cuero",
-                Precio = "S/,00,00",
+                Precio = 1300.00,
                 Url = "https://plazavea.vteximg.com.br/arquivos/ids/291411-450-450/image-43c8b295e4194004a74d5589a9d5d99f.jpg?v=637165299516970000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon blanco de cuero",
-                Precio = "S/,00,00",
+                Precio = 120.50,
                 Url = "https://promart.vteximg.com.br/arquivos/ids/4436046-1000-1000/10012119.jpg?v=637805479991770000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon negro de cuero",
-                Precio = "S/,00,00",
+                Precio = 5000,
                 Url = "https://plazavea.vteximg.com.br/arquivos/ids/291411-450-450/image-43c8b295e4194004a74d5589a9d5d99f.jpg?v=637165299516970000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon blanco de cuero",
-                Precio = "S/,00,00",
+                Precio = 1.50,
                 Url = "https://promart.vteximg.com.br/arquivos/ids/4436046-1000-1000/10012119.jpg?v=637805479991770000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon negro de cuero",
-                Precio = "S/,00,00",
+                Precio = 13.00,
                 Url = "https://plazavea.vteximg.com.br/arquivos/ids/291411-450-450/image-43c8b295e4194004a74d5589a9d5d99f.jpg?v=637165299516970000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon blanco de cuero",
-                Precio = "S/,00,00",
+                Precio = 12.50,
                 Url = "https://promart.vteximg.com.br/arquivos/ids/4436046-1000-1000/10012119.jpg?v=637805479991770000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon negro de cuero",
-                Precio = "S/,00,00",
+                Precio = 13.00,
                 Url = "https://plazavea.vteximg.com.br/arquivos/ids/291411-450-450/image-43c8b295e4194004a74d5589a9d5d99f.jpg?v=637165299516970000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon blanco de cuero",
-                Precio = "S/,00,00",
+                Precio = 15.50,
                 Url = "https://promart.vteximg.com.br/arquivos/ids/4436046-1000-1000/10012119.jpg?v=637805479991770000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon negro de cuero",
-                Precio = "S/,00,00",
+                Precio = 150.20,
                 Url = "https://plazavea.vteximg.com.br/arquivos/ids/291411-450-450/image-43c8b295e4194004a74d5589a9d5d99f.jpg?v=637165299516970000"
             });
 
             DBCarritos.Add(new CartViewModel
             {
                 name = "Sillon blanco de cuero",
-                Precio = "S/,00,00",
+                Precio = 200.00,
                 Url = "https://promart.vteximg.com.br/arquivos/ids/4436046-1000-1000/10012119.jpg?v=637805479991770000"
             });
 

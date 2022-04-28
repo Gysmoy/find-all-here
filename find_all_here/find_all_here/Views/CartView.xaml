@@ -1,112 +1,289 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="find_all_here.CartView">
-    <StackLayout BackgroundColor="{StaticResource bg-container}">
-        <Grid Padding="10">
+             x:Class="find_all_here.CartView"
+             xmlns:model="find_all_here.Models"
+             Title="Carrito">
+    <StackLayout BackgroundColor="{StaticResource bg-body}">
+        <Grid
+            RowSpacing="0"
+            Margin="0"
+            Padding="10"
+            Background="{StaticResource bg-outline}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <ImageButton Grid.Column="0"
-                    VerticalOptions="Center" HorizontalOptions="Center"
-                    WidthRequest="85" HeightRequest="85"
-                    BackgroundColor="{StaticResource bg-profile}"
-                    Source="alex" CornerRadius="250"/>
-
-            <Label Grid.Column="1" FontSize="18"
-                   Text="Alex Ccora Contreras" TextColor="#FFF"
-                   FontAttributes="Bold" Margin="9"/>
-
-            <Button Grid.Column="1" Text="Perfil" Margin="10,45,10,10" 
-                    TextColor="{StaticResource btn-primary}"
-                    BackgroundColor="{StaticResource btn-primary-outline}" BorderWidth="1" 
-                    BorderColor="{StaticResource btn-primary}" TextTransform="None"
-                    FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
-                    HorizontalOptions="Start" CornerRadius="9"/>
-
-            <Button Grid.Column="1" Text="581.4k" Margin="0,45,155,10"
-                    BackgroundColor="#838383" BorderWidth="1" BorderColor="#474747" TextTransform="None"
-                    FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
-                    HorizontalOptions="End" CornerRadius="9"/>
+            <Label 
+                Grid.Column="0"
+                TextColor="{StaticResource lbl-primary}"
+                Text="Carrito de compras"
+                FontSize="24"/>
+            <Frame
+                Grid.Column="1"
+                CornerRadius="7.5"
+                Padding="0"
+                BackgroundColor="{StaticResource btn-primary-outline}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0,5,0,0" 
+                HasShadow="True">
+                <Label  Text="Seguir comprando" TextColor="{StaticResource btn-primary}"
+                    Padding="10,5" FontSize="12" FontAttributes="Bold"
+                    HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseCartCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
         </Grid>
-        
-        <ListView ItemsSource="{Binding DBCarritos}" HasUnevenRows="True" 
-                  ItemSelected="ListView_ItemSelected" 
-                  ItemTapped="ListView_ItemTapped"
-                  BackgroundColor="{StaticResource bg-profile}">
-            
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame Padding="16" BackgroundColor="{StaticResource bg-container}" 
-                               HorizontalOptions="FillAndExpand" 
-                               VerticalOptions="FillAndExpand"
-                               BorderColor="#FFFFFF" 
-                               CornerRadius="10" Margin="5">
 
-                            <Grid>
+        <CollectionView x:Name="ProductsListView" ItemsSource="{Binding DBCarritos}" SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <Frame BackgroundColor="{StaticResource bg-body}" Padding="15,10" HasShadow="True" CornerRadius="0">
+                        <Frame
+                            Background="{StaticResource bg-container}"
+                            Margin="0"
+                            Padding="0"
+                            CornerRadius="10">
+                            <Grid
+                                Margin="0"
+                                Padding="0"
+                                RowSpacing="0"
+                                Background="{StaticResource bg-container}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1*"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
-                                
-                                <Image Grid.RowSpan="2"
-                                       Source="{Binding Url}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="60"
-                                       WidthRequest="60"/>
-
-                                <Label Grid.Column="1"
-                                       Text="{Binding name}" TextColor="#FFF"
-                                       FontAttributes="Bold" Margin="19,8,0,0"/>
-
-                                <Label Grid.Row="1" 
-                                       Grid.Column="1" 
-                                       Text="{Binding Precio}" TextColor="#FFF"
-                                       VerticalOptions="End" Margin="19,0,0,8" 
-                                       FontAttributes="Bold"/>
-
-                                <Button Grid.Row="0" Grid.Column="2" Text="- 2 +" TextColor="#FFF"
-                                        BackgroundColor="#081E00" BorderWidth="1" BorderColor="#0B5345 " TextTransform="None"
-                                        FontAttributes="Bold" FontSize="12" HeightRequest="35" WidthRequest="60"
-                                        VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,0,4"
-                                        CornerRadius="9"/>
-
-                                <Button Grid.Row="1" Grid.Column="2" Text="🗑️"
-                                        BackgroundColor="#310202 " BorderWidth="1" BorderColor="#5F0303  " TextTransform="None"
-                                        FontAttributes="None" FontSize="13" HeightRequest="35" WidthRequest="60"
-                                        VerticalOptions="Center" HorizontalOptions="Center"
-                                        CornerRadius="9"/>
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.RowSpan="3"
+                                    Source="{Binding Url}"
+                                    HeightRequest="100"
+                                    WidthRequest="100"
+                                    BackgroundColor="{StaticResource bg-outline}"/>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding name}"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    FontAttributes="Bold"
+                                    Padding="20,10,20,0"
+                                    FontSize="16"/>
+                                <Frame
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    CornerRadius="7.5"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource btn-danger-outline}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="10,10,10,0"
+                                    HasShadow="True">
+                                    <Label  Text="Quitar" TextColor="{StaticResource btn-danger}"
+                                        Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                        HorizontalOptions="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </Frame>
+                                <StackLayout
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Padding="20,0">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="S/" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
+                                                    <Span Text="{Binding Precio}" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
+                                                    <Span Text=" • " FontSize="14" TextColor="{StaticResource lbl-primary}" FontAttributes="Bold"/>
+                                                    <Span Text="@" FontSize="14" TextColor="{StaticResource lbl-secondary}" FontAttributes="Italic"/>
+                                                    <Span Text="gysmoy" FontSize="14" FontAttributes="Italic"/>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Padding="0"
+                                    VerticalOptions="Center">
+                                    <Grid
+                                        Margin="0"
+                                        Padding="0"
+                                        RowSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Frame
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            CornerRadius="20"
+                                            Margin="20,7.5,2.5,7.5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource btn-danger-outline}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HasShadow="True">
+                                            <Label  Text="-" TextColor="{StaticResource btn-danger}"
+                                                Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                                HorizontalOptions="Center">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </Frame>
+                                        <Frame
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            CornerRadius="2.5"
+                                            Margin="2.5,7.5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource btn-secondary-outline}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HasShadow="True">
+                                            <Label  Text="0" TextColor="{StaticResource btn-secondary}"
+                                                Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                                HorizontalOptions="Center">
+                                            </Label>
+                                        </Frame>
+                                        <Frame
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            CornerRadius="20"
+                                            Margin="2.5,7.5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource btn-success-outline}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HasShadow="True">
+                                            <Label  Text="+" TextColor="{StaticResource btn-success}"
+                                                Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                                HorizontalOptions="Center">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </Frame>
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            Text="S/12.50"
+                                            FontSize="20"
+                                            Margin="10,7.5"
+                                            TextColor="{StaticResource lbl-primary}"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="End"/>
+                                    </Grid>
+                                </StackLayout>
                             </Grid>
                         </Frame>
-                    </ViewCell>
+                    </Frame>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-        <Grid>
-            <Button Text="VOLVER" FontSize="16" TextColor="{StaticResource btn-primary}"
-                    BackgroundColor="{StaticResource btn-primary-outline}" BorderWidth="1" 
-                    BorderColor="{StaticResource btn-primary}" 
-                    FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
-                    VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,178,8"
-                    CornerRadius="9" Clicked="Btn_Home"/>
-
-            <Button Text="CONTINUAR" FontSize="16" TextColor="#fff"
-                    BackgroundColor="#310202 " BorderWidth="1" BorderColor="#5F0303 " 
-                    FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
-                    VerticalOptions="Center" HorizontalOptions="Center" Margin="170,0,8,8"
-                    CornerRadius="9" Clicked="Btn_Pago"/>
+        <Grid
+            BackgroundColor="{StaticResource bg-outline}"
+            Margin="0"
+            Padding="0"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label
+                Margin="10,5"
+                Grid.Row="0"
+                Grid.Column="0"
+                FontSize="16"
+                TextColor="{StaticResource lbl-primary}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Subtotal: " TextColor="{StaticResource lbl-secondary}" />
+                            <Span Text="S/" FontAttributes="Bold" />
+                            <Span Text="1250.00" FontAttributes="Bold" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Margin="10,0"
+                Grid.Row="1"
+                Grid.Column="0"
+                FontSize="16"
+                TextColor="{StaticResource lbl-primary}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="IGV (18%): " FontSize="14" TextColor="{StaticResource lbl-secondary}" />
+                            <Span Text="S/" FontAttributes="Bold" />
+                            <Span Text="1250.00" FontAttributes="Bold" />
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                Margin="10,5,10,15"
+                Grid.Row="2"
+                Grid.Column="0"
+                FontSize="20"
+                TextColor="{StaticResource lbl-primary}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>
+                            <Span Text="Total a pagar: " TextColor="{StaticResource lbl-secondary}" />
+                            <Span Text="S/" FontAttributes="Bold" FontSize="20"/>
+                            <Span Text="1250.00" FontAttributes="Bold" FontSize="20"/>
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Frame
+                Grid.Row="0"
+                Grid.Column="1"
+                Grid.RowSpan="3"
+                CornerRadius="10"
+                Margin="0,0,10,0"
+                Padding="10,20"
+                BackgroundColor="{StaticResource btn-success-outline}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                HasShadow="True">
+                <Label  Text="Pagar" TextColor="{StaticResource btn-success}"
+                    Padding="10,5" FontSize="16" FontAttributes="Bold"
+                    HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
         </Grid>
     </StackLayout>
 </ContentPage>

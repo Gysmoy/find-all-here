@@ -12,7 +12,7 @@ namespace find_all_here.ViewModels
 
         public string Name { get; set; }
 
-        public string Precio { get; set; }
+        public double Precio { get; set; }
 
         public string Image { get; set; }
 

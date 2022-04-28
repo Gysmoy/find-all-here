@@ -14,7 +14,7 @@ namespace find_all_here.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.0.155")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.4.160")]
 	public partial class Resource
 	{
 		
@@ -24922,7 +24922,10 @@ namespace find_all_here.Droid
 			public const int user = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int yapelogo = 2131165345;
+			public const int x = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int yapelogo = 2131165346;
 			
 			static Drawable()
 			{
