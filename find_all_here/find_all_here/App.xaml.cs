@@ -3,6 +3,7 @@ using Android.App;
 using Android.Widget;
 using Xamarin.Forms.Xaml;
 using find_all_here.Models;
+using Newtonsoft.Json;
 using Application = Xamarin.Forms.Application;
 
 namespace find_all_here
@@ -16,34 +17,19 @@ namespace find_all_here
         protected override void OnStart()
 
         {
-            var user = Properties.ContainsKey("user") ? (User)Properties["user"] : new User();
-            /* INICIO: AGREGANDO PRODUCTOS 
-            var cart = new Cart();
-            var coca = new Product
+            /* Creando carrito */
+            if (!Properties.ContainsKey("carrito"))
             {
-                Name = "Coca Cola",
-                Price = 1.5,
-                Quantity = 1,
-                Image_mini = "https://www.cocacola.es/content/dam/one/es/es2/coca-cola/products/productos/dic-2021/CC_Origal.jpg"
-            };
-            cart.Products.Add(coca);
-            var pepsi = new Product
-            {
-                Name = "Pepsi",
-                Price = 1.5,
-                Quantity = 1,
-                Image_mini = "https://ihopperu.com/wp-content/uploads/2020/08/103181-1.jpg"
-            };
-            cart.Products.Add(pepsi);
-            
-            Properties["cart"] = cart;
-            FIN: AGREGANDO PRODUCTOS */
+                Properties["carrito"] = JsonConvert.SerializeObject(new Cart());
+            }
+            var user = Properties.ContainsKey("user") ? JsonConvert.DeserializeObject<User>((String)Properties["user"]) : new User();
             if (user.Status)
             {
                 MainPage = new Shell();
             }
             else
             {
+                Properties.Clear();
                 MainPage = new LoginView();
             }
             

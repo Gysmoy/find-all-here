@@ -118,7 +118,7 @@ namespace find_all_here.ViewModels
                         
                         var user = userValidate.Data[0];
                         user.Status = true;
-                        App.Current.Properties["user"] = user;
+                        App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
 
                         App.Current.MainPage = new Shell();
                     }
