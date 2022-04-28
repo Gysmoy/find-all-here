@@ -59,10 +59,10 @@
 
         <Grid >
             <Button Text="VOLVER" FontSize="16" TextColor="#fff"
-                    BackgroundColor="#414241 " BorderWidth="1" BorderColor="#737373  " 
+                    BackgroundColor="#414241 " BorderWidth="1" BorderColor="#737373" 
                     FontAttributes="Bold" HeightRequest="55" WidthRequest="145"
                     VerticalOptions="Center" HorizontalOptions="Center"
-                    CornerRadius="9" />
+                    CornerRadius="9" Clicked="Btn_Cart"/>
         </Grid>
 
     </StackLayout>

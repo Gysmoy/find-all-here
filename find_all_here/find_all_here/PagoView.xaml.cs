@@ -25,5 +25,9 @@ namespace find_all_here
 
             BindingContext = this;
         }
+        async void Btn_Cart(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }
