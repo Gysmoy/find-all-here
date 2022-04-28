@@ -117,7 +117,7 @@ namespace find_all_here.ViewModels
                         user.Status = true;
                         App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
                         await App.Current.MainPage.DisplayAlert(
-                            "Hola" + user.Names,
+                            "Hola " + user.Names,
                             "Bienvenido a Find All Here",
                             "Aceptar");
                         App.Current.MainPage = new Shell();
