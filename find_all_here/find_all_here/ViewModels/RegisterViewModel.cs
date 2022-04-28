@@ -137,7 +137,7 @@ namespace find_all_here.ViewModels
                 string[] parameters = { this.email, this.email};
                 var responseStr = db.Connect(sp, parameters, "one");
                 Response response = JsonConvert.DeserializeObject<Response>(responseStr);
-                if (response.Status == 200)
+                if (response.Data.Count != 0)
                 {
                     Toast.MakeText(
                         Android.App.Application.Context, 
@@ -188,7 +188,7 @@ namespace find_all_here.ViewModels
                 string[] parameters = { this.username, this.username };
                 var responseStr = db.Connect(sp, parameters, "one");
                 Response response = JsonConvert.DeserializeObject<Response>(responseStr);
-                if (response.Status == 200)
+                if (response.Data.Count != 0)
                 {
                     Toast.MakeText(
                         Android.App.Application.Context,
