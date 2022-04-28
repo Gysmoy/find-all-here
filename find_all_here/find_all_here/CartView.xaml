@@ -22,8 +22,10 @@
                    Text="Alex Ccora Contreras" TextColor="#FFF"
                    FontAttributes="Bold" Margin="9"/>
 
-            <Button Grid.Column="1" Text="Seguir" Margin="10,45,10,10" TextColor="#FFF"
-                    BackgroundColor="#228705" BorderWidth="1" BorderColor="#239B56" TextTransform="None"
+            <Button Grid.Column="1" Text="Perfil" Margin="10,45,10,10" 
+                    TextColor="{StaticResource btn-primary}"
+                    BackgroundColor="{StaticResource btn-primary-outline}" BorderWidth="1" 
+                    BorderColor="{StaticResource btn-primary}" TextTransform="None"
                     FontAttributes="Bold" FontSize="14" HeightRequest="37" WidthRequest="70"
                     HorizontalOptions="Start" CornerRadius="9"/>
 
@@ -93,8 +95,9 @@
         </ListView>
 
         <Grid>
-            <Button Text="VOLVER" FontSize="16" TextColor="#fff"
-                    BackgroundColor="#414241 " BorderWidth="1" BorderColor="#737373  " 
+            <Button Text="VOLVER" FontSize="16" TextColor="{StaticResource btn-primary}"
+                    BackgroundColor="{StaticResource btn-primary-outline}" BorderWidth="1" 
+                    BorderColor="{StaticResource btn-primary}" 
                     FontAttributes="Bold" HeightRequest="70" WidthRequest="145"
                     VerticalOptions="Center" HorizontalOptions="Center" Margin="0,0,178,8"
                     CornerRadius="9" Clicked="Btn_Home"/>

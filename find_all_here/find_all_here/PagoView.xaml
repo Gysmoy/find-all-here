@@ -13,7 +13,7 @@
                     BackgroundColor="#06284D" BorderWidth="3" BorderColor="#185AA0" 
                     FontAttributes="Bold" HeightRequest="55" WidthRequest="230"
                     VerticalOptions="Center" HorizontalOptions="Center"
-                    CornerRadius="16"/>
+                    CornerRadius="16" Clicked="Btn_Tarjet"/>
         </Grid>
 
         <Label Text="El monto del pedido se descontara de la tarjeta una vez que el envio sea confirmado." 
@@ -41,7 +41,8 @@
                                 <ImageButton Source="{Binding Image}" BackgroundColor="Black" 
                                              CornerRadius="10" Aspect="Fill" Margin="25" 
                                              HeightRequest="210" WidthRequest="235" 
-                                             HorizontalOptions="Center" VerticalOptions="End"/>
+                                             HorizontalOptions="Center" VerticalOptions="End"
+                                             Clicked="Btn_Yape"/>
                             </Grid>
                         </DataTemplate>
                     </CarouselView.ItemTemplate>

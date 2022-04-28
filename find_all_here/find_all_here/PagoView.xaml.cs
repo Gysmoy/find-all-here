@@ -29,5 +29,13 @@ namespace find_all_here
         {
             await Navigation.PopModalAsync();
         }
+        async void Btn_Tarjet(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new PaymentTypeView.PagoTargetView());
+        }
+        async void Btn_Yape(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new PaymentTypeView.YapeView());
+        }
     }
 }
