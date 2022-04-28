@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.PagoView">
-    <StackLayout >
+    <StackLayout BackgroundColor="{StaticResource bg-container}" >
 
         <Label Text="Online" FontSize="22" Margin="16,20,0,0" TextColor="White"/>
         <Label Text="Puedes pagar con tarjeta de credito o debito." Margin="25,0,0,0" 
@@ -20,7 +20,7 @@
                FontSize="18" Margin="25,0,16,10" TextColor="White"/>
 
         <ScrollView HorizontalOptions="FillAndExpand">
-            <Grid RowSpacing="100" HorizontalOptions="FillAndExpand">
+            <Grid RowSpacing="90" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -30,8 +30,9 @@
                     <Label Text="Medios de pago" TextColor="#F9B522"
                            FontFamily="ThemeFont" FontSize="40" HorizontalOptions="Center"/>
                 </StackLayout>
-                <CarouselView Grid.Row="1" ItemsSource="{Binding DBCarritos}" BackgroundColor="#838383"
-                              HeightRequest="323" HorizontalOptions="FillAndExpand">
+                <CarouselView Grid.Row="1" ItemsSource="{Binding DBCarritos}" Margin="10"
+                              HeightRequest="323" BackgroundColor="{StaticResource bg-profile}"
+                              HorizontalOptions="FillAndExpand">
                     <CarouselView.ItemTemplate>
                         <DataTemplate>
                             <Grid HorizontalOptions="FillAndExpand">
