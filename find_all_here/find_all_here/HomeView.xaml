@@ -10,7 +10,7 @@
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Agregar producto" Icon="plus.png"  Command="{Binding AddProductCommand}" />
-        <ToolbarItem Name="Ver Carrito" Icon="cart.png"  Command="{Binding OpenCartCommand}" />
+        <ToolbarItem Name="Ver Carrito" Icon="cart.png" Command="{Binding OpenCartCommand}" />
         <ToolbarItem Name="Cerrar sesión" Icon="logout.png" Activated="OnLogOutClicked"/>
     </ContentPage.ToolbarItems>
     
