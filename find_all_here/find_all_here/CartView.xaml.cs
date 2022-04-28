@@ -10,12 +10,12 @@ using find_all_here.ViewModels;
 
 namespace find_all_here
 {
-    public partial class ACarrito : ContentPage
+    public partial class CartView : ContentPage
     {
         public IList<DBCarrito> DBCarritos { get; private set; }
         public HomeView MainPage { get; private set; }
 
-        public ACarrito()
+        public CartView()
         {
             InitializeComponent();
             DBCarritos = new List<DBCarrito>();

@@ -45,7 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ACarrito.xaml">
+    <EmbeddedResource Update="CartView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="AddProductView.xaml">
