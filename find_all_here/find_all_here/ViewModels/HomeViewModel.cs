@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using Android;
 using Android.Content.Res;
@@ -21,6 +22,13 @@ namespace find_all_here.ViewModels
         public Command AddProductCommand { get; }
         public Command OpenCartCommand { get; }
         public Command<Product> ProductTapped { get; }
+        
+        #region ProductCommands
+        public Command<Product> AddToCartCommand { get; }
+        public Command<Product> OpenUserProfileCommand { get; }
+        public Command<Product> OpenCommentsCommand { get; }
+        #endregion
+        
         public HomeViewModel()
         {
             Title = "Find All Here";
@@ -28,6 +36,11 @@ namespace find_all_here.ViewModels
             ProductTapped = new Command<Product>(OnProductSelected);
             AddProductCommand = new Command(OnAddProduct);
             OpenCartCommand = new Command(OnOpenCart);
+            
+            AddToCartCommand = new Command<Product>(OnAddToCart);
+            OpenUserProfileCommand = new Command<Product>(OnOpenUserProfile);
+            OpenCommentsCommand = new Command<Product>(OnOpenComments);
+            
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
             ExecuteLoadProductsCommand();
         }
@@ -138,6 +151,33 @@ namespace find_all_here.ViewModels
         private async void OnOpenCart(object obj)
         {
             await Shell.Current.Navigation.PushModalAsync(new CartView());
+        }
+
+        private static void OnAddToCart(Product product)
+        {
+            if (product == null) return;
+
+            var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
+            var exist = cart.Products.Any(p => p.Id == product.Id);
+            if (!exist)
+            {
+                cart.Products.Add(product);
+                App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
+                Toast.MakeText(Android.App.Application.Context, "Producto agregado al carrito", ToastLength.Short).Show();
+            }
+            else
+            {
+                Toast.MakeText(Android.App.Application.Context, "Producto ya existe en el carrito", ToastLength.Short).Show();
+            }
+        }
+        private async void OnOpenUserProfile(object obj)
+        {
+            return;
+        }
+        private async void OnOpenComments(object obj)
+        {
+            Product product = obj as Product;
+            Toast.MakeText(Android.App.Application.Context, product.Description, ToastLength.Short).Show();
         }
         async void OnProductSelected(Product product)
         {

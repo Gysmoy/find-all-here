@@ -116,9 +116,9 @@ namespace find_all_here.ViewModels
                         var user = userValidate.Data[0];
                         user.Status = true;
                         App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
-                        
-                        
-                        
+                        App.Current.Properties["cart"] = JsonConvert.SerializeObject(new Cart());
+
+
                         await App.Current.MainPage.DisplayAlert(
                             "Hola " + user.Names,
                             "Bienvenido a Find All Here",

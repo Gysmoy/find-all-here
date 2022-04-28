@@ -19,6 +19,7 @@ namespace find_all_here.Models
         JOIN BRANDS B ON P._brand = B.id
         JOIN CATEGORIES C ON P._category = C.id
         JOIN USERS U ON P._user = U.id
+        ORDER BY P.update_date DESC
         ";
         public static string GetUserByUsernameAndPassword = @"
         SELECT 
