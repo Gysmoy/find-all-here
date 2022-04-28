@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Input;
 using find_all_here.ViewModels;
-using GalaSoft.MvvmLight.Command;
-using Newtonsoft.Json;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

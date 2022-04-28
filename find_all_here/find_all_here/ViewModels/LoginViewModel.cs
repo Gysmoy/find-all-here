@@ -111,15 +111,15 @@ namespace find_all_here.ViewModels
                     }
                     else
                     {
-                        await App.Current.MainPage.DisplayAlert(
-                            "Correcto!",
-                            "Bienvenido a Find All Here",
-                            "Aceptar");
+                        
                         
                         var user = userValidate.Data[0];
                         user.Status = true;
-                        App.Current.Properties["user"] = user;
-
+                        App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
+                        await App.Current.MainPage.DisplayAlert(
+                            "Hola" + user.Names,
+                            "Bienvenido a Find All Here",
+                            "Aceptar");
                         App.Current.MainPage = new Shell();
                     }
                 }

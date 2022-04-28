@@ -17,5 +17,10 @@ namespace find_all_here
             InitializeComponent();
             BindingContext = new AddProductViewModel();
         }
+        async void Btn03(object sender, EventArgs e)
+        {
+            // cerrar el este modal
+            await Navigation.PopModalAsync();
+        }
     }
 }
