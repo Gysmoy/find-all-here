@@ -9,7 +9,11 @@ namespace find_all_here.ViewModels
     {
         public string name { get; set; }
 
+        public string Name { get; set; }
+
         public string Precio { get; set; }
+
+        public string Image { get; set; }
 
         public string Url { get; set; }
 
