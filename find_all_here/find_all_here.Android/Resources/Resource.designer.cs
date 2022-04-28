@@ -14,7 +14,7 @@ namespace find_all_here.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.4.160")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.0.155")]
 	public partial class Resource
 	{
 		
@@ -216,6 +216,228 @@ namespace find_all_here.Droid
 			global::Plugin.Geolocator.Resource.Styleable.GradientColor_android_type = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_type;
 			global::Plugin.Geolocator.Resource.Xml.image_share_filepaths = global::find_all_here.Droid.Resource.Xml.image_share_filepaths;
 			global::Plugin.Geolocator.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::find_all_here.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
+			global::Plugin.Media.Resource.Attribute.alpha = global::find_all_here.Droid.Resource.Attribute.alpha;
+			global::Plugin.Media.Resource.Attribute.coordinatorLayoutStyle = global::find_all_here.Droid.Resource.Attribute.coordinatorLayoutStyle;
+			global::Plugin.Media.Resource.Attribute.font = global::find_all_here.Droid.Resource.Attribute.font;
+			global::Plugin.Media.Resource.Attribute.fontProviderAuthority = global::find_all_here.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Plugin.Media.Resource.Attribute.fontProviderCerts = global::find_all_here.Droid.Resource.Attribute.fontProviderCerts;
+			global::Plugin.Media.Resource.Attribute.fontProviderFetchStrategy = global::find_all_here.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Plugin.Media.Resource.Attribute.fontProviderFetchTimeout = global::find_all_here.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Plugin.Media.Resource.Attribute.fontProviderPackage = global::find_all_here.Droid.Resource.Attribute.fontProviderPackage;
+			global::Plugin.Media.Resource.Attribute.fontProviderQuery = global::find_all_here.Droid.Resource.Attribute.fontProviderQuery;
+			global::Plugin.Media.Resource.Attribute.fontStyle = global::find_all_here.Droid.Resource.Attribute.fontStyle;
+			global::Plugin.Media.Resource.Attribute.fontVariationSettings = global::find_all_here.Droid.Resource.Attribute.fontVariationSettings;
+			global::Plugin.Media.Resource.Attribute.fontWeight = global::find_all_here.Droid.Resource.Attribute.fontWeight;
+			global::Plugin.Media.Resource.Attribute.keylines = global::find_all_here.Droid.Resource.Attribute.keylines;
+			global::Plugin.Media.Resource.Attribute.layout_anchor = global::find_all_here.Droid.Resource.Attribute.layout_anchor;
+			global::Plugin.Media.Resource.Attribute.layout_anchorGravity = global::find_all_here.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Plugin.Media.Resource.Attribute.layout_behavior = global::find_all_here.Droid.Resource.Attribute.layout_behavior;
+			global::Plugin.Media.Resource.Attribute.layout_dodgeInsetEdges = global::find_all_here.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Plugin.Media.Resource.Attribute.layout_insetEdge = global::find_all_here.Droid.Resource.Attribute.layout_insetEdge;
+			global::Plugin.Media.Resource.Attribute.layout_keyline = global::find_all_here.Droid.Resource.Attribute.layout_keyline;
+			global::Plugin.Media.Resource.Attribute.statusBarBackground = global::find_all_here.Droid.Resource.Attribute.statusBarBackground;
+			global::Plugin.Media.Resource.Attribute.ttcIndex = global::find_all_here.Droid.Resource.Attribute.ttcIndex;
+			global::Plugin.Media.Resource.Color.browser_actions_bg_grey = global::find_all_here.Droid.Resource.Color.browser_actions_bg_grey;
+			global::Plugin.Media.Resource.Color.browser_actions_divider_color = global::find_all_here.Droid.Resource.Color.browser_actions_divider_color;
+			global::Plugin.Media.Resource.Color.browser_actions_text_color = global::find_all_here.Droid.Resource.Color.browser_actions_text_color;
+			global::Plugin.Media.Resource.Color.browser_actions_title_color = global::find_all_here.Droid.Resource.Color.browser_actions_title_color;
+			global::Plugin.Media.Resource.Color.notification_action_color_filter = global::find_all_here.Droid.Resource.Color.notification_action_color_filter;
+			global::Plugin.Media.Resource.Color.notification_icon_bg_color = global::find_all_here.Droid.Resource.Color.notification_icon_bg_color;
+			global::Plugin.Media.Resource.Color.ripple_material_light = global::find_all_here.Droid.Resource.Color.ripple_material_light;
+			global::Plugin.Media.Resource.Color.secondary_text_default_material_light = global::find_all_here.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Plugin.Media.Resource.Dimension.browser_actions_context_menu_max_width = global::find_all_here.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::Plugin.Media.Resource.Dimension.browser_actions_context_menu_min_padding = global::find_all_here.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
+			global::Plugin.Media.Resource.Dimension.compat_button_inset_horizontal_material = global::find_all_here.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Plugin.Media.Resource.Dimension.compat_button_inset_vertical_material = global::find_all_here.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Plugin.Media.Resource.Dimension.compat_button_padding_horizontal_material = global::find_all_here.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Plugin.Media.Resource.Dimension.compat_button_padding_vertical_material = global::find_all_here.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Plugin.Media.Resource.Dimension.compat_control_corner_material = global::find_all_here.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Plugin.Media.Resource.Dimension.compat_notification_large_icon_max_height = global::find_all_here.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Plugin.Media.Resource.Dimension.compat_notification_large_icon_max_width = global::find_all_here.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Plugin.Media.Resource.Dimension.notification_action_icon_size = global::find_all_here.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Plugin.Media.Resource.Dimension.notification_action_text_size = global::find_all_here.Droid.Resource.Dimension.notification_action_text_size;
+			global::Plugin.Media.Resource.Dimension.notification_big_circle_margin = global::find_all_here.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Plugin.Media.Resource.Dimension.notification_content_margin_start = global::find_all_here.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Plugin.Media.Resource.Dimension.notification_large_icon_height = global::find_all_here.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Plugin.Media.Resource.Dimension.notification_large_icon_width = global::find_all_here.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Plugin.Media.Resource.Dimension.notification_main_column_padding_top = global::find_all_here.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Plugin.Media.Resource.Dimension.notification_media_narrow_margin = global::find_all_here.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Plugin.Media.Resource.Dimension.notification_right_icon_size = global::find_all_here.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Plugin.Media.Resource.Dimension.notification_right_side_padding_top = global::find_all_here.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Plugin.Media.Resource.Dimension.notification_small_icon_background_padding = global::find_all_here.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Plugin.Media.Resource.Dimension.notification_small_icon_size_as_large = global::find_all_here.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Plugin.Media.Resource.Dimension.notification_subtext_size = global::find_all_here.Droid.Resource.Dimension.notification_subtext_size;
+			global::Plugin.Media.Resource.Dimension.notification_top_pad = global::find_all_here.Droid.Resource.Dimension.notification_top_pad;
+			global::Plugin.Media.Resource.Dimension.notification_top_pad_large_text = global::find_all_here.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Plugin.Media.Resource.Drawable.notification_action_background = global::find_all_here.Droid.Resource.Drawable.notification_action_background;
+			global::Plugin.Media.Resource.Drawable.notification_bg = global::find_all_here.Droid.Resource.Drawable.notification_bg;
+			global::Plugin.Media.Resource.Drawable.notification_bg_low = global::find_all_here.Droid.Resource.Drawable.notification_bg_low;
+			global::Plugin.Media.Resource.Drawable.notification_bg_low_normal = global::find_all_here.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Plugin.Media.Resource.Drawable.notification_bg_low_pressed = global::find_all_here.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Plugin.Media.Resource.Drawable.notification_bg_normal = global::find_all_here.Droid.Resource.Drawable.notification_bg_normal;
+			global::Plugin.Media.Resource.Drawable.notification_bg_normal_pressed = global::find_all_here.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Plugin.Media.Resource.Drawable.notification_icon_background = global::find_all_here.Droid.Resource.Drawable.notification_icon_background;
+			global::Plugin.Media.Resource.Drawable.notification_template_icon_bg = global::find_all_here.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Plugin.Media.Resource.Drawable.notification_template_icon_low_bg = global::find_all_here.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Plugin.Media.Resource.Drawable.notification_tile_bg = global::find_all_here.Droid.Resource.Drawable.notification_tile_bg;
+			global::Plugin.Media.Resource.Drawable.notify_panel_notification_icon_bg = global::find_all_here.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Plugin.Media.Resource.Id.accessibility_action_clickable_span = global::find_all_here.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_0 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_0;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_1 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_1;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_10 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_10;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_11 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_11;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_12 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_12;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_13 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_13;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_14 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_14;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_15 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_15;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_16 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_16;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_17 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_17;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_18 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_18;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_19 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_19;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_2 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_2;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_20 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_20;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_21 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_21;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_22 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_22;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_23 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_23;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_24 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_24;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_25 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_25;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_26 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_26;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_27 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_27;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_28 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_28;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_29 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_29;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_3 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_3;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_30 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_30;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_31 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_31;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_4 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_4;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_5 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_5;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_6 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_6;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_7 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_7;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_8 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_8;
+			global::Plugin.Media.Resource.Id.accessibility_custom_action_9 = global::find_all_here.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Plugin.Media.Resource.Id.actions = global::find_all_here.Droid.Resource.Id.actions;
+			global::Plugin.Media.Resource.Id.action_container = global::find_all_here.Droid.Resource.Id.action_container;
+			global::Plugin.Media.Resource.Id.action_divider = global::find_all_here.Droid.Resource.Id.action_divider;
+			global::Plugin.Media.Resource.Id.action_image = global::find_all_here.Droid.Resource.Id.action_image;
+			global::Plugin.Media.Resource.Id.action_text = global::find_all_here.Droid.Resource.Id.action_text;
+			global::Plugin.Media.Resource.Id.all = global::find_all_here.Droid.Resource.Id.all;
+			global::Plugin.Media.Resource.Id.async = global::find_all_here.Droid.Resource.Id.async;
+			global::Plugin.Media.Resource.Id.blocking = global::find_all_here.Droid.Resource.Id.blocking;
+			global::Plugin.Media.Resource.Id.bottom = global::find_all_here.Droid.Resource.Id.bottom;
+			global::Plugin.Media.Resource.Id.browser_actions_header_text = global::find_all_here.Droid.Resource.Id.browser_actions_header_text;
+			global::Plugin.Media.Resource.Id.browser_actions_menu_items = global::find_all_here.Droid.Resource.Id.browser_actions_menu_items;
+			global::Plugin.Media.Resource.Id.browser_actions_menu_item_icon = global::find_all_here.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::Plugin.Media.Resource.Id.browser_actions_menu_item_text = global::find_all_here.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::Plugin.Media.Resource.Id.browser_actions_menu_view = global::find_all_here.Droid.Resource.Id.browser_actions_menu_view;
+			global::Plugin.Media.Resource.Id.center = global::find_all_here.Droid.Resource.Id.center;
+			global::Plugin.Media.Resource.Id.center_horizontal = global::find_all_here.Droid.Resource.Id.center_horizontal;
+			global::Plugin.Media.Resource.Id.center_vertical = global::find_all_here.Droid.Resource.Id.center_vertical;
+			global::Plugin.Media.Resource.Id.chronometer = global::find_all_here.Droid.Resource.Id.chronometer;
+			global::Plugin.Media.Resource.Id.clip_horizontal = global::find_all_here.Droid.Resource.Id.clip_horizontal;
+			global::Plugin.Media.Resource.Id.clip_vertical = global::find_all_here.Droid.Resource.Id.clip_vertical;
+			global::Plugin.Media.Resource.Id.dialog_button = global::find_all_here.Droid.Resource.Id.dialog_button;
+			global::Plugin.Media.Resource.Id.end = global::find_all_here.Droid.Resource.Id.end;
+			global::Plugin.Media.Resource.Id.fill = global::find_all_here.Droid.Resource.Id.fill;
+			global::Plugin.Media.Resource.Id.fill_horizontal = global::find_all_here.Droid.Resource.Id.fill_horizontal;
+			global::Plugin.Media.Resource.Id.fill_vertical = global::find_all_here.Droid.Resource.Id.fill_vertical;
+			global::Plugin.Media.Resource.Id.forever = global::find_all_here.Droid.Resource.Id.forever;
+			global::Plugin.Media.Resource.Id.icon = global::find_all_here.Droid.Resource.Id.icon;
+			global::Plugin.Media.Resource.Id.icon_group = global::find_all_here.Droid.Resource.Id.icon_group;
+			global::Plugin.Media.Resource.Id.info = global::find_all_here.Droid.Resource.Id.info;
+			global::Plugin.Media.Resource.Id.italic = global::find_all_here.Droid.Resource.Id.italic;
+			global::Plugin.Media.Resource.Id.left = global::find_all_here.Droid.Resource.Id.left;
+			global::Plugin.Media.Resource.Id.line1 = global::find_all_here.Droid.Resource.Id.line1;
+			global::Plugin.Media.Resource.Id.line3 = global::find_all_here.Droid.Resource.Id.line3;
+			global::Plugin.Media.Resource.Id.none = global::find_all_here.Droid.Resource.Id.none;
+			global::Plugin.Media.Resource.Id.normal = global::find_all_here.Droid.Resource.Id.normal;
+			global::Plugin.Media.Resource.Id.notification_background = global::find_all_here.Droid.Resource.Id.notification_background;
+			global::Plugin.Media.Resource.Id.notification_main_column = global::find_all_here.Droid.Resource.Id.notification_main_column;
+			global::Plugin.Media.Resource.Id.notification_main_column_container = global::find_all_here.Droid.Resource.Id.notification_main_column_container;
+			global::Plugin.Media.Resource.Id.right = global::find_all_here.Droid.Resource.Id.right;
+			global::Plugin.Media.Resource.Id.right_icon = global::find_all_here.Droid.Resource.Id.right_icon;
+			global::Plugin.Media.Resource.Id.right_side = global::find_all_here.Droid.Resource.Id.right_side;
+			global::Plugin.Media.Resource.Id.start = global::find_all_here.Droid.Resource.Id.start;
+			global::Plugin.Media.Resource.Id.tag_accessibility_actions = global::find_all_here.Droid.Resource.Id.tag_accessibility_actions;
+			global::Plugin.Media.Resource.Id.tag_accessibility_clickable_spans = global::find_all_here.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::Plugin.Media.Resource.Id.tag_accessibility_heading = global::find_all_here.Droid.Resource.Id.tag_accessibility_heading;
+			global::Plugin.Media.Resource.Id.tag_accessibility_pane_title = global::find_all_here.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Plugin.Media.Resource.Id.tag_screen_reader_focusable = global::find_all_here.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Plugin.Media.Resource.Id.tag_transition_group = global::find_all_here.Droid.Resource.Id.tag_transition_group;
+			global::Plugin.Media.Resource.Id.tag_unhandled_key_event_manager = global::find_all_here.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Plugin.Media.Resource.Id.tag_unhandled_key_listeners = global::find_all_here.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Plugin.Media.Resource.Id.text = global::find_all_here.Droid.Resource.Id.text;
+			global::Plugin.Media.Resource.Id.text2 = global::find_all_here.Droid.Resource.Id.text2;
+			global::Plugin.Media.Resource.Id.time = global::find_all_here.Droid.Resource.Id.time;
+			global::Plugin.Media.Resource.Id.title = global::find_all_here.Droid.Resource.Id.title;
+			global::Plugin.Media.Resource.Id.top = global::find_all_here.Droid.Resource.Id.top;
+			global::Plugin.Media.Resource.Integer.status_bar_notification_info_maxnum = global::find_all_here.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Plugin.Media.Resource.Layout.browser_actions_context_menu_page = global::find_all_here.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::Plugin.Media.Resource.Layout.browser_actions_context_menu_row = global::find_all_here.Droid.Resource.Layout.browser_actions_context_menu_row;
+			global::Plugin.Media.Resource.Layout.custom_dialog = global::find_all_here.Droid.Resource.Layout.custom_dialog;
+			global::Plugin.Media.Resource.Layout.notification_action = global::find_all_here.Droid.Resource.Layout.notification_action;
+			global::Plugin.Media.Resource.Layout.notification_action_tombstone = global::find_all_here.Droid.Resource.Layout.notification_action_tombstone;
+			global::Plugin.Media.Resource.Layout.notification_template_custom_big = global::find_all_here.Droid.Resource.Layout.notification_template_custom_big;
+			global::Plugin.Media.Resource.Layout.notification_template_icon_group = global::find_all_here.Droid.Resource.Layout.notification_template_icon_group;
+			global::Plugin.Media.Resource.Layout.notification_template_part_chronometer = global::find_all_here.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Plugin.Media.Resource.Layout.notification_template_part_time = global::find_all_here.Droid.Resource.Layout.notification_template_part_time;
+			global::Plugin.Media.Resource.String.status_bar_notification_info_overflow = global::find_all_here.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Plugin.Media.Resource.Style.TextAppearance_Compat_Notification = global::find_all_here.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Plugin.Media.Resource.Style.TextAppearance_Compat_Notification_Info = global::find_all_here.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Plugin.Media.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::find_all_here.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Plugin.Media.Resource.Style.TextAppearance_Compat_Notification_Time = global::find_all_here.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Plugin.Media.Resource.Style.TextAppearance_Compat_Notification_Title = global::find_all_here.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Plugin.Media.Resource.Style.Widget_Compat_NotificationActionContainer = global::find_all_here.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Plugin.Media.Resource.Style.Widget_Compat_NotificationActionText = global::find_all_here.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Plugin.Media.Resource.Style.Widget_Support_CoordinatorLayout = global::find_all_here.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::Plugin.Media.Resource.Styleable.ColorStateListItem = global::find_all_here.Droid.Resource.Styleable.ColorStateListItem;
+			global::Plugin.Media.Resource.Styleable.ColorStateListItem_alpha = global::find_all_here.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Plugin.Media.Resource.Styleable.ColorStateListItem_android_alpha = global::find_all_here.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Plugin.Media.Resource.Styleable.ColorStateListItem_android_color = global::find_all_here.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_keylines = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Plugin.Media.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::find_all_here.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
+			global::Plugin.Media.Resource.Styleable.FontFamily = global::find_all_here.Droid.Resource.Styleable.FontFamily;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_android_font = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_android_fontStyle = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_android_fontWeight = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_font = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_fontStyle = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_fontWeight = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Plugin.Media.Resource.Styleable.FontFamilyFont_ttcIndex = global::find_all_here.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Plugin.Media.Resource.Styleable.FontFamily_fontProviderAuthority = global::find_all_here.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Plugin.Media.Resource.Styleable.FontFamily_fontProviderCerts = global::find_all_here.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Plugin.Media.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::find_all_here.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Plugin.Media.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::find_all_here.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Plugin.Media.Resource.Styleable.FontFamily_fontProviderPackage = global::find_all_here.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Plugin.Media.Resource.Styleable.FontFamily_fontProviderQuery = global::find_all_here.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.Media.Resource.Styleable.GradientColor = global::find_all_here.Droid.Resource.Styleable.GradientColor;
+			global::Plugin.Media.Resource.Styleable.GradientColorItem = global::find_all_here.Droid.Resource.Styleable.GradientColorItem;
+			global::Plugin.Media.Resource.Styleable.GradientColorItem_android_color = global::find_all_here.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Plugin.Media.Resource.Styleable.GradientColorItem_android_offset = global::find_all_here.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_centerColor = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_centerX = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_centerY = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_endColor = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_endX = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_endY = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_gradientRadius = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_startColor = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_startX = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_startY = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_tileMode = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Plugin.Media.Resource.Styleable.GradientColor_android_type = global::find_all_here.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Plugin.Media.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::find_all_here.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::XamAR.Forms.Resource.Animation.abc_fade_in = global::find_all_here.Droid.Resource.Animation.abc_fade_in;
 			global::XamAR.Forms.Resource.Animation.abc_fade_out = global::find_all_here.Droid.Resource.Animation.abc_fade_out;
 			global::XamAR.Forms.Resource.Animation.abc_grow_fade_in_from_bottom = global::find_all_here.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -37767,25 +37989,28 @@ namespace find_all_here.Droid
 		{
 			
 			// aapt resource value: 0x7F120000
-			public const int image_share_filepaths = 2131886080;
+			public const int file_paths = 2131886080;
 			
 			// aapt resource value: 0x7F120001
-			public const int standalone_badge = 2131886081;
+			public const int image_share_filepaths = 2131886081;
 			
 			// aapt resource value: 0x7F120002
-			public const int standalone_badge_gravity_bottom_end = 2131886082;
+			public const int standalone_badge = 2131886082;
 			
 			// aapt resource value: 0x7F120003
-			public const int standalone_badge_gravity_bottom_start = 2131886083;
+			public const int standalone_badge_gravity_bottom_end = 2131886083;
 			
 			// aapt resource value: 0x7F120004
-			public const int standalone_badge_gravity_top_start = 2131886084;
+			public const int standalone_badge_gravity_bottom_start = 2131886084;
 			
 			// aapt resource value: 0x7F120005
-			public const int standalone_badge_offset = 2131886085;
+			public const int standalone_badge_gravity_top_start = 2131886085;
 			
 			// aapt resource value: 0x7F120006
-			public const int xamarin_essentials_fileprovider_file_paths = 2131886086;
+			public const int standalone_badge_offset = 2131886086;
+			
+			// aapt resource value: 0x7F120007
+			public const int xamarin_essentials_fileprovider_file_paths = 2131886087;
 			
 			static Xml()
 			{
