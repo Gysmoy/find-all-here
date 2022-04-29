@@ -16,6 +16,7 @@ namespace find_all_here
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(AddProductView), typeof(AddProductView));
+            Routing.RegisterRoute(nameof(ProfileView), typeof(ProfileView));
         }
     }
 }

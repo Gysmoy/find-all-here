@@ -175,9 +175,11 @@ namespace find_all_here.ViewModels
             }
             
         }
-        private async void OnOpenUserProfile(object obj)
+        private async void OnOpenUserProfile(Product product)
         {
-            return;
+            if (product == null)
+                return;
+            await Shell.Current.GoToAsync($"{nameof(ProfileView)}?{nameof(ProfileViewModel.UserId)}={product.User.Id}");
         }
         private async void OnOpenComments(object obj)
         {

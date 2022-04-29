@@ -239,7 +239,7 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Label
+            <!--Label
                 Margin="10,5"
                 Grid.Row="0"
                 Grid.Column="0"
@@ -286,7 +286,7 @@
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
-            </Label>
+            </Label-->
             <Frame
                 Grid.Row="0"
                 Grid.Column="1"
