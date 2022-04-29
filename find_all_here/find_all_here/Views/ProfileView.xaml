@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.ProfileView"
+             xmlns:local="clr-namespace:find_all_here.ViewModels"
              Title="Perfil de usuario">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Configuración de usuario" Icon="settings.png" Activated="OnConfigUserClicked" />
@@ -13,8 +14,27 @@
         HorizontalOptions="FillAndExpand"
         BackgroundColor="{StaticResource bg-body}">
         <StackLayout>
-
+            <Frame
+                CornerRadius="5"
+                Padding="0"
+                BackgroundColor="{StaticResource btn-danger-outline}"
+                HorizontalOptions="Start"
+                Margin="10,10,5,5"
+                IsVisible="{Binding BtnCloseVisible}"
+                HasShadow="True">
+                <Label  Text="Volver a inicio" TextColor="{StaticResource btn-danger}"
+                        Padding="10,5" FontSize="12" FontAttributes="Bold"
+                        HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            x:DataType="local:ProfileViewModel"
+                            Command="{Binding CloseProfileCommand}"
+                            CommandParameter="{Binding Id}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
             <Grid
+                x:DataType="local:ProfileViewModel"
                 Margin="0"
                 Padding="20"
                 RowSpacing="0"
@@ -85,14 +105,17 @@
                     Padding="0"
                     BackgroundColor="#2196F3"
                     HorizontalOptions="Start"
-                    Margin="0" 
-                    IsVisible="false"
+                    Margin="0"
+                    IsVisible="{Binding BtnFollowVisible}"
                     HasShadow="True">
                     <Label  Text="Seguir" TextColor="#fff"
                         Padding="10,5" FontSize="12" FontAttributes="Bold"
                         HorizontalOptions="Center" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding UserFollowCommand}"/>
+                            <TapGestureRecognizer
+                                x:DataType="local:ProfileViewModel"
+                                Command="{Binding UserFollowCommand}"
+                                CommandParameter="{Binding Id}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </Frame>
@@ -115,6 +138,7 @@
                     HorizontalTextAlignment="Start"/>
             </Grid>
             <Grid
+                x:DataType="local:ProfileViewModel"
                 Margin="2.5,0"
                 Padding="0"
                 RowSpacing="0"
@@ -126,13 +150,17 @@
                 </Grid.ColumnDefinitions>
                 <Frame
                     Grid.Column="0"
+                    Grid.ColumnSpan="{Binding BtnProductsColSpan}"
                     CornerRadius="5"
                     Padding="0"
                     BackgroundColor="{StaticResource btn-primary-outline}"
                     HorizontalOptions="FillAndExpand"
                     Margin="2.5,0"
                     HasShadow="True">
-                    <Label  Text="Mis productos" TextColor="{StaticResource btn-primary}"
+                    <Label
+                        x:DataType="local:ProfileViewModel"
+                        Text="{Binding BtnProductsTxt}"
+                        TextColor="{StaticResource btn-primary}"
                         FontAttributes="Bold"
                         FontSize="14" Padding="10"
                         HorizontalTextAlignment="Center">
@@ -148,6 +176,7 @@
                     BackgroundColor="{StaticResource bg-container}"
                     HorizontalOptions="FillAndExpand"
                     Margin="2.5,0"
+                    IsVisible="{Binding BtnCompraVentaVisible}"
                     HasShadow="True">
                     <Label  Text="Mis ventas" TextColor="{StaticResource lbl-outline}"
                         FontAttributes="Bold"
@@ -165,6 +194,7 @@
                     BackgroundColor="{StaticResource bg-container}"
                     HorizontalOptions="FillAndExpand"
                     Margin="2.5,0"
+                    IsVisible="{Binding BtnCompraVentaVisible}"
                     HasShadow="True">
                     <Label  Text="Mis compras" TextColor="{StaticResource lbl-outline}"
                         FontAttributes="Bold"

@@ -6,12 +6,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
 using Xamarin.Forms;
 
 namespace find_all_here.ViewModels
 {
     public class ProfileViewModel: BaseViewModel
     {
+        private string id;
         private string names;
         private string surnames;
         private string username;
@@ -21,6 +24,13 @@ namespace find_all_here.ViewModels
         private string phone;
         private string profile_mini;
         private string profile_full;
+        private bool btnCloseVisible;
+        private bool btnFollowVisible;
+        private bool btnCompraVentaVisible;
+        private string btnProductsTxt;
+        private int btnProductsColSpan;
+        public Command<string> UserFollowCommand { get; }
+        public Command CloseProfileCommand { get; }
 
         public string Id { get; set; }
         public string Names
@@ -68,48 +78,101 @@ namespace find_all_here.ViewModels
             get => profile_full;
             set => SetProperty(ref profile_full, value);
         }
-        public Task LoadUserId(string userId)
+        public bool BtnCloseVisible
+        {
+            get => btnCloseVisible;
+            set => SetProperty(ref btnCloseVisible, value);
+        }
+        public bool BtnFollowVisible
+        {
+            get => btnFollowVisible;
+            set => SetProperty(ref btnFollowVisible, value);
+        }
+        public bool BtnCompraVentaVisible
+        {
+            get => btnCompraVentaVisible;
+            set => SetProperty(ref btnCompraVentaVisible, value);
+        }
+        public string BtnProductsTxt
+        {
+            get => btnProductsTxt;
+            set => SetProperty(ref btnProductsTxt, value);
+        }
+        public int BtnProductsColSpan
+        {
+            get => btnProductsColSpan;
+            set => SetProperty(ref btnProductsColSpan, value);
+        }
+
+        public async Task LoadUserId(string userId)
         {
             try
             {
-                User user = new User();
+                var user = new User();
                 if (userId == null)
                 {
                     user = (User) App.Current.Properties["user"];
-                    Id = user.Id.ToString();
-                    Names = user.Names;
-                    Surnames = user.Surnames;
-                    Username = user.Username;
-                    Email = user.Email;
-                    Gender = user.Gender;
-                    Address = user.Address;
-                    Phone = user.Phone;
-                    Guid guid = Guid.NewGuid();
-                    Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/mini/" + guid.ToString();
-                    Profile_full = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/full/" + guid.ToString();
+                    BtnCloseVisible = false;
+                    BtnFollowVisible = false;
+                    BtnCompraVentaVisible = true;
+                    BtnProductsTxt = "Mis productos";
+                    BtnProductsColSpan = 1;
                 }
                 else
                 {
-                    Database db = new Database();
-                    string sp = StoredProcedures.GetUserById;
+                    var db = new Database();
+                    var sp = StoredProcedures.GetUserById;
                     string[] parameters = { userId };
-                    string response = db.Connect(sp, parameters, "one");
+                    var response = db.Connect(sp, parameters, "one");
                     var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
-
+                    if (userValidate.Data.Count != 0)
+                    {
+                        user = userValidate.Data[0];
+                        BtnCloseVisible = true;
+                        BtnFollowVisible = true;
+                        BtnCompraVentaVisible = false;
+                        BtnProductsTxt = "Productos de " + user.Names;
+                        BtnProductsColSpan = 3;
+                    }
+                    else
+                    {
+                        throw new Exception("No se encontró este usuario");
+                    }
                 }
+                Id = user.Id.ToString();
+                Names = user.Names;
+                Surnames = user.Surnames;
+                Username = user.Username;
+                Email = user.Email;
+                Gender = user.Gender;
+                Address = user.Address;
+                Phone = user.Phone;
+                var guid = Guid.NewGuid();
+                Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/mini/" + guid.ToString();
+                Profile_full = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/full/" + guid.ToString();
             } catch (Exception e)
             {
-               
+                try {await App.Current.MainPage.Navigation.PopModalAsync();} catch (Exception) { }
                 Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
             }
-            return Task.CompletedTask;
         }
 
         public ProfileViewModel()
         {
             var userId = App.Current.Properties.ContainsKey("userId") ? (string) App.Current.Properties["userId"] : null;
-            Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
             LoadUserId(userId);
+            CloseProfileCommand = new Command(async () => await OnCloseProfile());
+            UserFollowCommand = new Command<string>(OnUserFollow);
         }
+
+        private async Task OnCloseProfile()
+        {
+            await App.Current.MainPage.Navigation.PopModalAsync();
+        }
+        private void OnUserFollow(string userId)
+        {
+            Toast.MakeText(Android.App.Application.Context, "Ahora sigues a este usuario", ToastLength.Short).Show();
+        }
+
     }
 }
