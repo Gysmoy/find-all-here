@@ -197,8 +197,46 @@ namespace find_all_here.ViewModels
                 var products = JsonConvert.DeserializeObject<ListaProducts>(response);
                 if (products.Data.Count != 0)
                 {
-                    foreach (var product in products.Data)
+                    foreach (var productDetail in products.Data)
                     {
+                        Product product = new Product();
+                        product.Id = productDetail.Id;
+                        product.Name = productDetail.Name;
+                        product.Description = productDetail.Description;
+
+                        Brand brand = new Brand
+                        {
+                            Id = productDetail.B_id,
+                            Name = productDetail.B_name,
+                            Status = productDetail.B_status
+                        };
+                        product.Brand = brand;
+
+                        Category category = new Category
+                        {
+                            Id = productDetail.C_id,
+                            Name = productDetail.C_name,
+                            Status = productDetail.C_status
+                        };
+                        product.Category = category;
+
+                        product.Purchase_price = productDetail.Purchase_price;
+                        product.Sale_price = productDetail.Sale_price;
+                        product.Proportions = productDetail.Proportions;
+                        product.Stock = productDetail.Stock;
+                        product.Tags = productDetail.Tags;
+                        Guid guid = Guid.NewGuid();
+                        product.Image_mini = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/mini/" + guid.ToString();
+                        product.Image_full = "https://scriptperu.com/find_all_here/image/product/" + product.Id + "/full/" + guid.ToString();
+                        product.Product_status = productDetail.Product_status;
+
+                        product.Update_date = productDetail.Update_date;
+                        product.Relative_time = GetRelativeTime(product.Update_date);
+                        product.Percent = decimal.Round((1 - (product.Sale_price / product.Purchase_price)) * -100, 2);
+                        product.Relative_Percent = (product.Percent > 1) ? "+" + product.Percent + "%" : "" + product.Percent + "%";
+                        product.Color_percent = (product.Percent > 1) ? "#fc424a" : "#00d25b";
+                        product.Status = productDetail.Status;
+
                         BindingProducts.Add(product);
                     }
                 }
