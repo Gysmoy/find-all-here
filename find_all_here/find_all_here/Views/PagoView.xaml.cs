@@ -24,12 +24,6 @@ namespace find_all_here
             DBCarritos.Add(new CartViewModel { Name = "INTERBANK", Image = "interbank.png" });
 
             BindingContext = this;*/
-            decimal Total = 0;
-            var cart = (Cart) App.Current.Properties["cart"];
-            foreach (var product in cart.Products)
-            {
-                Total += decimal.Parse(product.Total_price);
-            }
 
         }
         async void Btn_Cart(object sender, EventArgs e)

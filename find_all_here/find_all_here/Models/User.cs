@@ -15,7 +15,7 @@ namespace find_all_here.Models
         public string Gender { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-        public string Birth_Date { get; set; }
+        public string Birth_date { get; set; }
         public string Profile_mini { get; set; }
         public string Profile_full { get; set; }
         public string Profile_type { get; set; }

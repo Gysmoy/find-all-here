@@ -116,7 +116,7 @@ namespace find_all_here.ViewModels
                         
                         var user = userValidate.Data[0];
                         user.Status = true;
-                        App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
+                        App.Current.Properties["user"] = user;
                         Cart cart = new Cart();
                         cart.Products = new List<Product>();
                         App.Current.Properties["cart"] = cart;
@@ -148,17 +148,7 @@ namespace find_all_here.ViewModels
 
         public async void ResetPasswordEmail()
         {
-            /*string WebAPIkey = "AIzaSyBFwirWkzuv9RZX9lmhHFKqas9bYLHjwCE";
 
-            try
-            {
-                var authProvider = new FirebaseAuthProvider(new FirebaseConfig(WebAPIkey));
-                await authProvider.SendPasswordResetEmailAsync(email);
-            }
-            catch (Exception ex)
-            {
-
-            }*/
 
         }
 

@@ -25,7 +25,7 @@ namespace find_all_here
                 cart.Products = new List<Product>();
                 Properties["cart"] = cart;
             }
-            var user = Properties.ContainsKey("user") ? JsonConvert.DeserializeObject<User>((String)Properties["user"]) : new User();
+            var user = Properties.ContainsKey("user") ? (User) Properties["user"] : new User();
             if (user.Status)
             {
                 MainPage = new Shell();

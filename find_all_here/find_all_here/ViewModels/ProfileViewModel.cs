@@ -3,6 +3,7 @@ using find_all_here.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace find_all_here.ViewModels
@@ -65,29 +66,40 @@ namespace find_all_here.ViewModels
             get => profile_full;
             set => SetProperty(ref profile_full, value);
         }
-        public async void LoadUserId(string userId)
+        public Task LoadUserId(string userId)
         {
-            if (userId == null)
+            try
             {
-                var user = (User) App.Current.Properties["user"];
-                Id = user.Id.ToString();
-                Names = user.Names;
-                Surnames = user.Surnames;
-                Username = user.Username;
-                Email = user.Email;
-                Gender = user.Gender;
-                Address = user.Address;
-                Phone = user.Phone;
-                Profile_mini = user.Profile_mini;
-                Profile_full = user.Profile_full;
-            } else
+                if (userId == null)
+                {
+                    User user = App.Current.Properties["user"] as User;
+                    Id = user.Id.ToString();
+                    Names = user.Names;
+                    Surnames = user.Surnames;
+                    Username = user.Username;
+                    Email = user.Email;
+                    Gender = user.Gender;
+                    Address = user.Address;
+                    Phone = user.Phone;
+                    Guid guid = Guid.NewGuid();
+                    Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/mini/" + guid.ToString();
+                    Profile_full = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/full/" + guid.ToString();
+                }
+                else
+                {
+                    Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
+                }
+            } catch (Exception e)
             {
-                Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
+                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
             }
+            return Task.CompletedTask;
         }
 
-        public ProfileViewModel(string userId)
+        public ProfileViewModel()
         {
+            var userId = App.Current.Properties.ContainsKey("userId") ? (string) App.Current.Properties["userId"] : null;
+            Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
             LoadUserId(userId);
         }
     }

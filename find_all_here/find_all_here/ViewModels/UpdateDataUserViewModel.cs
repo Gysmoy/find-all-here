@@ -122,8 +122,8 @@ namespace find_all_here.ViewModels
         {
             try
             {
-                User user =  JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
-                string[] date = user.Birth_Date.Split('-');
+                User user =  (User) App.Current.Properties["user"];
+                string[] date = user.Birth_date.Split('-');
                 var year = date[0];
                 var month = date[1];
                 var day = date[2];
