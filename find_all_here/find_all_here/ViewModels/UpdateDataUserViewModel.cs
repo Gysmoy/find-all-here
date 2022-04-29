@@ -5,14 +5,19 @@ using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Forms;
+using static Android.Content.ClipData;
 
 namespace find_all_here.ViewModels
 {
-    internal class UpdateDataUserViewModel: BaseViewModel
+    
+    public class UpdateDataUserViewModel : BaseViewModel, INotifyPropertyChanged
     {
-
+        
         public string names;
         public string surnames;
         public string email;
@@ -33,12 +38,15 @@ namespace find_all_here.ViewModels
         public string Txt_Names
         {
             get { return this.names; }
-            set { SetProperty(ref this.names, value); }
+            set { SetProperty(ref this.names, value);
+               }
         }
         public string Txt_Surnames
         {
             get { return this.surnames; }
-            set { SetProperty(ref this.surnames, value); }
+            set { SetProperty(ref this.surnames, value);
+                
+            }
         }
         public string Txt_Email
         {
@@ -88,6 +96,9 @@ namespace find_all_here.ViewModels
             set { SetProperty(ref this.password, value); }
         }
 
+  
+
+       
         public bool IsRunning
         {
             get { return this.isRunning; }
@@ -104,6 +115,50 @@ namespace find_all_here.ViewModels
             set { SetProperty(ref this.isVisible, value); }
         }
 
+
+        
+
+        public async void LoadDateUser()
+        {
+            try
+            {
+                User user =  JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
+                string[] date = user.Birth_Date.Split('-');
+                var year = date[0];
+                var month = date[1];
+                var day = date[2];
+                Txt_Names = user.Names;
+                Txt_Surnames = user.Surnames;
+                Txt_Email = user.Email;
+                Txt_Phone = user.Phone;
+                Txt_Gender = user.Gender;
+                Txt_DateDay = Int32.Parse(day);
+                Txt_DateMonth = Int32.Parse(month);
+                Txt_DateYear = Int32.Parse(year);
+                Txt_Address = user.Address;
+                Txt_Username = user.Username;
+
+               
+
+                Toast.MakeText(
+                            Android.App.Application.Context,
+                            "Mostrando datos"+ user.Names,
+                            ToastLength.Long
+                        ).Show();
+                return;
+
+
+            }
+            catch (Exception e)
+            {
+                Toast.MakeText(
+                             Android.App.Application.Context,
+                             "No se puede listar los datos" + e.Message,
+                             ToastLength.Long
+                         ).Show();
+                return;
+            }
+        }
         // commands
 
         public ICommand Update_Data_User
@@ -113,6 +168,10 @@ namespace find_all_here.ViewModels
                 return new RelayCommand(UpdateUserMethod);
             }
         }
+
+       
+
+
         public async void UpdateUserMethod()
         {
             try
@@ -172,9 +231,16 @@ namespace find_all_here.ViewModels
 
         public UpdateDataUserViewModel()
         {
+              LoadDateUser();
+           
+
             this.isEnabled = true;
             this.isVisible = false;
             this.isRunning = false;
         }
+
+       // User user = JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
+
+        
     }
 }
