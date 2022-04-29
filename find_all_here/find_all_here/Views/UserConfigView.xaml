@@ -6,7 +6,8 @@
 
     <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#101010">
 
-        <StackLayout  Padding="0">
+        <StackLayout   Padding="0" >
+
             <ActivityIndicator
                 IsRunning="{Binding IsRunning}"
                 IsVisible="{Binding IsVisible}"
@@ -160,7 +161,9 @@
                     Margin="50,0,50,30" 
                     BackgroundColor="Green" 
                     TextColor="#fff" FontSize="16" 
-                    Text="Redes Sociales"></Button>
+                    Text="Redes Sociales"
+                    IsEnabled="{Binding IsEnabled}"
+                    Command="{Binding reload}"/>
                 <Button 
                     Margin="50,0,50,30" 
                     BackgroundColor="{StaticResource btn-primary-outline}" 

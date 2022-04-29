@@ -55,7 +55,7 @@
       <DependentUpon>PagoView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Profile.xaml.cs">
+    <Compile Update="Views\ProfileView.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
