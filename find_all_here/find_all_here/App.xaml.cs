@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Widget;
 using Xamarin.Forms.Xaml;
@@ -20,7 +21,9 @@ namespace find_all_here
             /* Creando carrito */
             if (!Properties.ContainsKey("cart"))
             {
-                Properties["cart"] = JsonConvert.SerializeObject(new Cart());
+                Cart cart = new Cart();
+                cart.Products = new List<Product>();
+                Properties["cart"] = cart;
             }
             var user = Properties.ContainsKey("user") ? JsonConvert.DeserializeObject<User>((String)Properties["user"]) : new User();
             if (user.Status)

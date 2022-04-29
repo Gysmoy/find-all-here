@@ -12,12 +12,7 @@ namespace find_all_here
             InitializeComponent();
             BindingContext = _homeViewModel = new HomeViewModel();
         }
-        
-        async void Login(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new LoginView());
-        }
-        
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
