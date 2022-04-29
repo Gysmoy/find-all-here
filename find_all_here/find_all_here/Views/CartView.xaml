@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.CartView"
-             xmlns:model="find_all_here.Models"
-             Title="Carrito">
+             xmlns:local="clr-namespace:find_all_here.ViewModels"
+             xmlns:model="clr-namespace:find_all_here.Models"
+             Title="{Binding Title}">
     <StackLayout BackgroundColor="{StaticResource bg-body}">
         <Grid
             RowSpacing="0"
@@ -41,11 +42,12 @@
             </Frame>
         </Grid>
 
-        <CollectionView x:Name="ProductsListView" ItemsSource="{Binding DBCarritos}" SelectionMode="None">
+        <CollectionView x:DataType="local:CartViewModel" x:Name="ProductsListView" ItemsSource="{Binding BindingProducts}" SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate >
                     <Frame BackgroundColor="{StaticResource bg-body}" Padding="15,10" HasShadow="True" CornerRadius="0">
                         <Frame
+                            x:DataType="model:Product"
                             Background="{StaticResource bg-container}"
                             Margin="0"
                             Padding="0"
@@ -69,14 +71,16 @@
                                     Grid.Row="0"
                                     Grid.Column="0"
                                     Grid.RowSpan="3"
-                                    Source="{Binding Url}"
+                                    x:DataType="model:Product"
+                                    Source="{Binding Image_mini}"
                                     HeightRequest="100"
                                     WidthRequest="100"
                                     BackgroundColor="{StaticResource bg-outline}"/>
                                 <Label
                                     Grid.Row="0"
                                     Grid.Column="1"
-                                    Text="{Binding name}"
+                                    x:DataType="model:Product"
+                                    Text="{Binding Name, Mode=TwoWay}"
                                     TextColor="{StaticResource lbl-primary}"
                                     FontAttributes="Bold"
                                     Padding="20,10,20,0"
@@ -95,7 +99,13 @@
                                         Padding="10,5" FontSize="12" FontAttributes="Bold"
                                         HorizontalOptions="Center">
                                         <Label.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                            <TapGestureRecognizer
+                                                Command="{Binding Source={
+                                                    RelativeSource AncestorType={
+                                                        x:Type local:CartViewModel
+                                                    }
+                                                }, Path=RemoveProductCommand}"
+                                                CommandParameter="{Binding}"/>
                                         </Label.GestureRecognizers>
                                     </Label>
                                 </Frame>
@@ -109,10 +119,10 @@
                                             <FormattedString>
                                                 <FormattedString.Spans>
                                                     <Span Text="S/" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
-                                                    <Span Text="{Binding Precio}" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
+                                                    <Span x:DataType="model:Product" Text="{Binding Sale_price, Mode=TwoWay}" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
                                                     <Span Text=" • " FontSize="14" TextColor="{StaticResource lbl-primary}" FontAttributes="Bold"/>
                                                     <Span Text="@" FontSize="14" TextColor="{StaticResource lbl-secondary}" FontAttributes="Italic"/>
-                                                    <Span Text="gysmoy" FontSize="14" FontAttributes="Italic"/>
+                                                    <Span x:DataType="model:Product" Text="{Binding User.Username, Mode=TwoWay}" FontSize="14" FontAttributes="Italic"/>
                                                 </FormattedString.Spans>
                                             </FormattedString>
                                         </Label.FormattedText>
@@ -148,7 +158,13 @@
                                                 Padding="10,5" FontSize="12" FontAttributes="Bold"
                                                 HorizontalOptions="Center">
                                                 <Label.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                                    <TapGestureRecognizer
+                                                        Command="{Binding Source = {
+                                                            RelativeSource AncestorType={
+                                                                x:Type local:CartViewModel
+                                                            }
+                                                        }, Path = DecreaseProductCommand}"
+                                                        CommandParameter="{Binding}" />
                                                 </Label.GestureRecognizers>
                                             </Label>
                                         </Frame>
@@ -162,7 +178,7 @@
                                             HorizontalOptions="Center"
                                             VerticalOptions="Center"
                                             HasShadow="True">
-                                            <Label  Text="0" TextColor="{StaticResource btn-secondary}"
+                                            <Label x:DataType="model:Product" Text="{Binding Quantity, Mode=TwoWay}" TextColor="{StaticResource btn-secondary}"
                                                 Padding="10,5" FontSize="12" FontAttributes="Bold"
                                                 HorizontalOptions="Center">
                                             </Label>
@@ -181,14 +197,20 @@
                                                 Padding="10,5" FontSize="12" FontAttributes="Bold"
                                                 HorizontalOptions="Center">
                                                 <Label.GestureRecognizers>
-                                                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                                    <TapGestureRecognizer 
+                                                        Command="{Binding Source = {
+                                                            RelativeSource AncestorType={
+                                                                x:Type local:CartViewModel
+                                                            }
+                                                        }, Path = IncreaseProductCommand}"
+                                                        CommandParameter="{Binding .}" />
                                                 </Label.GestureRecognizers>
                                             </Label>
                                         </Frame>
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="3"
-                                            Text="S/12.50"
+                                            Text="{Binding Total_price}"
                                             FontSize="20"
                                             Margin="10,7.5"
                                             TextColor="{StaticResource lbl-primary}"
@@ -202,8 +224,8 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-
         <Grid
+            x:DataType="local:CartViewModel"
             BackgroundColor="{StaticResource bg-outline}"
             Margin="0"
             Padding="0"
@@ -228,7 +250,7 @@
                         <FormattedString.Spans>
                             <Span Text="Subtotal: " TextColor="{StaticResource lbl-secondary}" />
                             <Span Text="S/" FontAttributes="Bold" />
-                            <Span Text="1250.00" FontAttributes="Bold" />
+                            <Span x:DataType="local:CartViewModel" Text="{Binding Subtotal, Mode=TwoWay}" FontAttributes="Bold" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
@@ -244,7 +266,7 @@
                         <FormattedString.Spans>
                             <Span Text="IGV (18%): " FontSize="14" TextColor="{StaticResource lbl-secondary}" />
                             <Span Text="S/" FontAttributes="Bold" />
-                            <Span Text="1250.00" FontAttributes="Bold" />
+                            <Span x:DataType="local:CartViewModel" Text="{Binding Igv, Mode=TwoWay}" FontAttributes="Bold" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
@@ -260,7 +282,7 @@
                         <FormattedString.Spans>
                             <Span Text="Total a pagar: " TextColor="{StaticResource lbl-secondary}" />
                             <Span Text="S/" FontAttributes="Bold" FontSize="20"/>
-                            <Span Text="1250.00" FontAttributes="Bold" FontSize="20"/>
+                            <Span x:DataType="local:CartViewModel" Text="{Binding Total, Mode=TwoWay}" FontAttributes="Bold" FontSize="20"/>
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
@@ -280,10 +302,11 @@
                     Padding="10,5" FontSize="16" FontAttributes="Bold"
                     HorizontalOptions="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                        <TapGestureRecognizer Command="{Binding PaymentCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
             </Frame>
         </Grid>
+        
     </StackLayout>
 </ContentPage>

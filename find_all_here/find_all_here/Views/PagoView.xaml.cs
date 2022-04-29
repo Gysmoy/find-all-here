@@ -17,13 +17,13 @@ namespace find_all_here
         public PagoView()
         {
             InitializeComponent();
-            DBCarritos = new List<CartViewModel>();
+            /*DBCarritos = new List<CartViewModel>();
 
             DBCarritos.Add(new CartViewModel { Name = "YAPE", Image = "yapelogo.png" });
             DBCarritos.Add(new CartViewModel { Name = "TUNKI", Image = "tunki.png" });
             DBCarritos.Add(new CartViewModel { Name = "INTERBANK", Image = "interbank.png" });
 
-            BindingContext = this;
+            BindingContext = this;*/
         }
         async void Btn_Cart(object sender, EventArgs e)
         {

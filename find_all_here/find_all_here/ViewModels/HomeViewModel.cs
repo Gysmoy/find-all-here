@@ -2,13 +2,9 @@
 using find_all_here.csharp;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Android;
-using Android.Content.Res;
 using Xamarin.Forms;
 using find_all_here.Models;
 
@@ -157,18 +153,27 @@ namespace find_all_here.ViewModels
         {
             if (product == null) return;
 
-            var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
-            var exist = cart.Products.Any(p => p.Id == product.Id);
-            if (!exist)
+            try
             {
-                cart.Products.Add(product);
-                App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
-                Toast.MakeText(Android.App.Application.Context, "Producto agregado al carrito", ToastLength.Short).Show();
+                var cart = (Cart) App.Current.Properties["cart"];
+                var exist = cart.Products.Any(p => p.Id == product.Id);
+                if (!exist)
+                {
+                    product.Quantity = product.Quantity == 0 ? 1 : product.Quantity;
+                    cart.Products.Add(product);
+                    App.Current.Properties["cart"] = cart;
+                    Toast.MakeText(Android.App.Application.Context, "Producto agregado al carrito", ToastLength.Short).Show();
+                }
+                else
+                {
+                    Toast.MakeText(Android.App.Application.Context, "Producto ya existe en el carrito", ToastLength.Short).Show();
+                }
             }
-            else
+            catch (Exception e)
             {
-                Toast.MakeText(Android.App.Application.Context, "Producto ya existe en el carrito", ToastLength.Short).Show();
+                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
             }
+            
         }
         private async void OnOpenUserProfile(object obj)
         {
