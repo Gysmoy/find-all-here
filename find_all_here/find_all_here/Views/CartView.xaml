@@ -250,7 +250,7 @@
                         <FormattedString.Spans>
                             <Span Text="Subtotal: " TextColor="{StaticResource lbl-secondary}" />
                             <Span Text="S/" FontAttributes="Bold" />
-                            <Span x:DataType="local:CartViewModel" Text="{Binding Subtotal, Mode=TwoWay}" FontAttributes="Bold" />
+                            <Span x:Name="Txt_Subtotal" x:DataType="local:CartViewModel" Text="{Binding Subtotal, Mode=TwoWay}" FontAttributes="Bold" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
@@ -266,7 +266,7 @@
                         <FormattedString.Spans>
                             <Span Text="IGV (18%): " FontSize="14" TextColor="{StaticResource lbl-secondary}" />
                             <Span Text="S/" FontAttributes="Bold" />
-                            <Span x:DataType="local:CartViewModel" Text="{Binding Igv, Mode=TwoWay}" FontAttributes="Bold" />
+                            <Span x:Name="Txt_Igv" x:DataType="local:CartViewModel" Text="{Binding Igv, Mode=TwoWay}" FontAttributes="Bold" />
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>
@@ -282,7 +282,7 @@
                         <FormattedString.Spans>
                             <Span Text="Total a pagar: " TextColor="{StaticResource lbl-secondary}" />
                             <Span Text="S/" FontAttributes="Bold" FontSize="20"/>
-                            <Span x:DataType="local:CartViewModel" Text="{Binding Total, Mode=TwoWay}" FontAttributes="Bold" FontSize="20"/>
+                            <Span x:Name="Txt_Total" x:DataType="local:CartViewModel" Text="{Binding Total, Mode=TwoWay}" FontAttributes="Bold" FontSize="20"/>
                         </FormattedString.Spans>
                     </FormattedString>
                 </Label.FormattedText>

@@ -17,16 +17,11 @@ namespace find_all_here.ViewModels
         public Command<Product> IncreaseProductCommand { get; }
         public Command<Product> DecreaseProductCommand { get; }
         public Command PaymentCommand { get; }
-        public decimal Subtotal { get; set; }
-        public decimal Igv { get; set; }
-        public decimal Total { get; set; }
-        
+
         public CartViewModel()
         {
             Title = "Carrito de compras";
-            Subtotal = 0;
-            Igv = 0;
-            Total = 0;
+            
             BindingProducts = new ObservableCollection<Product>();
             LoadProductsCommand = new Command(ExecuteLoadProductsCommand);
             CloseCartCommand = new Command(ExecuteCloseCartCommand);
@@ -34,6 +29,7 @@ namespace find_all_here.ViewModels
             IncreaseProductCommand = new Command<Product>(ExecuteIncreaseProductCommand);
             DecreaseProductCommand = new Command<Product>(ExecuteDecreaseProductCommand);
             PaymentCommand = new Command(ExecutePaymentCommand);
+
             ExecuteLoadProductsCommand();
         }
 
@@ -46,16 +42,11 @@ namespace find_all_here.ViewModels
                 BindingProducts.Clear();
                 var cart = (Cart) App.Current.Properties["cart"];
                 var products = cart.Products;
-                Total = 0;
                 foreach (var product in products)
                 {
                     product.Total_price = "S/" + product.Sale_price * product.Quantity;
-                    Total += product.Sale_price * product.Quantity;
                     BindingProducts.Add(product);
                 }
-                Igv = decimal.Round(Total * decimal.Parse("0.18"), 2);
-                Subtotal = decimal.Round(Total - Igv, 2);
-                Total = decimal.Round(Total, 2);
             }
             catch (Exception e)
             {
