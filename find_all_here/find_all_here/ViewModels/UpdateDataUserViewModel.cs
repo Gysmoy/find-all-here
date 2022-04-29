@@ -29,6 +29,7 @@ namespace find_all_here.ViewModels
         public string address;
         public string username;
         public string password;
+        public string profile_full;
 
         // Booleaos
         public bool isRunning;
@@ -95,10 +96,13 @@ namespace find_all_here.ViewModels
             get { return this.password; }
             set { SetProperty(ref this.password, value); }
         }
+        public string Profile_mini
+        {
+            get { return this.profile_full; }
+            set { SetProperty(ref this.profile_full, value); }
+        }
 
-  
 
-       
         public bool IsRunning
         {
             get { return this.isRunning; }
@@ -137,12 +141,13 @@ namespace find_all_here.ViewModels
                 Txt_DateYear = Int32.Parse(year);
                 Txt_Address = user.Address;
                 Txt_Username = user.Username;
+                Profile_mini = "https://scriptperu.com/find_all_here/image/user/" + user.Id + "/full/ww";
 
-               
+
 
                 Toast.MakeText(
                             Android.App.Application.Context,
-                            "Mostrando datos de: "+ user.Names,
+                            "Hola "+user.Names,
                             ToastLength.Long
                         ).Show();
                 return;
@@ -182,7 +187,7 @@ namespace find_all_here.ViewModels
                 {
 
                     var idUser = miusuario.Id;
-                    var birth_date = Convert.ToString(this.dateDay) + '-' + Convert.ToString(this.dateMonth) + '-' + Convert.ToString(this.dateYear);
+                    var birth_date = Convert.ToString(this.dateYear) + '-' + Convert.ToString(this.dateMonth) + '-' + Convert.ToString(this.dateDay);
 
                     var db = new Database();
                     var sp = StoredProcedures.UpdateUser;
@@ -204,7 +209,7 @@ namespace find_all_here.ViewModels
                     {
                         Toast.MakeText(
                             Android.App.Application.Context,
-                            responseStr,
+                            birth_date,
                             ToastLength.Long
                         ).Show();
                         return;
