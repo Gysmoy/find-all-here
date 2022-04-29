@@ -184,7 +184,7 @@ namespace find_all_here.ViewModels
             App.Current.Properties["userId"] = null;
             
         }
-        private async void OnOpenComments(object obj)
+        private void OnOpenComments(object obj)
         {
             Product product = obj as Product;
             Toast.MakeText(Android.App.Application.Context, product.Description, ToastLength.Short).Show();
