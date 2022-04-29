@@ -24,7 +24,7 @@ namespace find_all_here.Models
         public static string GetUserByUsernameAndPassword = @"
         SELECT 
             U.id, U.names, U.surnames, U.username, U.email,
-            U.gender, U.birth_date, U.address, U.phone
+            U.password, U.gender, U.birth_date, U.address, U.phone
         FROM USERS U
         WHERE
             (email = ? OR username = ?) AND password = ?
@@ -39,6 +39,18 @@ namespace find_all_here.Models
             names, surnames, username, email, password,
             birth_date, phone
         ) VALUES (?, ?, ?, ?, ?, ?, ?)
+        ";
+        public static string UpdateUser = @"
+        UPDATE USERS SET 
+            names=?, 
+            surnames=?, 
+            username=?, 
+            email=?, 
+            gender=?, 
+            birth_date=?, 
+            address=?, 
+            phone=? 
+        WHERE id = ?
         ";
     }
 }

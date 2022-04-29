@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="find_all_here.UserConfig"
+             Title="Configuracion de usuario">
+
+    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#101010">
+
+        <StackLayout  Padding="0">
+            <ActivityIndicator
+                IsRunning="{Binding IsRunning}"
+                IsVisible="{Binding IsVisible}"
+                Color="{StaticResource lbl-primary}"
+                Scale="0.8" />
+            <Label HorizontalOptions="Center" Padding="0,12,0,0" TextColor="#fff" FontSize="20" Text="Configuracion de usuario"></Label>
+            <ImageButton 
+                    Source="user"
+                    WidthRequest="125" HeightRequest="125" HorizontalOptions="Center"
+                    Margin="0,0,0,0" CornerRadius="250" 
+                    BackgroundColor="#333333"/>
+
+            <StackLayout>
+                <Grid Padding="10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="0" Grid.Column="0 " 
+                           Text="Nombres"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="0" Grid.Column="1" 
+                           Text="Apellidos"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="2" Grid.Column="0" 
+                           Text="Nombre de Usuario"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="2" Grid.Column="1" 
+                           Text="Email"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="4" Grid.Column="0" 
+                           Text="Telefono"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="4" Grid.Column="1" 
+                           Text="Fecha de Nacimiento"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="6" Grid.Column="0" 
+                           Text="Sexo"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="6" Grid.Column="1" 
+                           Text="Dirección"></Label>
+                    <Label Margin="5,0,0,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="8" Grid.Column="0" 
+                           Text="Contraseña"></Label>
+
+
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="1" Grid.Column="0"
+                           Text="{Binding Txt_Names, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"/>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="1" Grid.Column="1" 
+                           Text="{Binding Txt_Surnames, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"/>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="3" Grid.Column="0" 
+                           Text="{Binding Txt_Username, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"/>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="3" Grid.Column="1" 
+                           Text="{Binding Txt_Email, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"
+                           Keyboard="Email"/>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="5" Grid.Column="0" 
+                           Text="{Binding Txt_Phone, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"
+                           Keyboard="Numeric" />
+                    <StackLayout Grid.Row="5" Grid.Column="1">
+                        <Grid 
+                                    RowSpacing="2.5"
+                                    Padding="0">
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Entry
+                                        Grid.Column="0"
+                                        Margin="0,0,0,0"
+                                        FontSize="16"
+                                        TextColor="{StaticResource lbl-primary}"
+                                        Text="{Binding Txt_DateDay, Mode=TwoWay}"
+                                        Placeholder="Día"
+                                        Keyboard="Numeric"
+                                        IsEnabled="{Binding IsEnabled}"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand" />
+                            <Entry
+                                        Grid.Column="1"
+                                        Margin="0,0,0,0"
+                                        FontSize="16"
+                                        TextColor="{StaticResource lbl-primary}"
+                                        Text="{Binding Txt_DateMonth, Mode=TwoWay}"
+                                        Placeholder="Mes"
+                                        IsEnabled="{Binding IsEnabled}"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"/>
+                            <Entry
+                                        Grid.Column="2"
+                                        Margin="0,0,0,0"
+                                        FontSize="16"
+                                        TextColor="{StaticResource lbl-primary}"
+                                        Text="{Binding Txt_DateYear, Mode=TwoWay}"
+                                        Placeholder="Año"
+                                        IsEnabled="{Binding IsEnabled}"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="FillAndExpand"/>
+                        </Grid>
+                    </StackLayout>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="7" Grid.Column="0" 
+                           Text="{Binding Txt_Gender, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"/>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="7" Grid.Column="1" 
+                           Text="{Binding Txt_Address, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"/>
+                    <Entry Margin="0,0,8,0" TextColor="#fff" 
+                           FontSize="16" Grid.Row="9" Grid.Column="0" 
+                           Text="{Binding Txt_Password, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEnabled}"
+                           IsPassword="True"/>
+
+
+                </Grid>
+
+                <Button 
+                    Margin="50,0,50,30" 
+                    BackgroundColor="Green" 
+                    TextColor="#fff" FontSize="16" 
+                    Text="Redes Sociales"></Button>
+                <Button 
+                    Margin="50,0,50,30" 
+                    BackgroundColor="{StaticResource btn-primary-outline}" 
+                    TextColor="{StaticResource btn-primary}" 
+                    FontSize="16" 
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Text="Actualizar Datos"
+                    Command="{Binding Update_Data_User}"
+                    IsEnabled="{Binding IsEnabled}" 
+                    />
+
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

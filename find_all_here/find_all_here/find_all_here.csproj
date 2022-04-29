@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
     <Folder Include="php\" />
   </ItemGroup>
 
@@ -72,7 +71,7 @@
       <DependentUpon>Search.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserConfig.xaml.cs">
+    <Compile Update="Views\UserConfigView.xaml.cs">
       <DependentUpon>UserConfig.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

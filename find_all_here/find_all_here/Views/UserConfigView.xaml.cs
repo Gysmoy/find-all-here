@@ -1,4 +1,5 @@
-﻿using System;
+﻿using find_all_here.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace find_all_here
         public UserConfig()
         {
             InitializeComponent();
+            BindingContext = new UpdateDataUserViewModel();
         }
+
     }
 }
