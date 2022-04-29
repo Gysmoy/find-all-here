@@ -112,8 +112,6 @@ namespace find_all_here.ViewModels
                     }
                     else
                     {
-                        
-                        
                         var user = userValidate.Data[0];
                         user.Status = true;
                         App.Current.Properties["user"] = user;

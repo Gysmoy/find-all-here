@@ -18,14 +18,24 @@ namespace find_all_here
         protected override void OnStart()
 
         {
-            /* Creando carrito */
             if (!Properties.ContainsKey("cart"))
             {
                 Cart cart = new Cart();
                 cart.Products = new List<Product>();
                 Properties["cart"] = cart;
             }
-            var user = Properties.ContainsKey("user") ? (User) Properties["user"] : new User();
+
+            var user = new User();
+
+            if (!Properties.ContainsKey("user"))
+            {
+                user = (User)Properties["user"];
+            }
+            else
+            {
+                Properties["user"] = user;
+            }
+
             if (user.Status)
             {
                 MainPage = new Shell();

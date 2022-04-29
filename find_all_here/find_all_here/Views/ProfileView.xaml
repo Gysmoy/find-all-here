@@ -24,14 +24,14 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 Margin="8,8,8,3"
-                IsVisible="{Binding CloseProfileCommand}"
+                IsVisible="{Binding BtnCloseVisible}"
                 HasShadow="True">
                 <Label  Text="Volver a la pantalla de inicio" TextColor="{StaticResource btn-danger}"
                     Padding="10,5" FontSize="12" FontAttributes="Bold"
                     HorizontalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer
-                            Command="{Binding OnCloseProfile}"/>
+                            Command="{Binding CloseProfileCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
             </Frame>
@@ -252,6 +252,8 @@
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"
                                         Margin="10,10,10,0"
+                                        x:DataType="local:ProfileViewModel"
+                                        IsVisible="{Binding BtnCompraVentaVisible}"
                                         HasShadow="True">
                                         <Label  Text="Editar" TextColor="{StaticResource btn-warning}"
                                             Padding="10,5" FontSize="12" FontAttributes="Bold"
