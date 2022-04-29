@@ -7,10 +7,8 @@ using Xamarin.Forms;
 
 namespace find_all_here.ViewModels
 {
-    [QueryProperty(nameof(UserId), nameof(UserId))]
     public class ProfileViewModel: BaseViewModel
     {
-        private string userId;
         private string names;
         private string surnames;
         private string username;
@@ -67,21 +65,8 @@ namespace find_all_here.ViewModels
             get => profile_full;
             set => SetProperty(ref profile_full, value);
         }
-        public string UserId
-        {
-            get
-            {
-                return userId;
-            }
-            set
-            {
-                userId = value;
-                LoadUserId(value);
-            }
-        }
         public async void LoadUserId(string userId)
         {
-            Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
             if (userId == null)
             {
                 var user = (User) App.Current.Properties["user"];
@@ -95,12 +80,15 @@ namespace find_all_here.ViewModels
                 Phone = user.Phone;
                 Profile_mini = user.Profile_mini;
                 Profile_full = user.Profile_full;
+            } else
+            {
+                Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
             }
         }
 
-        public ProfileViewModel()
+        public ProfileViewModel(string userId)
         {
-
+            LoadUserId(userId);
         }
     }
 }

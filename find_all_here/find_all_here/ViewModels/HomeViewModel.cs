@@ -179,7 +179,7 @@ namespace find_all_here.ViewModels
         {
             if (product == null)
                 return;
-            await Shell.Current.GoToAsync($"{nameof(ProfileView)}?{nameof(ProfileViewModel.UserId)}={product.User.Id}");
+            await Shell.Current.Navigation.PushModalAsync(new ProfileView(product.User.Id.ToString()));
         }
         private async void OnOpenComments(object obj)
         {

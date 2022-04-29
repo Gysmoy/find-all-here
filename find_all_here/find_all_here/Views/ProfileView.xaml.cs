@@ -8,10 +8,10 @@ namespace find_all_here
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfileView : ContentPage
     {
-        public ProfileView()
+        public ProfileView(string userId = null)
         {
             InitializeComponent();
-            BindingContext = new ProfileViewModel();
+            BindingContext = new ProfileViewModel(userId);
         }
 
         async void OnConfigUserClicked(object sender, EventArgs e)
