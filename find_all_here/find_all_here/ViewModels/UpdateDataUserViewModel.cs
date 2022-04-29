@@ -183,45 +183,83 @@ namespace find_all_here.ViewModels
             {
 
                 User miusuario = JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
-                if (Sha256(this.password) == miusuario.Password)
+                if(string.IsNullOrEmpty(this.names) || 
+                    string.IsNullOrEmpty(this.surnames) ||
+                    string.IsNullOrEmpty(this.username) ||
+                    string.IsNullOrEmpty(this.email) ||
+                    string.IsNullOrEmpty(this.gender) ||
+                    string.IsNullOrEmpty((this.dateDay).ToString()) ||
+                    string.IsNullOrEmpty((this.dateMonth).ToString()) ||
+                    string.IsNullOrEmpty((this.dateYear).ToString()) ||
+                    string.IsNullOrEmpty(this.address) ||
+                    string.IsNullOrEmpty(this.phone) 
+                    )
                 {
-
-                    var idUser = miusuario.Id;
-                    var birth_date = Convert.ToString(this.dateYear) + '-' + Convert.ToString(this.dateMonth) + '-' + Convert.ToString(this.dateDay);
-
-                    var db = new Database();
-                    var sp = StoredProcedures.UpdateUser;
-                    string[] parameters = {
-                        this.names,
-                        this.surnames,
-                        this.username,
-                        this.email,
-                        this.gender,
-                        birth_date,
-                        this.address,
-                        this.phone,
-                        idUser.ToString(),
-
-                    };
-                    var responseStr = db.Connect(sp, parameters, "result");
-                    var response = JsonConvert.DeserializeObject<Response>(responseStr);
-                    if (response.Data)
-                    {
-                        Toast.MakeText(
-                            Android.App.Application.Context,
-                            birth_date,
-                            ToastLength.Long
-                        ).Show();
-                        return;
-                    }
+                    Toast.MakeText(
+                         Android.App.Application.Context,
+                         "Rellene todos los campos para continuar",
+                         ToastLength.Long
+                     ).Show();
+                    return;
                 }
                 else
                 {
-                    Toast.MakeText(
-                          Android.App.Application.Context,
-                          "contraseña incorrecta ",
-                          ToastLength.Short
-                      ).Show();
+
+                    if (string.IsNullOrEmpty(this.password))
+                    {
+                        Toast.MakeText(
+                              Android.App.Application.Context,
+                              "Ingrese su contraseña para poder actualizar sus datos",
+                              ToastLength.Long
+                          ).Show();
+                        return;
+                    }
+                    else
+                    {
+                        if (Sha256(this.password) == miusuario.Password)
+                        {
+
+                            var idUser = miusuario.Id;
+                            var birth_date = Convert.ToString(this.dateYear) + '-' + Convert.ToString(this.dateMonth) + '-' + Convert.ToString(this.dateDay);
+
+                            var db = new Database();
+                            var sp = StoredProcedures.UpdateUser;
+                            string[] parameters = {
+                                this.names,
+                                this.surnames,
+                                this.username,
+                                this.email,
+                                this.gender,
+                                birth_date,
+                                this.address,
+                                this.phone,
+                                idUser.ToString(),
+
+                            };
+                            var responseStr = db.Connect(sp, parameters, "result");
+                            var response = JsonConvert.DeserializeObject<Response>(responseStr);
+                            if (response.Data)
+                            {
+                                Toast.MakeText(
+                                    Android.App.Application.Context,
+                                    "Sus datos fueron actualizados",
+                                    ToastLength.Long
+                                ).Show();
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            Toast.MakeText(
+                                  Android.App.Application.Context,
+                                  "contraseña incorrecta ",
+                                  ToastLength.Short
+                              ).Show();
+                        }
+                    
+                    }
+                    
+
                 }
             }
             catch (Exception e)
