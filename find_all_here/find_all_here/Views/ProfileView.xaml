@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.ProfileView"
-             xmlns:local="clr-namespace:find_all_here.ViewModels"
              Title="Perfil de usuario">
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Configuración de usuario" Icon="settings.png" Activated="OnConfigUserClicked" />
@@ -14,27 +13,8 @@
         HorizontalOptions="FillAndExpand"
         BackgroundColor="{StaticResource bg-body}">
         <StackLayout>
-            <Frame
-                CornerRadius="5"
-                Padding="0"
-                BackgroundColor="{StaticResource btn-danger-outline}"
-                HorizontalOptions="Start"
-                Margin="10,10,5,5"
-                IsVisible="{Binding BtnCloseVisible}"
-                HasShadow="True">
-                <Label  Text="Volver a inicio" TextColor="{StaticResource btn-danger}"
-                        Padding="10,5" FontSize="12" FontAttributes="Bold"
-                        HorizontalOptions="Center" VerticalOptions="Center">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer
-                            x:DataType="local:ProfileViewModel"
-                            Command="{Binding CloseProfileCommand}"
-                            CommandParameter="{Binding Id}"/>
-                    </Label.GestureRecognizers>
-                </Label>
-            </Frame>
+
             <Grid
-                x:DataType="local:ProfileViewModel"
                 Margin="0"
                 Padding="20"
                 RowSpacing="0"
@@ -105,17 +85,14 @@
                     Padding="0"
                     BackgroundColor="#2196F3"
                     HorizontalOptions="Start"
-                    Margin="0"
-                    IsVisible="{Binding BtnFollowVisible}"
+                    Margin="0" 
+                    IsVisible="false"
                     HasShadow="True">
                     <Label  Text="Seguir" TextColor="#fff"
                         Padding="10,5" FontSize="12" FontAttributes="Bold"
                         HorizontalOptions="Center" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer
-                                x:DataType="local:ProfileViewModel"
-                                Command="{Binding UserFollowCommand}"
-                                CommandParameter="{Binding Id}"/>
+                            <TapGestureRecognizer Command="{Binding UserFollowCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </Frame>
@@ -138,7 +115,6 @@
                     HorizontalTextAlignment="Start"/>
             </Grid>
             <Grid
-                x:DataType="local:ProfileViewModel"
                 Margin="2.5,0"
                 Padding="0"
                 RowSpacing="0"
@@ -150,17 +126,13 @@
                 </Grid.ColumnDefinitions>
                 <Frame
                     Grid.Column="0"
-                    Grid.ColumnSpan="{Binding BtnProductsColSpan}"
                     CornerRadius="5"
                     Padding="0"
                     BackgroundColor="{StaticResource btn-primary-outline}"
                     HorizontalOptions="FillAndExpand"
                     Margin="2.5,0"
                     HasShadow="True">
-                    <Label
-                        x:DataType="local:ProfileViewModel"
-                        Text="{Binding BtnProductsTxt}"
-                        TextColor="{StaticResource btn-primary}"
+                    <Label  Text="Mis productos" TextColor="{StaticResource btn-primary}"
                         FontAttributes="Bold"
                         FontSize="14" Padding="10"
                         HorizontalTextAlignment="Center">
@@ -176,7 +148,6 @@
                     BackgroundColor="{StaticResource bg-container}"
                     HorizontalOptions="FillAndExpand"
                     Margin="2.5,0"
-                    IsVisible="{Binding BtnCompraVentaVisible}"
                     HasShadow="True">
                     <Label  Text="Mis ventas" TextColor="{StaticResource lbl-outline}"
                         FontAttributes="Bold"
@@ -194,7 +165,6 @@
                     BackgroundColor="{StaticResource bg-container}"
                     HorizontalOptions="FillAndExpand"
                     Margin="2.5,0"
-                    IsVisible="{Binding BtnCompraVentaVisible}"
                     HasShadow="True">
                     <Label  Text="Mis compras" TextColor="{StaticResource lbl-outline}"
                         FontAttributes="Bold"
@@ -206,6 +176,186 @@
                     </Label>
                 </Frame>
             </Grid>
+            <CollectionView x:Name="ProductsListView" ItemsSource="{Binding BindingProducts}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <Frame BackgroundColor="{StaticResource bg-body}" Padding="15,10" HasShadow="True" CornerRadius="0">
+                            <Frame
+                            
+                            Background="{StaticResource bg-container}"
+                            Margin="0"
+                            Padding="0"
+                            CornerRadius="10">
+                                <Grid
+                                Margin="0"
+                                Padding="0"
+                                RowSpacing="0"
+                                Background="{StaticResource bg-container}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.RowSpan="3"
+                                    Source=""
+                                    HeightRequest="100"
+                                    WidthRequest="100"
+                                    BackgroundColor="{StaticResource bg-outline}"/>
+                                    <Label
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text=""
+                                    TextColor="{StaticResource lbl-primary}"
+                                    FontAttributes="Bold"
+                                    Padding="20,10,20,0"
+                                    FontSize="16"/>
+                                    <Frame
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    CornerRadius="7.5"
+                                    Padding="0"
+                                    BackgroundColor="{StaticResource btn-danger-outline}"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Margin="10,10,10,0"
+                                    HasShadow="True">
+                                        <Label  Text="Quitar" TextColor="{StaticResource btn-danger}"
+                                        Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                        HorizontalOptions="Center">
+                                            <!--Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                Command="{Binding Source={
+                                                    RelativeSource AncestorType={
+                                                        x:Type local:CartViewModel
+                                                    }
+                                                }, Path=RemoveProductCommand}"
+                                                CommandParameter="{Binding}"/>
+                                            </Label.GestureRecognizers-->
+                                        </Label>
+                                    </Frame>
+                                    <StackLayout
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Padding="20,0">
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="S/" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
+                                                        <Span Text="{Binding Sale_price, Mode=TwoWay}" FontAttributes="Bold" FontSize="14" TextColor="{StaticResource btn-info}" />
+                                                        <Span Text=" • " FontSize="14" TextColor="{StaticResource lbl-primary}" FontAttributes="Bold"/>
+                                                        <Span Text="@" FontSize="14" TextColor="{StaticResource lbl-secondary}" FontAttributes="Italic"/>
+                                                        <Span Text="{Binding User.Username, Mode=TwoWay}" FontSize="14" FontAttributes="Italic"/>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="2"
+                                    Padding="0"
+                                    VerticalOptions="Center">
+                                        <Grid
+                                        Margin="0"
+                                        Padding="0"
+                                        RowSpacing="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Frame
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            CornerRadius="20"
+                                            Margin="20,7.5,2.5,7.5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource btn-danger-outline}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HasShadow="True">
+                                                <Label  Text="-" TextColor="{StaticResource btn-danger}"
+                                                Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                                HorizontalOptions="Center">
+                                                    <!--Label.GestureRecognizers>
+                                                        <TapGestureRecognizer
+                                                        Command="{Binding Source = {
+                                                            RelativeSource AncestorType={
+                                                                x:Type local:CartViewModel
+                                                            }
+                                                        }, Path = DecreaseProductCommand}"
+                                                        CommandParameter="{Binding}" />
+                                                    </Label.GestureRecognizers-->
+                                                </Label>
+                                            </Frame>
+                                            <Frame
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            CornerRadius="2.5"
+                                            Margin="2.5,7.5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource btn-secondary-outline}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HasShadow="True">
+                                                <Label Text="" TextColor="{StaticResource btn-secondary}"
+                                                Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                                HorizontalOptions="Center">
+                                                </Label>
+                                            </Frame>
+                                            <Frame
+                                            Grid.Row="0"
+                                            Grid.Column="2"
+                                            CornerRadius="20"
+                                            Margin="2.5,7.5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource btn-success-outline}"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            HasShadow="True">
+                                                <Label  Text="+" TextColor="{StaticResource btn-success}"
+                                                Padding="10,5" FontSize="12" FontAttributes="Bold"
+                                                HorizontalOptions="Center">
+                                                    <!--Label.GestureRecognizers>
+                                                        <TapGestureRecognizer 
+                                                        Command="{Binding Source = {
+                                                            RelativeSource AncestorType={
+                                                                x:Type local:CartViewModel
+                                                            }
+                                                        }, Path = IncreaseProductCommand}"
+                                                        CommandParameter="{Binding .}" />
+                                                    </Label.GestureRecognizers-->
+                                                </Label>
+                                            </Frame>
+                                            <Label
+                                            Grid.Row="0"
+                                            Grid.Column="3"
+                                            Text=""
+                                            FontSize="20"
+                                            Margin="10,7.5"
+                                            TextColor="{StaticResource lbl-primary}"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ScrollView>
 </ContentPage>
