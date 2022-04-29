@@ -4,6 +4,6 @@
     <SelectedDevice>HUAWEI JNY-LX2</SelectedDevice>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
     <ActiveDebugProfile>HUAWEI JNY-LX2</ActiveDebugProfile>
-    <DefaultDevice>pixel_5_-_api_30</DefaultDevice>
+    <DefaultDevice>Android_10</DefaultDevice>
   </PropertyGroup>
 </Project>

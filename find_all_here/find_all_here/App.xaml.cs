@@ -37,11 +37,6 @@ namespace find_all_here
             }
             
         }
-        public void Logout()
-        {
-            Properties.Clear();
-            MainPage = new LoginView();
-        }
 
         protected override void OnSleep()
         {
