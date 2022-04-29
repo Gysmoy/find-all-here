@@ -48,11 +48,7 @@ namespace find_all_here.ViewModels
             {
                 return $"Hace {ts.Minutes} minutos";
             }
-            if (ts.TotalSeconds > 1)
-            {
-                return $"Hace {ts.Seconds} segundos";
-            }
-            return "Ahora";
+            return ts.TotalSeconds > 1 ? $"Hace {ts.Seconds} segundos" : "Ahora";
         }
 
         // Método público para hacer hash a un texto en sha256

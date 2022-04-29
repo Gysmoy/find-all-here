@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Collections.Generic;
 using Android.Widget;
 using find_all_here.Models;
 using Newtonsoft.Json;
@@ -116,7 +117,9 @@ namespace find_all_here.ViewModels
                         var user = userValidate.Data[0];
                         user.Status = true;
                         App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
-                        App.Current.Properties["cart"] = JsonConvert.SerializeObject(new Cart());
+                        Cart cart = new Cart();
+                        cart.Products = new List<Product>();
+                        App.Current.Properties["cart"] = cart;
 
 
                         await App.Current.MainPage.DisplayAlert(

@@ -27,6 +27,6 @@
         <ShellContent Title="Inicio" Icon="home.png" Route="HomeView" ContentTemplate="{DataTemplate local:HomeView}"/>
         <ShellContent Title="Búsqueda" Icon="search.png" Route="SearchView" ContentTemplate="{DataTemplate local:Search}" />
         <ShellContent Title="Bandeja" Icon="bell.png" Route="InboxPage" ContentTemplate="{DataTemplate local:Inbox}" />
-        <ShellContent Title="Perfil" Icon="user.png" Route="UserPage" ContentTemplate="{DataTemplate local:Profile}" />
+        <ShellContent Title="Perfil" Icon="user.png" Route="UserPage" ContentTemplate="{DataTemplate local:ProfileView}" />
     </TabBar>
 </Shell>

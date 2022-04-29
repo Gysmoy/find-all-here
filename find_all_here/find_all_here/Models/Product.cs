@@ -19,8 +19,8 @@ namespace find_all_here.Models
         public string Image_mini { get; set; }
         public string Image_full { get; set; }
         public string Product_status { get; set; }
-        public double Price { get; set; }
         public int Quantity { get; set; }
+        public string Total_price { get; set; }
         public User User { get; set; }
         public DateTime Update_date { get; set; }
         public string Relative_time { get; set; }

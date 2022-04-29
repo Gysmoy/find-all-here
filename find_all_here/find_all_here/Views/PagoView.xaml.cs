@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using find_all_here.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,13 +17,20 @@ namespace find_all_here
         public PagoView()
         {
             InitializeComponent();
-            DBCarritos = new List<CartViewModel>();
+            /*DBCarritos = new List<CartViewModel>();
 
             DBCarritos.Add(new CartViewModel { Name = "YAPE", Image = "yapelogo.png" });
             DBCarritos.Add(new CartViewModel { Name = "TUNKI", Image = "tunki.png" });
             DBCarritos.Add(new CartViewModel { Name = "INTERBANK", Image = "interbank.png" });
 
-            BindingContext = this;
+            BindingContext = this;*/
+            decimal Total = 0;
+            var cart = (Cart) App.Current.Properties["cart"];
+            foreach (var product in cart.Products)
+            {
+                Total += decimal.Parse(product.Total_price);
+            }
+
         }
         async void Btn_Cart(object sender, EventArgs e)
         {
