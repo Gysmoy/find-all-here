@@ -182,7 +182,7 @@ namespace find_all_here.ViewModels
             try
             {
 
-                User miusuario = JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
+                User miusuario = (User) App.Current.Properties["user"];
                 if(string.IsNullOrEmpty(this.names) || 
                     string.IsNullOrEmpty(this.surnames) ||
                     string.IsNullOrEmpty(this.username) ||
