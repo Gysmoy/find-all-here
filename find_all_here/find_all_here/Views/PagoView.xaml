@@ -8,6 +8,7 @@
         <StackLayout
             VerticalOptions="CenterAndExpand">
             <ImageButton
+                x:Name="img_mini"
                 Margin="20, 60, 20, 20"
                 Padding="0"
                 Background="Transparent"
@@ -17,10 +18,11 @@
                 CornerRadius="75"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                Source="https://scriptperu.com/find_all_here/image/user/2/mini/asd"/>
+                Source=""/>
             <Label
+                x:Name="lbl_nombre"
                 FontSize="20"
-                Text="Hola, Carlos Manuel"
+                Text=""
                 TextColor="{StaticResource lbl-primary}"
                 HorizontalTextAlignment="Center"/>
             <Label
@@ -49,10 +51,11 @@
                         Text="Subtotal"
                         TextColor="{StaticResource lbl-secondary}"/>
                     <Label
+                        x:Name="txt_subtotal"
                         Grid.Row="0"
                         Grid.Column="1"
                         FontSize="16"
-                        Text="S/120.00"
+                        Text=""
                         HorizontalTextAlignment="End"
                         TextColor="{StaticResource lbl-primary}"/>
                     <Label
@@ -62,10 +65,11 @@
                         Text="IGV (18%)"
                         TextColor="{StaticResource lbl-secondary}"/>
                     <Label
+                        x:Name="txt_igv"
                         Grid.Row="1"
                         Grid.Column="1"
                         FontSize="16"
-                        Text="S/12.00"
+                        Text=""
                         HorizontalTextAlignment="End"
                         TextColor="{StaticResource lbl-primary}"/>
                     <Frame
@@ -83,18 +87,17 @@
                         FontAttributes="Bold"
                         TextColor="{StaticResource lbl-secondary}"/>
                     <Label
+                        x:Name="txt_total"
                         Grid.Row="3"
                         Grid.Column="1"
                         FontSize="20"
-                        Text="S/132.00"
+                        Text=""
                         FontAttributes="Bold"
                         HorizontalTextAlignment="End"
                         TextColor="{StaticResource lbl-primary}"/>
                 </Grid>
             </Frame>
             <Frame
-                Grid.Row="1"
-                Grid.Column="2"
                 CornerRadius="5"
                 Padding="12,6"
                 BackgroundColor="{StaticResource btn-success-outline}"
@@ -105,67 +108,10 @@
                     Padding="10,5" FontSize="18" FontAttributes="Bold"
                     HorizontalOptions="Center" VerticalOptions="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer/>
+                        <TapGestureRecognizer Tapped="OnRegisterSale"/>
                     </Label.GestureRecognizers>
                 </Label>
             </Frame>
         </StackLayout>
     </ScrollView>
-    
-    <!--StackLayout BackgroundColor="{StaticResource bg-body}">
-        <Grid>
-            <Image Source="superyape" Margin="60,30,30,410" VerticalOptions="Center" HorizontalOptions="Center"/>
-            
-            <StackLayout Padding="0" Margin="20,190,20,0" HorizontalOptions="FillAndExpand">
-
-                <Frame  BackgroundColor="White" HeightRequest="400" CornerRadius="10"
-                        HasShadow="True" Padding="0" Margin="10,80,10,0">
-                    <StackLayout>
-                        <StackLayout Margin="20">
-                            <Label Text="PAGO SEGURO" TextColor="Black"  FontSize="25"
-                                   HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
-                        </StackLayout>
-
-                        <StackLayout Padding="0" Margin="15,10">
-
-                            <StackLayout Orientation="Horizontal">
-                                <Frame HeightRequest="50" WidthRequest="50" 
-                                       CornerRadius="30" Padding="0" Margin="45,0,0,0">
-                                    <Image Source="sol" Aspect="AspectFill" Margin="1"/>
-                                </Frame>
-                                <Label Text="S/. 3 000,000" TextColor="Lime" FontSize="30" FontAttributes="None" 
-                                       HorizontalOptions="FillAndExpand" Margin="10,5,0,0"/>
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="SUBTOTAL:" TextColor="Black" FontAttributes="Bold" 
-                                       FontSize="25" Margin="20,30,0,0"/>
-
-                                <Label Text="S/. 3 000,000" TextColor="Black" FontAttributes="None" 
-                                       HorizontalOptions="FillAndExpand" Margin="10,32,0,0" FontSize="24"/>
-                            </StackLayout>
-
-                            <StackLayout Orientation="Horizontal">
-                                <Label Text="IGV (18%):" TextColor="Black" FontAttributes="Bold" 
-                                       FontSize="25" Margin="20,20,0,0"/>
-
-                                <Label Text="S/. 3 000,000" TextColor="Black" FontAttributes="None" 
-                                       HorizontalOptions="FillAndExpand" Margin="10,22,0,0" FontSize="24"/>
-                            </StackLayout>
-
-                            <Button Text="PAGAR" BackgroundColor="HotPink" 
-                                    TextColor="White" FontSize="25" CornerRadius="30" 
-                                    Margin="10" FontAttributes="Bold"/>
-
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                <Label Text="Tus pagos siempre seguros -" TextColor="DarkGray" FontSize="Small"/>
-                                <Label Text="https//:Yape.com" TextColor="Blue" FontAttributes="Bold" FontSize="Small"/>
-                            </StackLayout>
-
-                        </StackLayout>
-                    </StackLayout>
-                </Frame>
-            </StackLayout>
-        </Grid>
-    </StackLayout-->
 </ContentPage>

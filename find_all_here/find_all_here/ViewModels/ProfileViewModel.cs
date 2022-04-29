@@ -4,6 +4,7 @@ using find_all_here.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -14,6 +15,7 @@ namespace find_all_here.ViewModels
 {
     public class ProfileViewModel: BaseViewModel
     {
+        #region BindingUser
         private string id;
         private string names;
         private string surnames;
@@ -31,6 +33,7 @@ namespace find_all_here.ViewModels
         private int btnProductsColSpan;
         public Command<string> UserFollowCommand { get; }
         public Command CloseProfileCommand { get; }
+        #endregion
 
         public string Id { get; set; }
         public string Names
@@ -103,7 +106,34 @@ namespace find_all_here.ViewModels
             get => btnProductsColSpan;
             set => SetProperty(ref btnProductsColSpan, value);
         }
-
+        
+        #region BindingProducts
+        public ObservableCollection<Product> BindingProducts { get; }
+        public Command LoadProductsCommand { get; }
+        #endregion
+        
+        
+        public ProfileViewModel()
+        {
+            // Constructor Usuario
+            var userId = App.Current.Properties.ContainsKey("userId") ? (string) App.Current.Properties["userId"] : null;
+            LoadUserId(userId);
+            CloseProfileCommand = new Command(async () => await OnCloseProfile());
+            UserFollowCommand = new Command<string>(OnUserFollow);
+            
+            // Contructor Productos
+            BindingProducts = new ObservableCollection<Product>();
+            LoadProductsCommand = new Command(async () => await OnLoadProducts());
+            OnLoadProducts();
+        }
+        private async Task OnCloseProfile()
+        {
+            await App.Current.MainPage.Navigation.PopModalAsync();
+        }
+        private void OnUserFollow(string userId)
+        {
+            Toast.MakeText(Android.App.Application.Context, "Ahora sigues a este usuario", ToastLength.Short).Show();
+        }
         public async Task LoadUserId(string userId)
         {
             try
@@ -156,23 +186,30 @@ namespace find_all_here.ViewModels
                 Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
             }
         }
-
-        public ProfileViewModel()
+        public async Task OnLoadProducts()
         {
-            var userId = App.Current.Properties.ContainsKey("userId") ? (string) App.Current.Properties["userId"] : null;
-            LoadUserId(userId);
-            CloseProfileCommand = new Command(async () => await OnCloseProfile());
-            UserFollowCommand = new Command<string>(OnUserFollow);
+            try
+            {
+                var db = new Database();
+                var sp = StoredProcedures.GetProductsByUserId;
+                string[] parameters = { Id };
+                var response = db.Connect(sp, parameters, "all");
+                var products = JsonConvert.DeserializeObject<ListaProducts>(response);
+                if (products.Data.Count != 0)
+                {
+                    foreach (var product in products.Data)
+                    {
+                        BindingProducts.Add(product);
+                    }
+                }
+                else
+                {
+                    throw new Exception("No se encontraron productos");
+                }
+            } catch (Exception e)
+            {
+                Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
+            }
         }
-
-        private async Task OnCloseProfile()
-        {
-            await App.Current.MainPage.Navigation.PopModalAsync();
-        }
-        private void OnUserFollow(string userId)
-        {
-            Toast.MakeText(Android.App.Application.Context, "Ahora sigues a este usuario", ToastLength.Short).Show();
-        }
-
     }
 }

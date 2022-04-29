@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:find_all_here.ViewModels;assembly=find_all_here"
              x:Class="find_all_here.ProfileView"
              Title="Perfil de usuario">
     <ContentPage.ToolbarItems>
@@ -176,7 +177,7 @@
                     </Label>
                 </Frame>
             </Grid>
-            <CollectionView x:Name="ProductsListView" ItemsSource="{Binding BindingProducts}" SelectionMode="None">
+            <CollectionView x:DataType="local:ProfileViewModel" x:Name="ProductsListView" ItemsSource="{Binding BindingProducts}" SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate >
                         <Frame BackgroundColor="{StaticResource bg-body}" Padding="15,10" HasShadow="True" CornerRadius="0">

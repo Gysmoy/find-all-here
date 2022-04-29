@@ -22,6 +22,19 @@ namespace find_all_here.Models
         ORDER BY P.update_date DESC
         ";
 
+        public static string GetProductsByUserId = @"
+        SELECT
+            P.id, P.name, P.description, P.purchase_price, P.sale_price,
+            P.proportions, P.stock, P.tags, P.product_status, P.update_date, P.status,
+            B.id AS b_id, B.brand AS b_name, B.status AS b_status,
+            C.id AS c_id, C.category AS c_name, C.status AS c_status
+        FROM PRODUCTS P INNER
+        JOIN BRANDS B ON P._brand = B.id
+        JOIN CATEGORIES C ON P._category = C.id
+        WHERE P._user = ?
+        ORDER BY P.update_date DESC
+        ";
+
         public static string GetUserById = @"
         SELECT 
             U.id, U.names, U.surnames, U.username, U.email,
