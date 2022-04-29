@@ -36,7 +36,19 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="1*" />
                                 </Grid.ColumnDefinitions>
-                                <ImageButton Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" x:DataType="model:Product" Source="{Binding User.Profile_mini}" CornerRadius="250" WidthRequest="40" HeightRequest="40" BackgroundColor="{StaticResource bg-profile}" />
+                                <ImageButton
+                                    Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                    VerticalOptions="Center" HorizontalOptions="Center"
+                                    x:DataType="model:Product"
+                                    Source="{Binding User.Profile_mini}"
+                                    CornerRadius="250" WidthRequest="40" HeightRequest="40"
+                                    BackgroundColor="{StaticResource bg-profile}"
+                                    Command="{Binding Source={
+                                        RelativeSource AncestorType={
+                                            x:Type local:HomeViewModel
+                                        }
+                                    }, Path=OpenImageCommand}"
+                                    CommandParameter="{Binding User.Profile_full}"/>
                                 <Frame Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="0" Margin="0" Padding="10,0,0,0" BackgroundColor="Transparent" HorizontalOptions="Start">
                                     <Label TextColor="#fff" Padding="0" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center">
                                         <Label.FormattedText>
@@ -101,7 +113,18 @@
                                 </Label.FormattedText>
                             </Label>
                             <Frame Margin="0,5,0,0" Padding="0" CornerRadius="0">
-                                <ImageButton Margin="0" Padding="0" BackgroundColor="#ffffff" CornerRadius="0" x:DataType="model:Product" Source="{Binding Image_mini}" />
+                                <ImageButton
+                                    Margin="0" Padding="0"
+                                    BackgroundColor="#ffffff"
+                                    CornerRadius="0"
+                                    x:DataType="model:Product"
+                                    Source="{Binding Image_mini}"
+                                    Command="{Binding Source={
+                                        RelativeSource AncestorType={
+                                            x:Type local:HomeViewModel
+                                        }
+                                    }, Path=OpenImageCommand}"
+                                    CommandParameter="{Binding Image_full}"/>
                             </Frame>
                             <Grid Margin="10,0" Padding="0" BackgroundColor="Transparent">
                                 <Grid.ColumnDefinitions>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using find_all_here.Models;
+using find_all_here.Views;
 
 namespace find_all_here.ViewModels
 {
@@ -18,7 +19,8 @@ namespace find_all_here.ViewModels
         public Command AddProductCommand { get; }
         public Command OpenCartCommand { get; }
         public Command<Product> ProductTapped { get; }
-        
+        public Command<string> OpenImageCommand { get; }
+
         #region ProductCommands
         public Command<Product> AddToCartCommand { get; }
         public Command<Product> OpenUserProfileCommand { get; }
@@ -36,7 +38,8 @@ namespace find_all_here.ViewModels
             AddToCartCommand = new Command<Product>(OnAddToCart);
             OpenUserProfileCommand = new Command<Product>(OnOpenUserProfile);
             OpenCommentsCommand = new Command<Product>(OnOpenComments);
-            
+            OpenImageCommand = new Command<string>(OnOpenImage);
+
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
             ExecuteLoadProductsCommand();
         }
@@ -128,7 +131,6 @@ namespace find_all_here.ViewModels
 
         public void OnAppearing()
         {
-            IsBusy = true;
             SelectedProduct = null;
         }
         public Product SelectedProduct
@@ -183,6 +185,14 @@ namespace find_all_here.ViewModels
             await Shell.Current.Navigation.PushModalAsync(new ProfileView());
             App.Current.Properties["userId"] = null;
             
+        }
+        private async void OnOpenImage(string url)
+        {
+            if (url == null)
+                return;
+            App.Current.Properties["image"] = url;
+            await Shell.Current.Navigation.PushModalAsync(new WatchImageView());
+            App.Current.Properties["image"] = null;
         }
         private void OnOpenComments(object obj)
         {

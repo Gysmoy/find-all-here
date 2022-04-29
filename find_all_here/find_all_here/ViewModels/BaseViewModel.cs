@@ -8,7 +8,7 @@ namespace find_all_here.ViewModels
 {
     public class BaseViewModel
     {
-        bool isBusy = false;
+        bool isBusy;
         public bool IsBusy
         {
             get { return isBusy; }
