@@ -2,70 +2,97 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="find_all_here.PagoView">
-    <StackLayout BackgroundColor="{StaticResource bg-container}" >
-
-        <Label Text="Online" FontSize="22" Margin="16,20,0,0" TextColor="White"/>
-        <Label Text="Puedes pagar con tarjeta de credito o debito." Margin="25,0,0,0" 
-               FontSize="18" TextColor="White"/>
-
-        <Grid Margin="10" >
-            <Button Text="Pagar por tarjeta" FontSize="20"
-                    BackgroundColor="#06284D" BorderWidth="3" BorderColor="#185AA0" 
-                    FontAttributes="Bold" HeightRequest="55" WidthRequest="230"
-                    VerticalOptions="Center" HorizontalOptions="Center"
-                    CornerRadius="16" Clicked="Btn_Tarjet"/>
+    
+    <StackLayout BackgroundColor="Black">
+        <Grid
+            RowSpacing="0"
+            Margin="0"
+            Padding="10"
+            Background="{StaticResource bg-outline}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label 
+                Grid.Column="1"
+                TextColor="{StaticResource lbl-primary}"
+                Text="Carrito de compras"
+                FontSize="24"/>
+            <Frame
+                Grid.Column="0"
+                CornerRadius="7.5"
+                Padding="0"
+                BackgroundColor="{StaticResource btn-primary-outline}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0,5,0,0" 
+                HasShadow="True">
+                <Label  Text="Seguir comprando" TextColor="{StaticResource btn-primary}"
+                    Padding="10,5" FontSize="12" FontAttributes="Bold"
+                    HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseCartCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
         </Grid>
+        <Grid>
+            
+            <Image Source="superyape" Margin="60,30,30,410" VerticalOptions="Center" HorizontalOptions="Center"/>
+            
+            <StackLayout Padding="0" Margin="20,190,20,0" HorizontalOptions="FillAndExpand">
 
-        <Label Text="El monto del pedido se descontara de la tarjeta una vez que el envio sea confirmado." 
-               FontSize="18" Margin="25,0,16,10" TextColor="White"/>
+                <Frame  BackgroundColor="White" HeightRequest="400" CornerRadius="10"
+                        HasShadow="True" Padding="0" Margin="10,80,10,0">
+                    <StackLayout>
+                        <StackLayout Margin="20">
+                            <Label Text="PAGO SEGURO" TextColor="Black"  FontSize="25"
+                                   HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
 
-        <ScrollView HorizontalOptions="FillAndExpand">
-            <Grid RowSpacing="90" HorizontalOptions="FillAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <StackLayout Spacing="0" HorizontalOptions="Center" VerticalOptions="Start">
-                    <Label Text="Medios de pago" TextColor="#F9B522"
-                           FontFamily="ThemeFont" FontSize="40" HorizontalOptions="Center"/>
-                </StackLayout>
-                <CarouselView Grid.Row="1" ItemsSource="{Binding DBCarritos}" Margin="10"
-                              HeightRequest="323" BackgroundColor="{StaticResource bg-profile}"
-                              HorizontalOptions="FillAndExpand">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid HorizontalOptions="FillAndExpand">
-                                <Label Text="{Binding Name}" TextColor="#F9B522" FontSize="50" FontFamily="ThemeFont" 
-                                       HorizontalOptions="Center"/>
-                                <ImageButton Source="{Binding Image}" BackgroundColor="Black" 
-                                             CornerRadius="10" Aspect="Fill" Margin="25" 
-                                             HeightRequest="210" WidthRequest="235" 
-                                             HorizontalOptions="Center" VerticalOptions="End"
-                                             Clicked="Btn_Yape"/>
-                            </Grid>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-                <ImageButton Grid.Row="1" Source="left.png" Margin="15,50,0,0" 
-                             Aspect="Fill" HeightRequest="18" WidthRequest="18" 
-                             HorizontalOptions="Start" VerticalOptions="Center" 
-                             BackgroundColor="Transparent"/>
+                        <StackLayout Padding="0" Margin="15,10">
 
-                <ImageButton Grid.Row="1" Source="right.png" Margin="0,50,15,0" 
-                             Aspect="Fill" HeightRequest="18" WidthRequest="18" 
-                             HorizontalOptions="End" VerticalOptions="Center" 
-                             BackgroundColor="Transparent" />
-            </Grid>
-        </ScrollView>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame HeightRequest="50" WidthRequest="50" 
+                                       CornerRadius="30" Padding="0" Margin="45,0,0,0">
+                                    <Image Source="sol" Aspect="AspectFill" Margin="1"/>
+                                </Frame>
+                                <Label Text="S/. 3 000,000" TextColor="Lime" FontSize="30" FontAttributes="None" 
+                                       HorizontalOptions="FillAndExpand" Margin="10,5,0,0"/>
+                            </StackLayout>
 
-        <Grid >
-            <Button Text="VOLVER" FontSize="16" TextColor="#fff"
-                    BackgroundColor="#414241 " BorderWidth="1" BorderColor="#737373" 
-                    FontAttributes="Bold" HeightRequest="55" WidthRequest="145"
-                    VerticalOptions="Center" HorizontalOptions="Center"
-                    CornerRadius="9" Clicked="Btn_Cart"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="SUBTOTAL:" TextColor="Black" FontAttributes="Bold" 
+                                       FontSize="25" Margin="20,30,0,0"/>
+
+                                <Label Text="S/. 3 000,000" TextColor="Black" FontAttributes="None" 
+                                       HorizontalOptions="FillAndExpand" Margin="10,32,0,0" FontSize="24"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="IGV (18%):" TextColor="Black" FontAttributes="Bold" 
+                                       FontSize="25" Margin="20,20,0,0"/>
+
+                                <Label Text="S/. 3 000,000" TextColor="Black" FontAttributes="None" 
+                                       HorizontalOptions="FillAndExpand" Margin="10,22,0,0" FontSize="24"/>
+                            </StackLayout>
+
+                            <Button Text="PAGAR" BackgroundColor="HotPink" 
+                                    TextColor="White" FontSize="25" CornerRadius="30" 
+                                    Margin="10" FontAttributes="Bold"/>
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Label Text="Tus pagos siempre seguros -" TextColor="DarkGray" FontSize="Small"/>
+                                <Label Text="https//:Yape.com" TextColor="Blue" FontAttributes="Bold" FontSize="Small"/>
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
         </Grid>
-
     </StackLayout>
 </ContentPage>

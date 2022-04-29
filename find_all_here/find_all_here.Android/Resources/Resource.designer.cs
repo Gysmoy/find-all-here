@@ -24907,6 +24907,7 @@ namespace find_all_here.Droid
 			public const int settings = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
+<<<<<<< HEAD
 			public const int test_custom_background = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
@@ -24929,6 +24930,36 @@ namespace find_all_here.Droid
 			
 			// aapt resource value: 0x7F0700A3
 			public const int yapelogo = 2131165347;
+=======
+			public const int sol = 2131165340;
+			
+			// aapt resource value: 0x7F07009D
+			public const int superyape = 2131165341;
+			
+			// aapt resource value: 0x7F07009E
+			public const int test_custom_background = 2131165342;
+			
+			// aapt resource value: 0x7F07009F
+			public const int tooltip_frame_dark = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int tooltip_frame_light = 2131165344;
+			
+			// aapt resource value: 0x7F0700A1
+			public const int tunki = 2131165345;
+			
+			// aapt resource value: 0x7F0700A2
+			public const int upload = 2131165346;
+			
+			// aapt resource value: 0x7F0700A3
+			public const int user = 2131165347;
+			
+			// aapt resource value: 0x7F0700A4
+			public const int x = 2131165348;
+			
+			// aapt resource value: 0x7F0700A5
+			public const int yapelogo = 2131165349;
+>>>>>>> 836032e2af8d2ec430d9beb1d27eb8f36ed0dc63
 			
 			static Drawable()
 			{

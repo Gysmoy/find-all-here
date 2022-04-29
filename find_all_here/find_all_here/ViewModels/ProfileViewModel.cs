@@ -1,5 +1,7 @@
 ﻿using Android.Widget;
+using find_all_here.csharp;
 using find_all_here.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -70,9 +72,10 @@ namespace find_all_here.ViewModels
         {
             try
             {
+                User user = new User();
                 if (userId == null)
                 {
-                    User user = App.Current.Properties["user"] as User;
+                    user = (User) App.Current.Properties["user"];
                     Id = user.Id.ToString();
                     Names = user.Names;
                     Surnames = user.Surnames;
@@ -87,10 +90,16 @@ namespace find_all_here.ViewModels
                 }
                 else
                 {
-                    Toast.MakeText(Android.App.Application.Context, userId, ToastLength.Short).Show();
+                    Database db = new Database();
+                    string sp = StoredProcedures.GetUserById;
+                    string[] parameters = { userId };
+                    string response = db.Connect(sp, parameters, "one");
+                    var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
+
                 }
             } catch (Exception e)
             {
+               
                 Toast.MakeText(Android.App.Application.Context, e.Message, ToastLength.Short).Show();
             }
             return Task.CompletedTask;

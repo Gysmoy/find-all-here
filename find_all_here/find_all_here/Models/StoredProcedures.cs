@@ -21,6 +21,15 @@ namespace find_all_here.Models
         JOIN USERS U ON P._user = U.id
         ORDER BY P.update_date DESC
         ";
+
+        public static string GetUserById = @"
+        SELECT 
+            U.id, U.names, U.surnames, U.username, U.email,
+            U.gender, U.birth_date, U.address, U.phone
+        FROM USERS U
+        WHERE id = ?
+        ";
+
         public static string GetUserByUsernameAndPassword = @"
         SELECT 
             U.id, U.names, U.surnames, U.username, U.email,
