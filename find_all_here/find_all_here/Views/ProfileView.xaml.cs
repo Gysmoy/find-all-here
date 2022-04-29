@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace find_all_here
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Profile : ContentPage
+    public partial class ProfileView : ContentPage
     {
-        public Profile()
+        public ProfileView()
         {
             InitializeComponent();
         }
