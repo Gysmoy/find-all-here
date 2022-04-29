@@ -4,6 +4,6 @@
     <SelectedDevice>HUAWEI MED-LX9</SelectedDevice>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
     <ActiveDebugProfile>HUAWEI MED-LX9</ActiveDebugProfile>
-    <DefaultDevice>rrr</DefaultDevice>
+    <DefaultDevice>pixel_5_-_api_30</DefaultDevice>
   </PropertyGroup>
 </Project>
