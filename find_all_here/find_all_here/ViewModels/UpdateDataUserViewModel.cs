@@ -142,7 +142,7 @@ namespace find_all_here.ViewModels
 
                 Toast.MakeText(
                             Android.App.Application.Context,
-                            "Mostrando datos"+ user.Names,
+                            "Mostrando datos de: "+ user.Names,
                             ToastLength.Long
                         ).Show();
                 return;
@@ -214,7 +214,7 @@ namespace find_all_here.ViewModels
                 {
                     Toast.MakeText(
                           Android.App.Application.Context,
-                          "contraseña incorrecta " + miusuario.Password,
+                          "contraseña incorrecta ",
                           ToastLength.Short
                       ).Show();
                 }
