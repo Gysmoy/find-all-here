@@ -27,7 +27,7 @@ namespace find_all_here
 
             var user = new User();
 
-            if (!Properties.ContainsKey("user"))
+            if (Properties.ContainsKey("user"))
             {
                 user = (User)Properties["user"];
             }
