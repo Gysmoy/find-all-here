@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:find_all_here="clr-namespace:Find_All_Here"
+    x:DataType="find_all_here:Shell"
+    x:Class="Find_All_Here.Views.WatchImageView"
+    Title="Visor de imagen">
+    
+    <ContentPage.Content>
+        <Image
+            x:Name="imageViewer"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Source=""/>
+    </ContentPage.Content>
+</ContentPage>

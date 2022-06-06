@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:find_all_here="clr-namespace:Find_All_Here"
+    x:DataType="find_all_here:Shell"
+    x:Class="Find_All_Here.Views.PaymentView">
+    
+    <ScrollView
+        BackgroundColor="{StaticResource bg-container}">
+        <StackLayout
+            VerticalOptions="CenterAndExpand">
+            <ImageButton
+                x:Name="img_mini"
+                Margin="20, 60, 20, 20"
+                Padding="0"
+                Background="Transparent"
+                BorderColor="Transparent"
+                WidthRequest="150"
+                HeightRequest="150"
+                CornerRadius="75"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Source=""/>
+            <Label
+                x:Name="lbl_nombre"
+                FontSize="20"
+                Text=""
+                TextColor="{StaticResource lbl-primary}"
+                HorizontalTextAlignment="Center"/>
+            <Label
+                FontSize="14"
+                Text="Este es tu resumen de pago"
+                TextColor="{StaticResource lbl-secondary}"
+                HorizontalTextAlignment="Center"/>
+
+            <Frame
+                Margin="40,40,40,20"
+                Background="{StaticResource bg-outline}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontSize="16"
+                        Text="Subtotal"
+                        TextColor="{StaticResource lbl-secondary}"/>
+                    <Label
+                        x:Name="txt_subtotal"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text=""
+                        HorizontalTextAlignment="End"
+                        TextColor="{StaticResource lbl-primary}"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontSize="16"
+                        Text="IGV (18%)"
+                        TextColor="{StaticResource lbl-secondary}"/>
+                    <Label
+                        x:Name="txt_igv"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontSize="16"
+                        Text=""
+                        HorizontalTextAlignment="End"
+                        TextColor="{StaticResource lbl-primary}"/>
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Margin="10"
+                        Padding="1"
+                        Background="{StaticResource bg-profile}"/>
+                    <Label
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        FontSize="20"
+                        Text="Total a pagar"
+                        FontAttributes="Bold"
+                        TextColor="{StaticResource lbl-secondary}"/>
+                    <Label
+                        x:Name="txt_total"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        FontSize="20"
+                        Text=""
+                        FontAttributes="Bold"
+                        HorizontalTextAlignment="End"
+                        TextColor="{StaticResource lbl-primary}"/>
+                </Grid>
+            </Frame>
+            <Frame
+                CornerRadius="5"
+                Padding="12,6"
+                BackgroundColor="{StaticResource btn-success-outline}"
+                HorizontalOptions="Center"
+                Margin="0,0,0,40"
+                HasShadow="True">
+                <Label  Text="Registrar compra" TextColor="{StaticResource btn-success}"
+                    Padding="10,5" FontSize="18" FontAttributes="Bold"
+                    HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegisterSale"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:find_all_here="clr-namespace:Find_All_Here"
+    x:DataType="find_all_here:Shell"
+    x:Class="Find_All_Here.Views.UserConfigView"
+    Title="Configuración de usuario">
+    
+    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#101010">
+
+        <StackLayout   Padding="0" >
+
+            <ActivityIndicator
+                IsRunning="{Binding IsRunning}"
+                IsVisible="{Binding IsVisible}"
+                Color="{StaticResource lbl-primary}"
+                Scale="0.8" />
+            <Label HorizontalOptions="Center" Padding="0,12,0,0" TextColor="#fff" FontSize="20" Text="Configuracion de usuario"></Label>
+            <ImageButton 
+                    Source="{ Binding Profile_mini, Mode=TwoWay}"
+                    WidthRequest="125" HeightRequest="125" HorizontalOptions="Center"
+                    Margin="0,0,0,0" CornerRadius="250" 
+                    BackgroundColor="{StaticResource bg-profile}"/>
+
+            <StackLayout>
+                <Grid Padding="10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0"
+                           Grid.Column="0"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Nombres*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese sus nombres"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    Text="{Binding Txt_Names, Mode=TwoWay}"
+                                    IsEnabled="{Binding IsEnabled}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Apellidos*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese sus apellidos"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    Text="{Binding Txt_Surnames, Mode=TwoWay}"
+                                    IsEnabled="{Binding IsEnabled}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Nombre de usuario*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese nombre de usuario"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    Text="{Binding Txt_Username, Mode=TwoWay}"
+                                    IsEnabled="{Binding IsEnabled}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Email*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese su email"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                   Text="{Binding Txt_Email, Mode=TwoWay}"
+                                   IsEnabled="{Binding IsEnabled}"
+                                   Keyboard="Email"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Telefono*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese su telefono"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                   Text="{Binding Txt_Phone, Mode=TwoWay}"
+                                   IsEnabled="{Binding IsEnabled}"
+                                   Keyboard="Numeric"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Grid.Row="5" Grid.Column="1">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Fecha Nacimiento*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Grid 
+                                        RowSpacing="2.5"
+                                        Padding="0">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Entry
+                                            Grid.Column="0"
+                                            Margin="0,0,0,0"
+                                            FontSize="16"
+                                            TextColor="{StaticResource lbl-primary}"
+                                            Text="{Binding Txt_DateDay, Mode=TwoWay}"
+                                            Placeholder="Día"
+                                            Keyboard="Numeric"
+                                            IsEnabled="{Binding IsEnabled}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand" />
+                                <Entry
+                                            Grid.Column="1"
+                                            Margin="0,0,0,0"
+                                            FontSize="16"
+                                            TextColor="{StaticResource lbl-primary}"
+                                            Text="{Binding Txt_DateMonth, Mode=TwoWay}"
+                                            Placeholder="Mes"
+                                            IsEnabled="{Binding IsEnabled}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"/>
+                                <Entry
+                                            Grid.Column="2"
+                                            Margin="0,0,0,0"
+                                            FontSize="16"
+                                            TextColor="{StaticResource lbl-primary}"
+                                            Text="{Binding Txt_DateYear, Mode=TwoWay}"
+                                            Placeholder="Año"
+                                            IsEnabled="{Binding IsEnabled}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"/>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="3"
+                            Grid.Column="0"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Sexo*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese su sexo"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    Text="{Binding Txt_Gender, Mode=TwoWay}"
+                                   IsEnabled="{Binding IsEnabled}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="3"
+                            Grid.Column="1"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Dirección*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese su direccón"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    Text="{Binding Txt_Address, Mode=TwoWay}"
+                                    IsEnabled="{Binding IsEnabled}"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame  Grid.Row="4"
+                            Grid.Column="0"
+                            Margin="3"
+                            Padding="10,0"
+                            CornerRadius="5"
+                            Background="{StaticResource bg-outline}">
+                        <StackLayout Margin="0" Padding="0">
+                            <Label 
+                                    Margin="0,5,0,0"
+                                    Text="Contraseña*"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"/>
+                            <Entry
+                                    Margin="0,-10,0,0"
+                                    Placeholder="Ingrese su contraseña"
+                                    FontSize="16"
+                                    TextColor="{StaticResource lbl-primary}"
+                                    Text="{Binding Txt_Password, Mode=TwoWay}"
+                                    IsEnabled="{Binding IsEnabled}"
+                                    IsPassword="True"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+
+                <Button 
+                    Margin="30,-130,30,30" 
+                    BackgroundColor="{StaticResource btn-primary-outline}" 
+                    TextColor="{StaticResource btn-primary}" 
+                    FontSize="16" 
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Text="Actualizar Datos"
+                    Command="{Binding Update_Data_User}"
+                    IsEnabled="{Binding IsEnabled}" 
+                    />
+
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

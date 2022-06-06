@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Find_All_Here.Views"
+       Title="Find All Here"
+       x:Class="Find_All_Here.Shell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NavBarStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource lbl-primary}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource lbl-primary}" />
+                <Setter Property="Shell.DisabledColor" Value="{StaticResource lbl-outline}" />
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource lbl-secondary}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource bg-outline}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource lbl-primary}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource lbl-secondary}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource Primary}"/>
+                <Setter Property="Shell.NavBarHasShadow" Value="True"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource NavBarStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Title="Inicio" Icon="home.png" Route="HomeView" ContentTemplate="{DataTemplate local:HomeView}"/>
+        <ShellContent Title="Búsqueda" Icon="search.png" Route="SearchView" ContentTemplate="{DataTemplate local:SearchView}" />
+        <ShellContent Title="Bandeja" Icon="bell.png" Route="InboxPage" ContentTemplate="{DataTemplate local:NotificationsView}" />
+        <ShellContent Title="Perfil" Icon="user.png" Route="UserPage" ContentTemplate="{DataTemplate local:ProfileView}" />
+    </TabBar>
+
+
+</Shell>

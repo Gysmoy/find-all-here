@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Find_All_Here.App">
+    <Application.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="ColumnSpacing" Value="0" />
+            <Setter Property="RowSpacing" Value="0" />
+        </Style>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#0090e7</Color>
+            <Color x:Key="lbl-primary">#ffffff</Color>
+            <Color x:Key="lbl-secondary">#bfbfbf</Color>
+            <Color x:Key="lbl-outline">#6c7293</Color>
+            <Color x:Key="bg-body">#000000</Color>
+            <Color x:Key="bg-container">#191c24</Color>
+            <Color x:Key="bg-outline">#2a3038</Color>
+            <Color x:Key="bg-profile">#404040</Color>
+            <Color x:Key="btn-primary-outline">#330090e7</Color>
+            <Color x:Key="btn-primary">#0090e7</Color>
+            <Color x:Key="btn-secondary-outline">#33e4eaec</Color>
+            <Color x:Key="btn-secondary">#e4eaec</Color>
+            <Color x:Key="btn-success-outline">#3300d25b</Color>
+            <Color x:Key="btn-success">#00d25b</Color>
+            <Color x:Key="btn-danger-outline">#33fc424a</Color>
+            <Color x:Key="btn-danger">#fc424a</Color>
+            <Color x:Key="btn-warning-outline">#33ffab00</Color>
+            <Color x:Key="btn-warning">#ffab00</Color>
+            <Color x:Key="btn-info-outline">#338f5fe8</Color>
+            <Color x:Key="btn-info">#8f5fe8</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
