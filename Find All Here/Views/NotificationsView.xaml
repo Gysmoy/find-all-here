@@ -41,7 +41,7 @@
                         Grid.Column="1" 
                          Margin="8,-28,30, 29" 
                         Padding="0,0,0,0"
-                        Grid.ColumnSpan="{Binding BtnProductsColSpan}"
+                        
                         CornerRadius="5"
                     
                         BackgroundColor="{StaticResource btn-primary-outline}"
@@ -60,7 +60,7 @@
                         Grid.Column="2"
                          Margin="-15,-28,-50,29"
                         Padding="0,0,0,0"
-                        Grid.ColumnSpan="{Binding BtnProductsColSpan}"
+                       
                         CornerRadius="5"
                     
                         BackgroundColor="{StaticResource btn-danger-outline}"
@@ -111,7 +111,7 @@
                         Grid.Column="1" 
                          Margin="8,-28,10, 29" 
                         Padding="0,0,0,0"
-                        Grid.ColumnSpan="{Binding BtnProductsColSpan}"
+                        
                         CornerRadius="5"
                     
                         BackgroundColor="{StaticResource btn-primary-outline}"
@@ -132,7 +132,7 @@
                         HeightRequest="40"
                         Margin="0,-28,-50,29"
                         Padding="0,0,0,0"
-                        Grid.ColumnSpan="{Binding BtnProductsColSpan}"
+                      
                         CornerRadius="5"
                     
                         BackgroundColor="{StaticResource btn-danger-outline}"
@@ -182,7 +182,7 @@
                         Grid.Column="1" 
                          Margin="8,-28,10, 29" 
                         Padding="0,0,0,0"
-                        Grid.ColumnSpan="{Binding BtnProductsColSpan}"
+                        
                         CornerRadius="5"
                     
                         BackgroundColor="{StaticResource btn-primary-outline}"
@@ -201,7 +201,7 @@
                         Grid.Column="2"
                         Margin="0,-28,-20,29"
                         Padding="0,0,0,0"
-                        Grid.ColumnSpan="{Binding BtnProductsColSpan}"
+                       
                         CornerRadius="5"
                     
                         BackgroundColor="{StaticResource btn-danger-outline}"
