@@ -3,14 +3,16 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:find_all_here="clr-namespace:Find_All_Here"
+    xmlns:local="clr-namespace:Find_All_Here.ViewModels"
     x:DataType="find_all_here:Shell"
     x:Class="Find_All_Here.Views.RegisterView"
     BackgroundColor="{StaticResource Primary}"
     Title="Formulario de registro">
     
     <ScrollView>
-        <StackLayout>
+        <StackLayout x:DataType="local:RegisterViewModel">
             <ActivityIndicator
+                x:DataType="local:RegisterViewModel"
                 IsRunning="{Binding IsRunning}"
                 IsVisible="{Binding IsVisible}"
                 Color="{StaticResource lbl-primary}"
@@ -88,6 +90,7 @@
                                     Placeholder="Ingrese su nombre completo"
                                     FontSize="16"
                                     TextColor="{StaticResource lbl-primary}"
+                                    x:DataType="local:RegisterViewModel"
                                     Text="{Binding Txt_Names, Mode=TwoWay}"
                                     IsEnabled="{Binding IsEnabled}"
                                     HorizontalOptions="FillAndExpand"

@@ -38,7 +38,7 @@
                     Padding="10,5" FontSize="12" FontAttributes="Bold"
                     HorizontalOptions="Center">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding CloseCartCommand}" />
+                        <TapGestureRecognizer x:DataType="local:CartViewModel" Command="{Binding CloseCartCommand}" />
                     </Label.GestureRecognizers>
                 </Label>
             </Frame>

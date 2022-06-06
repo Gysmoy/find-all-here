@@ -16,7 +16,7 @@
         VerticalOptions="FillAndExpand"
         HorizontalOptions="FillAndExpand"
         BackgroundColor="{StaticResource bg-body}">
-        <StackLayout>
+        <StackLayout x:DataType="local:ProfileViewModel">
             <Frame
                 Grid.Row="0"
                 Grid.Column="2"
@@ -26,6 +26,7 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 Margin="8,8,8,3"
+                x:DataType="local:ProfileViewModel"
                 IsVisible="{Binding BtnCloseVisible}"
                 HasShadow="True">
                 <Label  Text="Volver a la pantalla de inicio" TextColor="{StaticResource btn-danger}"
@@ -58,6 +59,7 @@
                     Grid.Column="0"
                     Grid.RowSpan="3"
                     Margin="0"
+                    x:DataType="local:ProfileViewModel"
                     Source="{Binding Profile_mini}"
                     BackgroundColor="{StaticResource bg-outline}"
                     WidthRequest="100"
@@ -108,7 +110,8 @@
                     Padding="0"
                     BackgroundColor="#2196F3"
                     HorizontalOptions="Start"
-                    Margin="0" 
+                    Margin="0"
+                    x:DataType="local:ProfileViewModel"
                     IsVisible="{Binding BtnFollowVisible}"
                     HasShadow="True">
                     <Label  Text="Seguir" TextColor="#fff"
@@ -149,6 +152,7 @@
                 </Grid.ColumnDefinitions>
                 <Frame
                     Grid.Column="0"
+                    x:DataType="local:ProfileViewModel"
                     Grid.ColumnSpan="{Binding BtnProductsColSpan}"
                     CornerRadius="5"
                     Padding="0"

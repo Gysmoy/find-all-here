@@ -3,25 +3,27 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:find_all_here="clr-namespace:Find_All_Here"
+    xmlns:local="clr-namespace:Find_All_Here.ViewModels"
     x:DataType="find_all_here:Shell"
     x:Class="Find_All_Here.Views.UserConfigView"
     Title="Configuración de usuario">
     
     <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#101010">
 
-        <StackLayout   Padding="0" >
+        <StackLayout Padding="0" x:DataType="local:UpdateDataUserViewModel">
 
-            <ActivityIndicator
+            <!--ActivityIndicator
                 IsRunning="{Binding IsRunning}"
                 IsVisible="{Binding IsVisible}"
                 Color="{StaticResource lbl-primary}"
-                Scale="0.8" />
+                Scale="0.8" /-->
             <Label HorizontalOptions="Center" Padding="0,12,0,0" TextColor="#fff" FontSize="20" Text="Configuracion de usuario"></Label>
             <ImageButton 
-                    Source="{ Binding Profile_mini, Mode=TwoWay}"
-                    WidthRequest="125" HeightRequest="125" HorizontalOptions="Center"
-                    Margin="0,0,0,0" CornerRadius="250" 
-                    BackgroundColor="{StaticResource bg-profile}"/>
+                x:DataType="local:UpdateDataUserViewModel"
+                Source="{ Binding Profile_mini, Mode=TwoWay}"
+                WidthRequest="125" HeightRequest="125" HorizontalOptions="Center"
+                Margin="0,0,0,0" CornerRadius="250" 
+                BackgroundColor="{StaticResource bg-profile}"/>
 
             <StackLayout>
                 <Grid Padding="10" >
