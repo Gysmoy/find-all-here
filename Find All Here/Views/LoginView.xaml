@@ -60,7 +60,7 @@
                             Margin="0,30,0,0"
                             Padding="10,0"
                             CornerRadius="5"
-                            Background="{StaticResource bg-outline}">
+                            BackgroundColor="{StaticResource bg-outline}">
                             <StackLayout>
                                 <Label 
                                     Margin="0,5,0,0"
@@ -82,7 +82,7 @@
                         <Frame Grid.Row="3"
                             Padding="10,0"
                             CornerRadius="5"
-                            Background="{StaticResource bg-outline}">
+                            BackgroundColor="{StaticResource bg-outline}">
                             <StackLayout>
                                 <Label 
                                     Margin="0,5,0,0"
