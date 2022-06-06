@@ -8,7 +8,7 @@
     xmlns:find_all_here="clr-namespace:Find_All_Here"
     x:DataType="find_all_here:Shell"
     x:Name="BrowseProductsPage"
-    Title="{Binding Title}">
+    Title="Find All Here">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="Agregar producto" Icon="plus.png"  Command="{Binding AddProductCommand}" />

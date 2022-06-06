@@ -212,7 +212,7 @@
                         <Frame BackgroundColor="{StaticResource bg-body}" Padding="5,0,5,6" HasShadow="True" CornerRadius="0">
                             <Frame
                                 x:DataType="models:Product"
-                                Background="{StaticResource bg-container}"
+                                BackgroundColor="{StaticResource bg-container}"
                                 Margin="0"
                                 Padding="0"
                                 CornerRadius="10">
