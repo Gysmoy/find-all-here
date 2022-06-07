@@ -6,196 +6,219 @@
     x:DataType="find_all_here:Shell"
     x:Class="Find_All_Here.Views.NotificationsView"
     Title="Notificaciones">
-    
+
     <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#101010">
-        <StackLayout BackgroundColor="#858485" Padding="0">
-
-            <StackLayout Margin="0,5,0,5">
-                <Grid Padding="5" >
+        <StackLayout BackgroundColor="{StaticResource bg-body}"  Padding="0,8,0,0">
+            <Frame CornerRadius="8" BackgroundColor="{StaticResource bg-container}" Padding="20,20,20,-10" Margin="8,1,8,0">
+                <Grid  Padding="0" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <ImageButton Margin="0,-100,0,0" Grid.Row="0" Grid.Column="0"
-                    VerticalOptions="Center" HorizontalOptions="Center"
-                    WidthRequest="35" HeightRequest="35"
-                    BackgroundColor="{StaticResource bg-profile}"
-                    Source="" CornerRadius="250"/>
-
-                    <StackLayout BackgroundColor="#2F2F2E" Margin="5,0,0,0" Grid.Row="0" Grid.Column="1"  >
-                        <Grid Padding="10" >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="1*"/>
-
-
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
+                    <ImageButton Margin="-16,-16,0,0" 
+                                 Padding="0"
+                                 Grid.Row="0" 
+                                 Grid.Column="0"
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center"
+                                 WidthRequest="35" 
+                                 HeightRequest="35"
+                                 BackgroundColor="{StaticResource bg-profile}"
+                                 Source="https://scriptperu.com/find_all_here/image/user/2/full/hello" 
+                                 CornerRadius="250"/>
 
 
+                    <Label Grid.Row="0"  Grid.Column="1" TextColor="#fff" FontSize="14" Margin="8,-15,0,0" Text="Carlos Manuel Gmaboa Palomino"></Label>
+                    <Label Grid.Row="0"  Grid.Column="2" TextColor="#fff" FontSize="13" Margin="0,-15,0,0" Text="hace 3 días"></Label>
+                    <Label Grid.Row="1"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="8,-15,0,10" Text="Quiere adquirir tu producto"></Label>
 
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Row="0"  Grid.Column="1" TextColor="#fff" FontSize="20" Margin="0,-12,0,0" Text="@username"></Label>
-                            <Label Grid.Row="0"  Grid.Column="2" TextColor="#fff" FontSize="15" Margin="0,0" Text="hace 2 minutos"></Label>
-                            <Label Grid.Row="1"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="0,-15,0,10" Text="Quiere adquirir tu producto"></Label>
-
-                            <Button Grid.Row="2" Background="Green"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="12,0,30,0" Text="Atender"></Button>
-                            <Button Grid.Row="2" Background="Red"  Grid.Column="2" TextColor="#fff" FontSize="16" Margin="0,0,-40,0" Text="Olbidar"></Button>
-
-                            <!--Button Grid.Row="0" Grid.Column="1" Text="Agrega un producto"
-                    BackgroundColor="{StaticResource bg-container}"
-                    TextColor="{StaticResource lbl-primary}" TextTransform="None"
-                    FontAttributes="None" FontSize="12" HeightRequest="35"
-                    BorderWidth="1" BorderColor="{StaticResource bg-profile}"
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="1" 
+                         Margin="8,-28,30, 29" 
+                        Padding="0,0,0,0"
+                        
+                        CornerRadius="5"
                     
-                    CornerRadius="25" /-->
-
-
-
-
-                        </Grid>
-
-                    </StackLayout>
-
-
-
-
-
-                </Grid>
-
-
-
-            </StackLayout>
-            <StackLayout Margin="0,0,0,5">
-                <Grid Padding="5" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <ImageButton Margin="0,-100,0,0" Grid.Row="0" Grid.Column="0"
-                    VerticalOptions="Center" HorizontalOptions="Center"
-                    WidthRequest="35" HeightRequest="35"
-                    BackgroundColor="{StaticResource bg-profile}"
-                    Source="" CornerRadius="250"/>
-
-                    <StackLayout BackgroundColor="#2F2F2E" Margin="5,0,0,0" Grid.Row="0" Grid.Column="1"  >
-                        <Grid Padding="10" >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="1*"/>
-
-
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-
-
-
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Row="0"  Grid.Column="1" TextColor="#fff" FontSize="20" Margin="0,-12,0,0" Text="@username"></Label>
-                            <Label Grid.Row="0"  Grid.Column="2" TextColor="#fff" FontSize="15" Margin="0,0" Text="hace 2 minutos"></Label>
-                            <Label Grid.Row="1"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="0,-15,0,10" Text="Quiere adquirir tu producto"></Label>
-
-                            <Button Grid.Row="2" Background="Green"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="12,0,30,0" Text="Atender"></Button>
-                            <Button Grid.Row="2" Background="Red"  Grid.Column="2" TextColor="#fff" FontSize="16" Margin="0,0,-40,0" Text="Olbidar"></Button>
-
-                            <!--Button Grid.Row="0" Grid.Column="1" Text="Agrega un producto"
-                    BackgroundColor="{StaticResource bg-container}"
-                    TextColor="{StaticResource lbl-primary}" TextTransform="None"
-                    FontAttributes="None" FontSize="12" HeightRequest="35"
-                    BorderWidth="1" BorderColor="{StaticResource bg-profile}"
-                    
-                    CornerRadius="25" /-->
-
-
-
-
-                        </Grid>
-
-                    </StackLayout>
-
-
-
-
-
-                </Grid>
-
-
-
-            </StackLayout>
-        </StackLayout>
-
-    </ScrollView>
-    <!--ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hola"></Label>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Frame BackgroundColor="#202020" Padding="0" CornerRadius="0">
-                <StackLayout>
-                    <Grid Margin="0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-
-
-                        <ImageButton Grid.Column="0"
-                        BackgroundColor="#202020" HeightRequest="50" Padding="9"
-                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/homeflat_106039.png"/>
-
-                        <ImageButton Grid.Column="1"
-                        BackgroundColor="#202020" HeightRequest="50" Padding="9"
-                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/searchzoomflat_106031.png" />
-
-                        <Frame Grid.Column="2"
-                        CornerRadius="7.5"
-                        Padding="0"
-                        BackgroundColor="#2196F3"
-                        HorizontalOptions="Center"
-                        Margin="0,5" 
+                        BackgroundColor="{StaticResource btn-primary-outline}"
+                        HorizontalOptions="FillAndExpand"
+                
                         HasShadow="True">
-                            <Label Text="+" TextColor="#fff"
-                        Padding="12.5,5" FontSize="20" FontAttributes="Bold"
-                        HorizontalOptions="Center" VerticalOptions="Center">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding BtnAdd_Clicked}" />
-                                </Label.GestureRecognizers>
-                            </Label>
-                        </Frame>
+                        <Label  Text="Atender" TextColor="{StaticResource btn-primary}"
+                        FontAttributes="Bold"
+                        FontSize="14" Padding="10"
+                        HorizontalTextAlignment="Center">
+                            
+                        </Label>
+                    </Frame>
+                    <Frame
+                        Grid.Row="2" 
+                        Grid.Column="2"
+                         Margin="-15,-28,-50,29"
+                        Padding="0,0,0,0"
+                       
+                        CornerRadius="5"
+                    
+                        BackgroundColor="{StaticResource btn-danger-outline}"
+                        HorizontalOptions="FillAndExpand"
+                
+                        HasShadow="True">
+                        <Label  Text="Olvidar" TextColor="{StaticResource btn-danger}"
+                        FontAttributes="Bold"
+                        FontSize="14" Padding="10"
+                        HorizontalTextAlignment="Center">
 
-                        <ImageButton Grid.Column="3"
-                        BackgroundColor="#303030" HeightRequest="50" Padding="9"
-                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/lightbulbflat_106023.png" />
+                        </Label>
+                    </Frame>
+                    
+                </Grid>
 
-                        <ImageButton Grid.Column="4"
-                        BackgroundColor="#202020" HeightRequest="50" Padding="9"
-                        Source="https://cdn.icon-icons.com/icons2/1520/PNG/512/robotflat_106032.png"/>
-                    </Grid>
-                </StackLayout>
             </Frame>
+            <Frame CornerRadius="8" BackgroundColor="{StaticResource bg-container}" Padding="20,20,20,-10" Margin="8,1,8,0">
+                <Grid  Padding="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Margin="-16,-16,0,0" 
+                                 Padding="0"
+                                 Grid.Row="0" 
+                                 Grid.Column="0"
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center"
+                                 WidthRequest="35" 
+                                 HeightRequest="35"
+                                 BackgroundColor="{StaticResource bg-profile}"
+                                 Source="https://scriptperu.com/find_all_here/image/user/3/full/hello" 
+                                 CornerRadius="250"/>
+
+
+                    <Label Grid.Row="0"  Grid.Column="1" TextColor="#fff" FontSize="14" Margin="8,-15,0,0" Text="Alex Ccora Contreras"></Label>
+                    <Label Grid.Row="0"  Grid.Column="2" TextColor="#fff" FontSize="13" Margin="0,-15,0,0" Text="hace 5 minutos"></Label>
+                    <Label Grid.Row="1"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="8,-15,0,10" Text="Quiere adquirir tu producto"></Label>
+
+
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="1" 
+                         Margin="8,-28,10, 29" 
+                        Padding="0,0,0,0"
+                        
+                        CornerRadius="5"
+                    
+                        BackgroundColor="{StaticResource btn-primary-outline}"
+                        HorizontalOptions="FillAndExpand"
+                
+                        HasShadow="True">
+                        <Label  Text="Atender" TextColor="{StaticResource btn-primary}"
+                        FontAttributes="Bold"
+                        FontSize="14" Padding="10"
+                        HorizontalTextAlignment="Center">
+
+                        </Label>
+                    </Frame>
+                    <Frame
+                        Grid.Row="2" 
+                        Grid.Column="2"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        Margin="0,-28,-50,29"
+                        Padding="0,0,0,0"
+                      
+                        CornerRadius="5"
+                    
+                        BackgroundColor="{StaticResource btn-danger-outline}"
+                        HorizontalOptions="FillAndExpand"
+                
+                        HasShadow="True">
+                        <Label  Text="Olvidar" TextColor="{StaticResource btn-danger}"
+                        FontAttributes="Bold"
+                        FontSize="14" Padding="10"
+                        HorizontalTextAlignment="Center">
+
+                        </Label>
+                    </Frame>
+                </Grid>
+
+            </Frame>
+            <Frame CornerRadius="8" BackgroundColor="{StaticResource bg-container}" Padding="20,20,20,-10" Margin="8,1,8,0">
+                <Grid  Padding="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                       
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Margin="-16,-16,0,0" 
+                                 Padding="0"
+                                 Grid.Row="0" 
+                                 Grid.Column="0"
+                                 VerticalOptions="Center" 
+                                 HorizontalOptions="Center"
+                                 WidthRequest="35" 
+                                 HeightRequest="35"
+                                 BackgroundColor="{StaticResource bg-profile}"
+                                 Source="https://scriptperu.com/find_all_here/image/user/4/full/hello" 
+                                 CornerRadius="250"/>
+
+
+                    <Label Grid.Row="0"  Grid.Column="1" TextColor="#fff" FontSize="14" Margin="8,-15,0,0" Text="Daniel Espinoza Encarnacio"></Label>
+                    <Label Grid.Row="0"  Grid.Column="2" TextColor="#fff" FontSize="13" Margin="0,-15,0,0" Text="hace unos segundos"></Label>
+                    <Label Grid.Row="1"  Grid.Column="1" TextColor="#fff" FontSize="16" Margin="8,-15,0,10" Text="Quiere adquirir tu producto"></Label>
+
+                    <Frame
+                        Grid.Row="2"
+                        Grid.Column="1" 
+                         Margin="8,-28,10, 29" 
+                        Padding="0,0,0,0"
+                        
+                        CornerRadius="5"
+                    
+                        BackgroundColor="{StaticResource btn-primary-outline}"
+                        HorizontalOptions="FillAndExpand"
+                
+                        HasShadow="True">
+                        <Label  Text="Atender" TextColor="{StaticResource btn-primary}"
+                        FontAttributes="Bold"
+                        FontSize="14" Padding="10"
+                        HorizontalTextAlignment="Center">
+
+                        </Label>
+                    </Frame>
+                    <Frame
+                        Grid.Row="2" 
+                        Grid.Column="2"
+                        Margin="0,-28,-20,29"
+                        Padding="0,0,0,0"
+                       
+                        CornerRadius="5"
+                    
+                        BackgroundColor="{StaticResource btn-danger-outline}"
+                        HorizontalOptions="FillAndExpand"
+                
+                        HasShadow="True">
+                        <Label  Text="Olvidar" TextColor="{StaticResource btn-danger}"
+                        FontAttributes="Bold"
+                        FontSize="14" Padding="10"
+                        HorizontalTextAlignment="Center">
+
+                        </Label>
+                    </Frame>
+                </Grid>
+
+            </Frame>
+
         </StackLayout>
-    </ContentPage.Content-->
+    </ScrollView>
 </ContentPage>
