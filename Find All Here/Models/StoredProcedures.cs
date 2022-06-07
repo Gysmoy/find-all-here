@@ -31,7 +31,7 @@ namespace Find_All_Here.Models
         FROM PRODUCTS P INNER
         JOIN BRANDS B ON P._brand = B.id
         JOIN CATEGORIES C ON P._category = C.id
-        WHERE P._user = ?
+        WHERE P._user = :userid
         ORDER BY P.update_date DESC
         ";
 

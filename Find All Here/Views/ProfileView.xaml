@@ -26,10 +26,10 @@
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 Margin="8,8,8,3"
-                x:DataType="local:ProfileViewModel"
                 IsVisible="{Binding BtnCloseVisible}"
+                x:DataType="local:ProfileViewModel"
                 HasShadow="True">
-                <Label  Text="Volver a la pantalla de inicio" TextColor="{StaticResource btn-danger}"
+                <Label  Text="❮ Atrás" TextColor="{StaticResource btn-danger}"
                     Padding="10,5" FontSize="12" FontAttributes="Bold"
                     HorizontalOptions="Center">
                     <Label.GestureRecognizers>

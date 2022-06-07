@@ -12,7 +12,7 @@
             RowSpacing="0"
             Margin="0"
             Padding="10"
-            Background="{StaticResource bg-outline}">
+            BackgroundColor="{StaticResource bg-outline}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
@@ -50,7 +50,7 @@
                     <Frame BackgroundColor="{StaticResource bg-body}" Padding="15,10" HasShadow="True" CornerRadius="0">
                         <Frame
                             x:DataType="model:Product"
-                            Background="{StaticResource bg-container}"
+                            BackgroundColor="{StaticResource bg-container}"
                             Margin="0"
                             Padding="0"
                             CornerRadius="10">
@@ -58,7 +58,7 @@
                                 Margin="0"
                                 Padding="0"
                                 RowSpacing="0"
-                                Background="{StaticResource bg-container}">
+                                BackgroundColor="{StaticResource bg-container}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
@@ -241,54 +241,6 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <!--Label
-                Margin="10,5"
-                Grid.Row="0"
-                Grid.Column="0"
-                FontSize="16"
-                TextColor="{StaticResource lbl-primary}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Subtotal: " TextColor="{StaticResource lbl-secondary}" />
-                            <Span Text="S/" FontAttributes="Bold" />
-                            <Span x:Name="Txt_Subtotal" x:DataType="local:CartViewModel" Text="{Binding Subtotal, Mode=TwoWay}" FontAttributes="Bold" />
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label
-                Margin="10,0"
-                Grid.Row="1"
-                Grid.Column="0"
-                FontSize="16"
-                TextColor="{StaticResource lbl-primary}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="IGV (18%): " FontSize="14" TextColor="{StaticResource lbl-secondary}" />
-                            <Span Text="S/" FontAttributes="Bold" />
-                            <Span x:Name="Txt_Igv" x:DataType="local:CartViewModel" Text="{Binding Igv, Mode=TwoWay}" FontAttributes="Bold" />
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
-            <Label
-                Margin="10,5,10,15"
-                Grid.Row="2"
-                Grid.Column="0"
-                FontSize="20"
-                TextColor="{StaticResource lbl-primary}">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <FormattedString.Spans>
-                            <Span Text="Total a pagar: " TextColor="{StaticResource lbl-secondary}" />
-                            <Span Text="S/" FontAttributes="Bold" FontSize="20"/>
-                            <Span x:Name="Txt_Total" x:DataType="local:CartViewModel" Text="{Binding Total, Mode=TwoWay}" FontAttributes="Bold" FontSize="20"/>
-                        </FormattedString.Spans>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label-->
             <Frame
                 Grid.Row="0"
                 Grid.Column="1"

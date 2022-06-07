@@ -1,7 +1,7 @@
 /.vs/
-/Find All Here/bin/
-/Find All Here/obj/
-/Find All Here.Android/bin/
-/Find All Here.Android/obj/
-/Find All Here.iOS/bin/
-/Find All Here.iOS/obj/
+/find_all_here/find_all_here/bin/
+/find_all_here/find_all_here/obj/
+/find_all_here/find_all_here.Android/bin/
+/find_all_here/find_all_here.Android/obj/
+/find_all_here/find_all_here.Android/find_all_here.Android.csproj.user
+/.idea/

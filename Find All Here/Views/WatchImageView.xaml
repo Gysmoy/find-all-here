@@ -8,10 +8,31 @@
     Title="Visor de imagen">
     
     <ContentPage.Content>
-        <Image
-            x:Name="imageViewer"
-            VerticalOptions="FillAndExpand"
-            HorizontalOptions="FillAndExpand"
-            Source=""/>
+        <StackLayout BackgroundColor="{StaticResource bg-body}">
+            <Frame
+                Grid.Row="0"
+                Grid.Column="2"
+                CornerRadius="7.5"
+                Padding="0"
+                BackgroundColor="{StaticResource btn-danger-outline}"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                Margin="8,8,8,3"
+                HasShadow="True">
+                <Label  Text="❮ Atrás" TextColor="{StaticResource btn-danger}"
+                    Padding="10,5" FontSize="12" FontAttributes="Bold"
+                    HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="OnBackClicked"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Frame>
+            <Image
+                x:Name="imageViewer"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Source=""/>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

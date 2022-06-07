@@ -39,7 +39,8 @@ namespace Find_All_Here
             else
             {
                 Properties.Clear();
-                MainPage = new LoginView();
+                //MainPage = new LoginView();
+                MainPage = new WatchImageView();
             }
 
         }

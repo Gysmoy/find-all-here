@@ -14,7 +14,7 @@
                 x:Name="img_mini"
                 Margin="20, 60, 20, 20"
                 Padding="0"
-                Background="Transparent"
+                BackgroundColor="Transparent"
                 BorderColor="Transparent"
                 WidthRequest="150"
                 HeightRequest="150"
@@ -36,7 +36,7 @@
 
             <Frame
                 Margin="40,40,40,20"
-                Background="{StaticResource bg-outline}">
+                BackgroundColor="{StaticResource bg-outline}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>

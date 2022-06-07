@@ -1,0 +1,49 @@
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\bin\Debug\netstandard2.0\Find All Here.deps.json
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\bin\Debug\netstandard2.0\Find All Here.dll
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\bin\Debug\netstandard2.0\Find All Here.pdb
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.csproj.AssemblyReference.cache
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Shell.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\AddProductView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\CartView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\HomeView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\NotificationsView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\PaymentView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\ProfileView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\RegisterView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\SearchView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\UserConfigView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\UsersView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\WatchImageView.xaml.g.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.AssemblyInfoInputs.cache
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.AssemblyInfo.cs
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.csproj.CoreCompileInputs.cache
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.dll
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\refint\Find All Here.dll
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.pdb
+D:\Gysmoy\Proyectos x\Find All Here\Find All Here\obj\Debug\netstandard2.0\ref\Find All Here.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.csproj.AssemblyReference.cache
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.GeneratedMSBuildEditorConfig.editorconfig
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Shell.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\AddProductView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\CartView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\HomeView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\LoginView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\NotificationsView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\PaymentView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\ProfileView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\RegisterView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\SearchView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\UserConfigView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\UsersView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Views\WatchImageView.xaml.g.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.AssemblyInfoInputs.cache
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.AssemblyInfo.cs
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.csproj.CoreCompileInputs.cache
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\refint\Find All Here.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here\obj\Debug\netstandard2.0\Find All Here.pdb
