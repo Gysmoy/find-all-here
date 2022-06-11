@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Command;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 using System.Windows.Input;
 
@@ -91,30 +92,37 @@ namespace Find_All_Here.ViewModels
             this.IsEnabledTxt = false;
             try
             {
-                Database db = new Database();
-                string sp = StoredProcedures.GetUserByUsernameAndPassword;
                 string password = Sha256(this.password);
-                string[] parameters = { this.email, this.email, password };
-                string response = db.Connect(sp, parameters, "one");
-                var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
-                if (userValidate.Status == 200)
+
+                Response response = User.GetUserByUsernameAndPassword(email, password);
+
+                if (response.Result == true)
                 {
-                    if (userValidate.Data.Count == 0)
+                    if (response.Rows == 0)
                     {
-                        await App.Current.MainPage.DisplayAlert(
-                            "Error!",
-                            "Usuario o contraseña incorrecta",
-                            "Aceptar");
-                        return;
+                        throw new Exception("Usuario o contraseña incorrecta");
                     }
                     else
                     {
-                        var user = userValidate.Data[0];
-                        user.Status = true;
-                        App.Current.Properties["user"] = user;
-                        Cart cart = new Cart();
-                        cart.Products = new List<Product>();
-                        App.Current.Properties["cart"] = cart;
+                        var u = response.Data[0];
+                        var user = new User
+                        {
+                            Id = int.Parse(u["id"]),
+                            Names = u["names"],
+                            Surnames = u["surnames"],
+                            Username = u["username"],
+                            Email = u["email"],
+                            Password = u["password"],
+                            Gender = u["gender"],
+                            Birth_date = u["birth_date"],
+                            Address = u["address"],
+                            Phone = u["phone"],
+                            Status = true
+                        };
+
+                        App.Current.Properties["user"] = JsonConvert.SerializeObject(user);
+                        var cart = new Cart();
+                        App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
 
 
                         await App.Current.MainPage.DisplayAlert(
@@ -123,14 +131,18 @@ namespace Find_All_Here.ViewModels
                             "Aceptar");
                         App.Current.MainPage = new Shell();
                     }
+                } else
+                {
+                    throw new Exception(response.Message);
                 }
             }
             catch (Exception e)
             {
                 await App.Current.MainPage.DisplayAlert(
                     "Error!",
-                    "No se pudo conectar con el servidor",
-                    "Aceptar");
+                    e.Message,
+                    "Aceptar"
+                );
             }
             finally
             {

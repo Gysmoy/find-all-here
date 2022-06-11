@@ -1,5 +1,6 @@
 ﻿using Find_All_Here.Models;
 using Find_All_Here.Views;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,7 +43,7 @@ namespace Find_All_Here.ViewModels
             try
             {
                 BindingProducts.Clear();
-                var cart = (Cart)App.Current.Properties["cart"];
+                var cart = JsonConvert.DeserializeObject<Cart>((string) App.Current.Properties["cart"]);
                 var products = cart.Products;
                 foreach (var product in products)
                 {
@@ -73,13 +74,13 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var cart = (Cart)App.Current.Properties["cart"];
+                var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
                 foreach (var p in cart.Products.Where(p => p.Id == product.Id))
                 {
                     cart.Products.Remove(p);
                     break;
                 }
-                App.Current.Properties["cart"] = cart;
+                App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
             }
             catch (Exception e)
             {
@@ -101,13 +102,13 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var cart = (Cart)App.Current.Properties["cart"];
+                var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
                 cart.Products.FirstOrDefault(p => p.Id == product.Id).Quantity++;
                 cart.Products.FirstOrDefault(p => p.Id == product.Id).Total_price
                     = "S/"
                         + cart.Products.FirstOrDefault(p => p.Id == product.Id).Sale_price
                         * cart.Products.FirstOrDefault(p => p.Id == product.Id).Quantity;
-                App.Current.Properties["cart"] = cart;
+                App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
             }
             catch (Exception e)
             {
@@ -129,13 +130,13 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var cart = (Cart)App.Current.Properties["cart"];
+                var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
                 cart.Products.FirstOrDefault(p => p.Id == product.Id).Quantity--;
                 cart.Products.FirstOrDefault(p => p.Id == product.Id).Total_price
                     = "S/"
                         + cart.Products.FirstOrDefault(p => p.Id == product.Id).Sale_price
                         * cart.Products.FirstOrDefault(p => p.Id == product.Id).Quantity;
-                App.Current.Properties["cart"] = cart;
+                App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
             }
             catch (Exception e)
             {

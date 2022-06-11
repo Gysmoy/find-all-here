@@ -124,7 +124,7 @@ namespace Find_All_Here.ViewModels
         {
             try
             {
-                User user = (User)App.Current.Properties["user"];
+                User user = JsonConvert.DeserializeObject<User>((string) App.Current.Properties["user"]);
                 string[] date = user.Birth_date.Split('-');
                 var year = date[0];
                 var month = date[1];
@@ -178,7 +178,7 @@ namespace Find_All_Here.ViewModels
             try
             {
 
-                User miusuario = (User)App.Current.Properties["user"];
+                User miusuario = JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
                 if (string.IsNullOrEmpty(this.names) ||
                     string.IsNullOrEmpty(this.surnames) ||
                     string.IsNullOrEmpty(this.username) ||
@@ -216,7 +216,6 @@ namespace Find_All_Here.ViewModels
                             var idUser = miusuario.Id;
                             var birth_date = Convert.ToString(this.dateYear) + '-' + Convert.ToString(this.dateMonth) + '-' + Convert.ToString(this.dateDay);
 
-                            var db = new Database();
                             var sp = StoredProcedures.UpdateUser;
                             string[] parameters = {
                                 this.names,
@@ -230,7 +229,7 @@ namespace Find_All_Here.ViewModels
                                 idUser.ToString(),
 
                             };
-                            var responseStr = db.Connect(sp, parameters, "result");
+                            var responseStr = Database.Connect(sp, parameters, "result");
                             var response = JsonConvert.DeserializeObject<Response>(responseStr);
                             if (response.Result)
                             {

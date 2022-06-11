@@ -656,6 +656,16 @@ D:\Gysmoy\Proyectos x\Find All Here\Find All Here.Android\obj\Debug\120\stamp\_C
 D:\Gysmoy\Proyectos x\Find All Here\Find All Here.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 D:\Gysmoy\Proyectos x\Find All Here\Find All Here.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 D:\Gysmoy\Proyectos x\Find All Here\Find All Here.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\mscorlib.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.Android.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.Android.pdb
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here.apk
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here.aab
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here-Signed.aab
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here-Signed.apk
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here-Signed.apk.idsig
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.pdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\MonoAndroid,Version=v12.0.AssemblyAttributes.cs
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\build.props
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\adb.props
@@ -690,15 +700,6 @@ D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.And
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\R.txt
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\R.cs.flag
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\Find All Here.Android.csproj.CoreCompileInputs.cache
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.Android.dll
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.Android.pdb
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here.apk
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here.aab
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here-Signed.aab
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here-Signed.apk
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\com.pe.sode.find_all_here-Signed.apk.idsig
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.dll
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\bin\Debug\Find All Here.pdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\Find All Here.Android.csproj.CopyComplete
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\Find All Here.Android.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\Find All Here.Android.pdb
@@ -753,11 +754,12 @@ D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.And
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\GalaSoft.MvvmLight.Platform.dll.mdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Java.Interop.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Java.Interop.pdb
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Microsoft.CSharp.dll
+D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Microsoft.CSharp.pdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Mono.Android.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Mono.Android.pdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Mono.Security.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Mono.Security.pdb
-D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\mscorlib.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\mscorlib.pdb
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\netstandard.dll
 D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll

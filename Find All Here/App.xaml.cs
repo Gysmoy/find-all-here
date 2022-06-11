@@ -1,5 +1,7 @@
 ﻿using Find_All_Here.Models;
+using Find_All_Here.RestClient;
 using Find_All_Here.Views;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -14,23 +16,19 @@ namespace Find_All_Here
         protected override void OnStart()
 
         {
-            if (!Properties.ContainsKey("cart"))
-            {
-                Cart cart = new Cart();
-                cart.Products = new List<Product>();
-                Properties["cart"] = cart;
-            }
-
             var user = new User();
-
+            var cart = new Cart();
             if (Properties.ContainsKey("user"))
             {
-                user = (User)Properties["user"];
+                user = JsonConvert.DeserializeObject<User>((string) Properties["user"]);
+
+                if (Properties.ContainsKey("cart"))
+                {
+                    cart = JsonConvert.DeserializeObject<Cart>((string) Properties["cart"]);
+                }
             }
-            else
-            {
-                Properties["user"] = user;
-            }
+            Properties["user"] = JsonConvert.SerializeObject(user);
+            Properties["cart"] = JsonConvert.SerializeObject(cart);
 
             if (user.Status)
             {
@@ -39,8 +37,7 @@ namespace Find_All_Here
             else
             {
                 Properties.Clear();
-                //MainPage = new LoginView();
-                MainPage = new WatchImageView();
+                MainPage = new LoginView();
             }
 
         }

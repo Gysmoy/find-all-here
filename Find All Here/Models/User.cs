@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Find_All_Here.RestClient;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -26,6 +28,16 @@ namespace Find_All_Here.Models
         public User()
         {
             Status = false;
+        }
+
+        public static Response GetUserByUsernameAndPassword(string username, string password)
+        {
+            var sp = StoredProcedures.GetUserByUsernameAndPassword;
+            string[] parameters = { username, username, password };
+            string res_user = Database.Fetch(sp, parameters, "one");
+            
+            Response data_user = JsonConvert.DeserializeObject<Response>(res_user);
+            return data_user;
         }
     }
 }

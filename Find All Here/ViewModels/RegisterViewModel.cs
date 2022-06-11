@@ -141,10 +141,9 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var db = new Database();
                 var sp = StoredProcedures.ExistUser;
                 string[] parameters = { this.email, this.email };
-                var response = db.Connect(sp, parameters, "one");
+                var response = Database.Connect(sp, parameters, "one");
                 var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
                 if (userValidate.Data.Count != 0)
                 {
@@ -199,10 +198,9 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var db = new Database();
                 var sp = StoredProcedures.ExistUser;
                 string[] parameters = { this.username, this.username };
-                var response = db.Connect(sp, parameters, "one");
+                var response = Database.Connect(sp, parameters, "one");
                 var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
                 if (userValidate.Data.Count != 0)
                 {
@@ -250,7 +248,6 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var db = new Database();
                 var sp = StoredProcedures.SetUser;
                 var birthDate = this.dateYear + "-" + this.dateMonth + "-" + this.dateDay;
                 string[] parameters = {
@@ -262,7 +259,7 @@ namespace Find_All_Here.ViewModels
                     birthDate,
                     this.phone
                 };
-                var responseStr = db.Connect(sp, parameters, "result");
+                var responseStr = Database.Connect(sp, parameters, "result");
                 var response = JsonConvert.DeserializeObject<Response>(responseStr);
                 if (response.Result)
                 {

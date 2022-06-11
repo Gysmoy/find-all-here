@@ -25,27 +25,30 @@ try {
 	if ($_POST['fetch'] == 'one') {
 		$res['data'] = $query -> fetch(PDO::FETCH_ASSOC);
 		$res['data'] = $res['data'] ? [$res['data']]: [];
-		$res['result'] = $res['data'] ? true: false;
+		$res['result'] = $result ? true: false;
 		$res['message'] = $res['data'] ? 'Operación correcta': 'No existe registro en la BD';
+		$res['rows'] = count($res['data']);
 	} else if ($_POST['fetch'] == 'all') {
 		$res['data'] = $query -> fetchAll(PDO::FETCH_ASSOC);
-		$res['result'] = $res['data'] ? true: false;
+		$res['result'] = $result ? true: false;
 		$res['message'] = $res['data'] ? 'Operación correcta': 'No existen registros en la BD';
+		$res['rows'] = count($res['data']);
 	} else if ($_POST['fetch'] == 'result') {
 		$res['result'] = $result ? true: false;
-		$res['data'] = null;
+		$res['data'] = [];
 		$res['message'] = $result ? 'Operación correcta': 'Ocurrió un error en la ejecución';
+		$res['rows'] = $query -> rowCount();;
 	} else {
-		$res['message'] = 'Petición fetch inálida';
-		$res['data'] = null;
-        $res['result'] = false;
+		throw new Exception('Error: Petición fetch inválida', 1);
 	}
 	$res['status'] = 200;
 } catch (Exception $e) {
 	$res['status'] = 400;
-	$res['message'] = $e -> getMessage();
-	$res['data'] = null;
+	// $res['message'] = $e -> getMessage();
+	$res['message'] = $_POST['params'];
+	$res['data'] = [];
     $res['result'] = false;
+	$res['rows'] = 0;
 } finally {
 	//http_response_code($res['status']);
 	header('Content-Type: application/json');

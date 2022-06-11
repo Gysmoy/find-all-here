@@ -21,6 +21,8 @@ com.google.android.material.bottomnavigation.BottomNavigationView;D:\Gysmoy\Seme
 com.google.android.material.tabs.TabLayout;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\56\jl\res\layout\fallbacktabbardonotuse.xml
 com.google.android.material.tabs.TabLayout;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\56\jl\res\layout\rootlayout.xml
 com.google.android.material.tabs.TabLayout;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\56\jl\res\layout\tabbar.xml
+crc643f46942d9dd1fff9.ShellFlyoutLayout;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\56\jl\res\layout\flyoutcontent.xml
+crc64720bb2db43a66fe9.FormsViewPager;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\56\jl\res\layout\rootlayout.xml
 declare-styleable;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\56\jl\res\values\attrs.xml
 external-cache-path;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;D:\Gysmoy\Semestre V\Formación Práctica Remota\Find All Here\Find All Here.Android\obj\Debug\120\lp\55\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml

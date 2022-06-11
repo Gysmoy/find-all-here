@@ -20,7 +20,8 @@ namespace Find_All_Here.ViewModels
         public Command AddProductCommand { get; }
         public Command OpenCartCommand { get; }
         public Command<Product> ProductTapped { get; }
-        public Command<string> OpenImageCommand { get; }
+        public Command<User> OpenImageUserCommand { get; }
+        public Command<Product> OpenImageProductCommand { get; }
 
         #region ProductCommands
         public Command<Product> AddToCartCommand { get; }
@@ -39,7 +40,8 @@ namespace Find_All_Here.ViewModels
             AddToCartCommand = new Command<Product>(OnAddToCart);
             OpenUserProfileCommand = new Command<Product>(OnOpenUserProfile);
             OpenCommentsCommand = new Command<Product>(OnOpenComments);
-            OpenImageCommand = new Command<string>(OnOpenImage);
+            OpenImageUserCommand = new Command<User>(OnOpenImageUser);
+            OpenImageProductCommand = new Command<Product>(OnOpenImageProduct);
 
             LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
             ExecuteLoadProductsCommand();
@@ -51,9 +53,8 @@ namespace Find_All_Here.ViewModels
             try
             {
                 BindingProducts.Clear();
-                Database db = new Database();
                 string sp = StoredProcedures.GetAllProducts;
-                string response = db.Connect(sp, null, "all");
+                string response = Database.Connect(sp, null, "all");
                 ListaProducts listaProducts = JsonConvert.DeserializeObject<ListaProducts>(response);
                 
                 if (listaProducts.Status == 200)
@@ -167,13 +168,13 @@ namespace Find_All_Here.ViewModels
 
             try
             {
-                var cart = (Cart)App.Current.Properties["cart"];
+                var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
                 var exist = cart.Products.Any(p => p.Id == product.Id);
                 if (!exist)
                 {
                     product.Quantity = product.Quantity == 0 ? 1 : product.Quantity;
                     cart.Products.Add(product);
-                    App.Current.Properties["cart"] = cart;
+                    App.Current.Properties["cart"] = JsonConvert.SerializeObject(cart);
                     await App.Current.MainPage.DisplayAlert(
                         "Correcto!",
                         "Producto agregado al carrito",
@@ -192,7 +193,7 @@ namespace Find_All_Here.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     "Error!",
-                    "Producto agregado al carrito",
+                    e.Message,
                     "Aceptar");
             }
 
@@ -206,13 +207,25 @@ namespace Find_All_Here.ViewModels
             App.Current.Properties["userId"] = null;
 
         }
-        private async void OnOpenImage(string url)
+        private async void OnOpenImageProduct(Product product)
         {
-            if (url == null)
+            if (product == null)
                 return;
-            App.Current.Properties["image"] = url;
+            App.Current.Properties["image"] = product.Image_full;
+            App.Current.Properties["name"] = product.Name;
             await Shell.Current.Navigation.PushModalAsync(new WatchImageView());
             App.Current.Properties["image"] = null;
+            App.Current.Properties["name"] = null;
+        }
+        private async void OnOpenImageUser(User user)
+        {
+            if (user == null)
+                return;
+            App.Current.Properties["image"] = user.Profile_full;
+            App.Current.Properties["name"] = $"{user.Names} {user.Surnames}";
+            await Shell.Current.Navigation.PushModalAsync(new WatchImageView());
+            App.Current.Properties["image"] = null;
+            App.Current.Properties["name"] = null;
         }
         private async void OnOpenComments(object obj)
         {

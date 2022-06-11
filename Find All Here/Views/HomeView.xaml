@@ -49,8 +49,8 @@
                                         RelativeSource AncestorType={
                                             x:Type local:HomeViewModel
                                         }
-                                    }, Path=OpenImageCommand}"
-                                    CommandParameter="{Binding User.Profile_full}"/>
+                                    }, Path=OpenImageUserCommand}"
+                                    CommandParameter="{Binding User}"/>
                                 <Frame Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="0" Margin="0" Padding="10,0,0,0" BackgroundColor="Transparent" HorizontalOptions="Start">
                                     <Label TextColor="#fff" Padding="0" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center">
                                         <Label.FormattedText>
@@ -125,8 +125,8 @@
                                         RelativeSource AncestorType={
                                             x:Type local:HomeViewModel
                                         }
-                                    }, Path=OpenImageCommand}"
-                                    CommandParameter="{Binding Image_full}"/>
+                                    }, Path=OpenImageProductCommand}"
+                                    CommandParameter="{Binding .}"/>
                             </Frame>
                             <Grid Margin="10,0" Padding="0" BackgroundColor="Transparent">
                                 <Grid.ColumnDefinitions>

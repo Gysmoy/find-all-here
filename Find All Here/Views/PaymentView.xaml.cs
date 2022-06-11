@@ -1,4 +1,5 @@
 ﻿using Find_All_Here.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Find_All_Here.Views
         public PaymentView()
         {
             InitializeComponent();
-            var cart = (Cart)Application.Current.Properties["cart"];
+            var cart = JsonConvert.DeserializeObject<Cart>((string)App.Current.Properties["cart"]);
             cart.Total = 0;
             foreach (var product in cart.Products)
             {
@@ -27,7 +28,7 @@ namespace Find_All_Here.Views
             var igv = cart.Total * (decimal)0.18;
             var subtotal = cart.Total - igv;
 
-            var user = (User)App.Current.Properties["user"];
+            var user = JsonConvert.DeserializeObject<User>((string)App.Current.Properties["user"]);
 
             // Variables
             var guid = Guid.NewGuid();

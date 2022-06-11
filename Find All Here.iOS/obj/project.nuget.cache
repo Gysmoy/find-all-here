@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "VtlmTWbU7E1fIAQpDIyTzjBhpZo2m+HCX+CUgjOb6uY9jQxALVLItK1qbuHDE07/MfsgN5G3E9uNef+DFRGxNg==",
+  "dgSpecHash": "JCu1mj7oTMt1yqKiU11jWFM8WeVbmI1ZchRH1aM5uNMmnQxjFjrWhmvj+asGI2C/rCvhkP5LW5BARhtIl7dpLQ==",
   "success": true,
   "projectFilePath": "D:\\Gysmoy\\Semestre V\\Formación Práctica Remota\\Find All Here\\Find All Here.iOS\\Find All Here.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gambo\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
+    "C:\\Users\\gambo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\gambo\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\gambo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\gambo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

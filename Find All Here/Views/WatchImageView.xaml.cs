@@ -15,9 +15,10 @@ namespace Find_All_Here.Views
         public WatchImageView()
         {
             InitializeComponent();
-            // var image = (string)App.Current.Properties["image"];
-            var image = "https://scriptperu.com/find_all_here/image/product/undefined/mini/abcd1234";
+            var image = (string) App.Current.Properties["image"];
+            var name = (string) App.Current.Properties["name"];
             imageViewer.Source = image;
+            nameViewer.Text = name;
         }
         async void OnBackClicked(object sender, EventArgs e)
         {

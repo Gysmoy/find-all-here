@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jT7T38HQ1JSmV6Vm0dAXGSsliYJwU5EZ/8KQE+bneTIwvev2gwoDObjzpOCx7IiG+G3Fpwq9/tbw3PVBkEL7Vg==",
+  "dgSpecHash": "qvLdVm33Ba7AfAYrbTS23dPvT4Kih3Aw8ASoktL3sf/PCYM611YdizHT9oCZQ6WcYzbnmzXBvkaeC1v/0VWfIg==",
   "success": true,
   "projectFilePath": "D:\\Gysmoy\\Semestre V\\Formación Práctica Remota\\Find All Here\\Find All Here\\Find All Here.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gambo\\.nuget\\packages\\commonservicelocator\\2.0.2\\commonservicelocator.2.0.2.nupkg.sha512",
+    "C:\\Users\\gambo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\gambo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\gambo\\.nuget\\packages\\mvvmlightlibs\\5.4.1.1\\mvvmlightlibs.5.4.1.1.nupkg.sha512",
     "C:\\Users\\gambo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

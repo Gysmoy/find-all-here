@@ -141,7 +141,7 @@ namespace Find_All_Here.ViewModels
                 var user = new User();
                 if (userId == null)
                 {
-                    user = (User)App.Current.Properties["user"];
+                    user = JsonConvert.DeserializeObject<User>((string) App.Current.Properties["user"]);
                     BtnCloseVisible = false;
                     BtnFollowVisible = false;
                     BtnCompraVentaVisible = true;
@@ -150,10 +150,9 @@ namespace Find_All_Here.ViewModels
                 }
                 else
                 {
-                    var db = new Database();
                     var sp = StoredProcedures.GetUserById;
                     string[] parameters = { userId };
-                    var response = db.Connect(sp, parameters, "one");
+                    var response = Database.Connect(sp, parameters, "one");
                     var userValidate = JsonConvert.DeserializeObject<UserValidate>(response);
                     if (userValidate.Data.Count != 0)
                     {
@@ -194,10 +193,9 @@ namespace Find_All_Here.ViewModels
         {
             try
             {
-                var db = new Database();
                 var sp = StoredProcedures.GetProductsByUserId;
                 string[] parameters = { Id };
-                var response = db.Connect(sp, parameters, "all");
+                var response = Database.Connect(sp, parameters, "all");
                 var products = JsonConvert.DeserializeObject<ListaProducts>(response);
                 if (products.Data.Count != 0)
                 {
